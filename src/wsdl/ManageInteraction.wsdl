@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="ManageInteractionService"
+	targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+	xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+	xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:tns="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0"
+	xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+	xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified"
+			targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:import namespace="http://www.orange.com/sidom/soa/dcrm/datacontract" schemaLocation="datacontract.xsd"/>
+			<xs:element name="Create">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="interaction" nillable="true"
+							type="q1:Interaction" xmlns:q1="http://www.orange.com/sidom/soa/dcrm/datacontract" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CreateResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="CreateResult" nillable="true"
+							type="q2:CreateInteractionResponse" xmlns:q2="http://www.orange.com/sidom/soa/dcrm/datacontract" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FindAndGet">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="criteria"
+							type="q3:InteractionCriteriaType" xmlns:q3="http://www.orange.com/sidom/soa/dcrm/datacontract" />
+						<xs:element minOccurs="0" name="value" nillable="true"
+							type="xs:string" />
+						<xs:element minOccurs="0" name="additionalCriteria"
+							type="q4:FilterCriteriaInteraction" xmlns:q4="http://www.orange.com/sidom/soa/dcrm/datacontract" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FindAndGetResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="FindAndGetResult"
+							nillable="true" type="q5:FindAndGetInteractionResponse"
+							xmlns:q5="http://www.orange.com/sidom/soa/dcrm/datacontract" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+</wsdl:types>
+	<wsdl:message name="ManageInteraction_Create_InputMessage">
+		<wsdl:part name="parameters" element="tns:Create"/>
+	</wsdl:message>
+	<wsdl:message name="ManageInteraction_Create_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CreateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ManageInteraction_Create_ServiceFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q1:ServiceFault" xmlns:q1="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+	</wsdl:message>
+	<wsdl:message name="ManageInteraction_FindAndGet_InputMessage">
+		<wsdl:part name="parameters" element="tns:FindAndGet"/>
+	</wsdl:message>
+	<wsdl:message name="ManageInteraction_FindAndGet_OutputMessage">
+		<wsdl:part name="parameters" element="tns:FindAndGetResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ManageInteraction_FindAndGet_ServiceFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q2:ServiceFault" xmlns:q2="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+	</wsdl:message>
+	<wsdl:portType name="ManageInteraction">
+		<wsdl:operation name="Create">
+			<wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0/ManageInteraction/Create" message="tns:ManageInteraction_Create_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0/ManageInteraction/CreateResponse" message="tns:ManageInteraction_Create_OutputMessage"/>
+			<wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0/ManageInteraction/CreateServiceFaultFault" name="ServiceFaultFault" message="tns:ManageInteraction_Create_ServiceFaultFault_FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="FindAndGet">
+			<wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0/ManageInteraction/FindAndGet" message="tns:ManageInteraction_FindAndGet_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0/ManageInteraction/FindAndGetResponse" message="tns:ManageInteraction_FindAndGet_OutputMessage"/>
+			<wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0/ManageInteraction/FindAndGetServiceFaultFault" name="ServiceFaultFault" message="tns:ManageInteraction_FindAndGet_ServiceFaultFault_FaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BasicHttpBinding_ManageInteraction" type="tns:ManageInteraction">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Create">
+			<soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0/ManageInteraction/Create" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ServiceFaultFault">
+				<soap:fault name="ServiceFaultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="FindAndGet">
+			<soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0/ManageInteraction/FindAndGet" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ServiceFaultFault">
+				<soap:fault name="ServiceFaultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ManageInteractionService">
+		<wsdl:port name="BasicHttpBinding_ManageInteraction" binding="tns:BasicHttpBinding_ManageInteraction">
+			<soap:address location="http://localhost:59861/ManageInteraction.svc"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

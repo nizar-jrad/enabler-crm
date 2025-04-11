@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- ===================================================================== -->
+<!-- -->
+<!-- log-back Configuration -->
+<!-- -->
+<!-- ===================================================================== -->
+<configuration scan="true" scanPeriod="15 seconds">
+
+	<property name="LOGS" value="${LOG_PATH}" />
+	
+	<!-- A time/date based rolling appender -->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		 <file>${LOGS}/enabler-crm.log</file>
+		<encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d %-5r %-5p [%c] \(%t\) %msg%n</Pattern>
+        </encoder>
+
+		<rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            <fileNamePattern>${LOGS}/enabler-crm-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+	</appender>
+
+	<appender name="SUPERVISION"
+        class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/supervision.log</file>
+        <encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
+        </encoder>
+
+	<!-- Rollover at the top of each hour <param name="DatePattern" value="'.'yyyy-MM-dd-HH"/> -->
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            <fileNamePattern>${LOGS}/archived/supervision-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+
+	<!-- ================ -->
+	<!-- Limit categories -->
+	<!-- ================ -->
+
+	<!-- com.orangecaraibe: DEBUG, but for a few classes/packages -->
+	<logger  name="com.orangecaraibe" level="info" />
+	
+	<logger name="com.orangecaraibe.enabler.crm" level="info" />
+
+	<!-- Logger hibernate pour les info BBD -->
+	<logger name="org.hibernate.SQL" level="info"/>
+
+	<logger name="org.hibernate.type" level="warn"/>
+
+	<logger name="org.springframework" level="info"/>
+	
+	<logger name="org.springframework.jdbc.core" level="info" />
+
+	<logger name="org.apache" level="info" />
+
+	<logger name="org.quartz" level="info" />
+	
+	<logger name="org" level="info"/>
+	
+	
+	<logger name="com.orangecaraibe.enabler.services" level="info">
+		<appender-ref ref="SUPERVISION" />
+	</logger>
+	
+	<!-- ================ -->
+	<!-- Root logger -->
+	<!-- ================ -->
+	<root level="info">
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>

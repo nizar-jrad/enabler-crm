@@ -1,0 +1,105 @@
+@startuml
+title SOA Layer - enabler-crm - Position dans le SI DOM
+
+skinparam titleFontSize 12
+
+skinparam Actor {
+fontName arial
+borderColor #666666
+backgroundColor #FEDE00
+fontColor black
+fontSize 12
+}
+
+skinparam component {
+arrowColor #666666
+borderColor #666666
+fontSize 11
+}
+skinparam package {
+borderColor #666666
+fontSize 11
+}
+skinparam interface {
+borderColor black
+fontSize 12
+}
+skinparam node {
+fontSize 11
+}
+skinparam database {
+borderColor #666666
+fontSize 10
+}
+
+skinparam note {
+fontSize 11
+fontColor white
+backgroundColor #45B8EF
+borderColor white
+}
+
+package "Frontend" {
+[DCRM]
+[Vue360]
+[Webcare\nFEL, O&M,...] as SELFCARE
+[Prompt]
+[Autres]
+[USSD]
+}
+[DCRM] .left.> [Vue360]
+
+package "Business Layer" {
+[Business Logic] as BL
+}
+
+[Vue360] - BL
+DCRM - BL
+
+package "SOA Layer" as SOA {
+
+package "<color:white><size:12>enabler-crm" as ecrm #888888 {
+[ManageInteraction] #FFD200
+[ManageCustomerProblem] #FFD200
+[<size:10>WSTroubleTicket] as WSTroubleTicket #FFD200
+[<size:10>ManageUSSD] as ManageUSSD #FFD200
+}
+
+package "autres enablers" {
+[ ]
+}
+
+package "enabler-installed-base" {
+[ManagePortability]
+}
+}
+
+package "OM/TD" as OMTD {
+[OM]
+}
+
+BL -> ecrm
+SELFCARE -> ecrm
+Prompt -> ecrm
+Autres -> ecrm
+[ ] -> ecrm
+OM -> ecrm
+USSD -> ManageUSSD
+ManageUSSD -right-> ManagePortability
+
+package "Backend SI DOM" as BESIDOM {
+database Prompt as PromptBE
+database DCRM as DCRMBE
+}
+
+package "Backend SI OF" as BESIOF {
+database  Oceane
+}
+
+ManageInteraction ---> DCRMBE
+ManageCustomerProblem ---> DCRMBE
+ManageCustomerProblem ---> Oceane
+ManageCustomerProblem ---> PromptBE
+Oceane -> WSTroubleTicket
+WSTroubleTicket -> DCRMBE
+@enduml

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns0="http://www.orange.com/Interfaces/ManageTroubleTicket/v2" 
+	xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:root="http://www.orange.com/Interfaces/ManageTroubleTicket/v2/root" 
+	xmlns:intf="http://www.orange.com/Interfaces/ManageTroubleTicket/v2" 
+	name="ManageTroubleTicket" 
+	targetNamespace="http://www.orange.com/Interfaces/ManageTroubleTicket/v2" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <Service>ManageTroubleTicket</Service>
+    <SOA_EBSVersion>2.2</SOA_EBSVersion>
+    <Date>17/02/2020 10:00:30</Date>
+    <Description>Update adapte it to IOSW 9.12.</Description>
+    <Entity>
+    </Entity>
+    <Process>
+    </Process>
+    <Function>
+    </Function>
+    <Tool>Interface Designer version 2.2</Tool>
+    <References>
+      <Reference>CommonTypes 8.0</Reference>
+      <Reference>GDM (System) S8F1_SOA_10_044</Reference>
+    </References>
+  </wsdl:documentation>
+  <wsdl:types>
+    <schema 
+		targetNamespace="http://www.orange.com/Interfaces/ManageTroubleTicket/v2/root" 
+		xmlns="http://www.w3.org/2001/XMLSchema">
+      <import 
+			schemaLocation="ManageTroubleTicket_OCEANE_2.2.2.xsd" 
+		namespace="http://www.orange.com/Interfaces/ManageTroubleTicket/v2" />
+      <element name="CreateTroubleTicket" type="root:CreateTroubleTicketMessage" />
+      <complexType name="CreateTroubleTicketMessage">
+        <sequence>
+          <element name="TroubleTicket" type="ns0:TroubleTicketViewForCreateTroubleTicketRequest">
+            <annotation>
+              <documentation>
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="CreateTroubleTicketResponse" type="root:CreateTroubleTicketResponseMessage" />
+      <complexType name="CreateTroubleTicketResponseMessage">
+        <sequence>
+          <element name="TroubleTicket" type="ns0:TroubleTicketViewForCreateTroubleTicketResponse">
+            <annotation>
+              <documentation>
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="CreateTroubleTicketFault" type="root:CreateTroubleTicketFaultMessage" />
+      <complexType name="CreateTroubleTicketFaultMessage">
+        <sequence>
+          <element name="Fault" type="ns0:FaultViewForCreateTroubleTicketFault">
+            <annotation>
+              <documentation>
+               </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="UpdateTroubleTicket" type="root:UpdateTroubleTicketMessage" />
+      <complexType name="UpdateTroubleTicketMessage">
+        <sequence>
+          <element name="TroubleTicket" type="ns0:TroubleTicketViewForUpdateTroubleTicketRequest">
+            <annotation>
+              <documentation>
+                </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="UpdateTroubleTicketResponse" type="root:UpdateTroubleTicketResponseMessage" />
+      <complexType name="UpdateTroubleTicketResponseMessage">
+        <sequence>
+          <element name="TroubleTicket" type="ns0:TroubleTicketViewForUpdateTroubleTicketResponse">
+            <annotation>
+              <documentation>
+                </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+      <element name="UpdateTroubleTicketFault" type="root:UpdateTroubleTicketFaultMessage" />
+      <complexType name="UpdateTroubleTicketFaultMessage">
+        <sequence>
+          <element name="Fault" type="ns0:FaultViewForUpdateTroubleTicketFault">
+            <annotation>
+              <documentation>
+              </documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </complexType>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="CreateTroubleTicketRequest">
+    <wsdl:part name="parameters" element="root:CreateTroubleTicket" />
+  </wsdl:message>
+  <wsdl:message name="CreateTroubleTicketResponse">
+    <wsdl:part name="parameters" element="root:CreateTroubleTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTroubleTicketFault">
+    <wsdl:part name="parameters" element="root:CreateTroubleTicketFault" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTroubleTicketRequest">
+    <wsdl:part name="parameters" element="root:UpdateTroubleTicket" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTroubleTicketResponse">
+    <wsdl:part name="parameters" element="root:UpdateTroubleTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTroubleTicketFault">
+    <wsdl:part name="parameters" element="root:UpdateTroubleTicketFault" />
+  </wsdl:message>
+  <wsdl:portType name="noname">
+    <wsdl:operation name="CreateTroubleTicket">
+      <wsdl:documentation>This operation creates a new trouble ticket based on trouble report.</wsdl:documentation>
+      <wsdl:input name="CreateTroubleTicketRequest" message="intf:CreateTroubleTicketRequest" />
+      <wsdl:output name="CreateTroubleTicketResponse" message="intf:CreateTroubleTicketResponse" />
+      <wsdl:fault name="CreateTroubleTicketFault" message="intf:CreateTroubleTicketFault" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTroubleTicket">
+      <wsdl:documentation>This operation updates an ongoing trouble ticket thorough its lifecycle</wsdl:documentation>
+      <wsdl:input name="UpdateTroubleTicketRequest" message="intf:UpdateTroubleTicketRequest" />
+      <wsdl:output name="UpdateTroubleTicketResponse" message="intf:UpdateTroubleTicketResponse" />
+      <wsdl:fault name="UpdateTroubleTicketFault" message="intf:UpdateTroubleTicketFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ManageTroubleTicketBinding" type="intf:noname">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateTroubleTicket">
+      <wsdlsoap:operation soapAction="http://www.orange.com/Interfaces/ManageTroubleTicket/v2/CreateTroubleTicket" />
+      <wsdl:input name="CreateTroubleTicketRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CreateTroubleTicketResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CreateTroubleTicketFault">
+        <wsdlsoap:fault use="literal" name="CreateTroubleTicketFault" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTroubleTicket">
+      <wsdlsoap:operation soapAction="http://www.orange.com/Interfaces/ManageTroubleTicket/v2/UpdateTroubleTicket" />
+      <wsdl:input name="UpdateTroubleTicketRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateTroubleTicketResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UpdateTroubleTicketFault">
+        <wsdlsoap:fault use="literal" name="UpdateTroubleTicketFault" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManageTroubleTicketOceane">
+    <wsdl:documentation>This service manages Service and Resource Trouble Ticket.</wsdl:documentation>
+    <wsdl:port name="ManageTroubleTicketPort" binding="intf:ManageTroubleTicketBinding">
+      <wsdlsoap:address location="http://localhost/ManageTroubleTicket" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

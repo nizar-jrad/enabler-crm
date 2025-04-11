@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ManageUSSDProviderService" targetNamespace="http://provider.soa.ussd.enabler.orangecaraibe.com/" xmlns:ns1="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD" xmlns:ns2="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://provider.soa.ussd.enabler.orangecaraibe.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="http://in-eint-as1.ms.fcm:9000/enabler-crm/soa/manageUSSD?wsdl=manageUSSD.wsdl" namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD" />
+  <wsdl:binding name="ManageUSSDProviderServiceSoapBinding" type="ns1:manageUSSD">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getUSSDFormatedPortabilityInfo">
+      <soap:operation soapAction="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD/getUSSDFormatedPortabilityInfo" style="rpc" />
+      <wsdl:input name="getUSSDFormatedPortabilityInfo">
+        <soap:body namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getUSSDFormatedPortabilityInfoResponse">
+        <soap:body namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManageUSSDProviderService">
+    <wsdl:port binding="tns:ManageUSSDProviderServiceSoapBinding" name="ManageUSSDProviderPort">
+      <soap:address location="http://in-eint-as1.ms.fcm:9000/enabler-crm/soa/manageUSSD" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

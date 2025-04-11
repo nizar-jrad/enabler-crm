@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ManageCRMProviderService" targetNamespace="http://provider.soa.epoint.enabler.orangecaraibe.com/" xmlns:ns1="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageCRM" xmlns:ns2="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://provider.soa.epoint.enabler.orangecaraibe.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="http://in-eint-as1.ms.fcm:9000/enabler-crm/soa/manageCRM?wsdl=manageCRM.wsdl" namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageCRM" />
+  <wsdl:binding name="ManageCRMProviderServiceSoapBinding" type="ns1:manageCRM">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkOutgoingRIO">
+      <soap:operation soapAction="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageCRM/checkOutgoingRIO" style="rpc" />
+      <wsdl:input name="checkOutgoingRIO">
+        <soap:body namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageCRM" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="checkOutgoingRIOResponse">
+        <soap:body namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageCRM" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManageCRMProviderService">
+    <wsdl:port binding="tns:ManageCRMProviderServiceSoapBinding" name="ManageCRMProviderPort">
+      <soap:address location="http://in-eint-as1.ms.fcm:9000/enabler-crm/soa/manageCRM" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

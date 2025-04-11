@@ -1,0 +1,4142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by aziz (weenko) -->
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by Joel (Orange) -->
+<xs:schema 
+			targetNamespace="http://www.orange.com/Interfaces/ManageTroubleTicket" 
+			xmlns:tns="http://www.orange.com/Interfaces/ManageTroubleTicket" 
+			xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="TroubleTicketViewForCreateTroubleTicketRequest">
+		<xs:sequence>
+			<xs:element name="local_System" type="tns:System_REQ_CTT">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_externalTicketID" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleTicketType">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ServiceTroubleTicket"/>
+						<xs:enumeration value="ResourceTroubleTicket"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="troubleTicketCategory" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleTicketPriority" type="xs:integer" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_supervisionTool" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleTicketOriginator" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleDetectionDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleSeverity" type="xs:integer" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleUrgency" type="xs:integer" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleCriticity" type="xs:integer" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="restorationCommitmentDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="requestedRestorationDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="plannedRestorationDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_ExternalTicketPriority" type="xs:integer" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_Onbhfollowup" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Trouble Type.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CustomerProblem" type="tns:CustomerTroubleTicket_REQ_CTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyRole" type="tns:PartyRole_REQ_CTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InstalledService" type="tns:InstalledService_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InstalledResource" type="tns:InstalledResource_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_Comment" type="tns:Comment_REQ_CTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_ActionInProgress" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_Freezes" nillable="true" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+					<xs:element name="local_Freeze" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+						  <xs:sequence>
+							<xs:element name="internalid" type="xs:string" nillable="true" minOccurs="0"/>
+							<xs:element name="startdate"  type="xs:dateTime"/>
+							<xs:element name="enddate"  type="xs:dateTime" nillable="true" minOccurs="0"/>
+							<xs:element name="causeid" type="xs:string"/>
+							<xs:element name="PartyRole">
+								<xs:complexType>
+								  <xs:sequence>
+									<xs:element name="PartyRoleSet">
+										<xs:complexType>
+										  <xs:sequence>
+											<xs:element name="partyRoleSetID" type="xs:string" nillable="true" minOccurs="0"/>
+										  </xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Party">
+										<xs:complexType>
+										  <xs:sequence>
+											<xs:element name="partyID" type="xs:string" nillable="true" minOccurs="0"/>
+										  </xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								  </xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						  </xs:sequence>
+						</xs:complexType>
+					</xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+			<xs:element name="local_ComplementaryField" type="tns:ComplementaryField_REQ_CTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_hasalreadyworked" nillable="true" type="xs:string" minOccurs="0"/>
+            <xs:element name="local_occupationCode" nillable="true" type="xs:string" minOccurs="0"/>
+            <xs:element name="local_Complementarydescription" nillable="true" type="xs:string" minOccurs="0"/>
+            <xs:element name="local_internalgroupcomment" nillable="true" type="xs:string" minOccurs="0"/>
+            <xs:element name="local_FavouriteContactMethod" nillable="true" type="xs:string" minOccurs="0"/>
+            <xs:element name="local_localcontactapproved" nillable="true" type="xs:string" minOccurs="0"/>
+            <xs:element name="local_customerNextCallback" nillable="true" type="xs:string" minOccurs="0"/>
+			<xs:element name="Site" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence> 
+                    <xs:element name="siteID" nillable="true" type="xs:string" minOccurs="0"/>
+                    <xs:element name="LOCAL_siteEndPoint" nillable="true" type="xs:string" minOccurs="0"/>
+                    <xs:element name="siteName" nillable="true" type="xs:string" minOccurs="0"/>
+                    <xs:element name="PartyRole" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="partyRoleID" nillable="true" minOccurs="0" type="xs:string"/>
+                          <xs:element name="partyRoleType" nillable="true" minOccurs="0" type="xs:string"/>
+                          <xs:element name="Party" nillable="true" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="partyID" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="OrganisationName" nillable="true" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="tradingName" nillable="true" minOccurs="0" type="xs:string"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="PersonName" nillable="true" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="firstName" nillable="true" type="xs:string" minOccurs="0"/>
+                                      <xs:element name="lastName" nillable="true" minOccurs="0" type="xs:string"/>
+                                      <xs:element name="salutation" nillable="true" type="xs:string" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ContactMethod" nillable="true" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="EmailAddress" nillable="true" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="eMailAddress" nillable="true" minOccurs="0" type="xs:string"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="PhoneNumber" nillable="true" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="number" nillable="true" minOccurs="0" type="xs:string"/>
+                                            <xs:element name="numberType" nillable="true" minOccurs="0" type="xs:string"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="AccessInformation" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accessInformationName" nillable="true" minOccurs="0" type="xs:string"/>
+                          <xs:element name="accessInformationType" nillable="true" minOccurs="0" type="xs:string"/>
+                          <xs:element name="AccessInfoSpecCharacteristic" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="specCharacteristicCode" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="specCharacteristicLabel" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="AccessInfoCharacteristicValue" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="characteristicValue" nillable="true" minOccurs="0" type="xs:string"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Address" nillable="true" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="apartmentNumber" nillable="true" type="xs:string" minOccurs="0"/>
+                          <xs:element name="staircaseNumber" nillable="true" type="xs:string" minOccurs="0"/>
+                          <xs:element name="floorNumber" nillable="true" type="xs:string" minOccurs="0"/>
+                          <xs:element name="buildingName" nillable="true" type="xs:string" minOccurs="0"/>
+                          <xs:element name="residenceName" nillable="true" type="xs:string" minOccurs="0"/>
+                          <xs:element name="locality" type="xs:string" nillable="true" minOccurs="0"/>
+                          <xs:element name="postalCode" nillable="true" type="xs:string" minOccurs="0"/>
+                          <xs:element name="houseType" nillable="true" type="xs:string" minOccurs="0"/>
+                          <xs:element name="Street" nillable="true" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="streetNumber" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="streetLetter" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="streetType" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="streetName" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="StreetNumberCode" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="referential" nillable="true" minOccurs="0" type="xs:string"/>
+                                      <xs:element name="code" nillable="true" minOccurs="0" type="xs:string"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="StreetCode" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="referential" nillable="true" minOccurs="0" type="xs:string"/>
+                                      <xs:element name="code" nillable="true" minOccurs="0" type="xs:string"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="City" nillable="true" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="cityName" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="cityCode" nillable="true" minOccurs="0" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="State" nillable="true" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="stateName" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="stateCode" nillable="true" minOccurs="0" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Country" nillable="true" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="countryName" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="countryCode" nillable="true" minOccurs="0" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="FormattedPostalAddress" nillable="true" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="formatType" nillable="true" minOccurs="0" type="xs:string"/>
+                                <xs:element name="AddressLine" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="line" nillable="true" minOccurs="0" type="xs:string"/>
+                                      <xs:element name="lineNumber" nillable="true" minOccurs="0" type="xs:string"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>	  
+            <xs:element name="local_complementaryData" nillable="true" type="xs:string" minOccurs="0"/>
+			<xs:element name="Local_URLlink" type="tns:URLlink" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_TroubleTicketAction" type="tns:TroubleTicketAction" nillable="true" minOccurs="0"/>			
+		</xs:sequence>
+	</xs:complexType> 
+	<xs:complexType name="System_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="code" type="xs:string"/>
+			<xs:element name="action" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType> 
+	<xs:complexType name="TroubleTicketAction">
+		<xs:sequence>
+			<xs:element name="actionType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Alarm"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="actionDescription" nillable="true" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="URLlink">
+		<xs:sequence>
+			<xs:element name="label" type="xs:string"/>
+			<xs:element name="fileName" type="xs:string"/>
+			<xs:element name="visibility" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Internal"/>
+						<xs:enumeration value="Customer"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="localUri" nillable="true" type="xs:string" minOccurs="0"/>
+			<xs:element name="externalUri" nillable="true" type="xs:string" minOccurs="0"/>
+			<xs:element name="deletion" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Comment_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="code" type="xs:string"/>
+			<xs:element name="label" type="xs:string"/>
+			<xs:element name="operationType" type="xs:string"/>
+			<xs:element name="PartyRole" type="tns:CommentPartyRole_REQ_CTT" minOccurs="0" nillable="true">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_ActionInProgress" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplementaryField_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="Index" type="xs:integer"/>
+			<xs:element name="value" type="xs:string" nillable="true" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CommentPartyRole_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="Party" type="tns:CommentParty_REQ_CTT">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CommentParty_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicketStatus_REQ_CTT"/>
+	<xs:complexType name="CustomerTroubleTicket_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="troubleTicketID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceQualifiedAlarm_REQ_CTT"/>
+	<xs:complexType name="ResourceQualifiedAlarm_REQ_CTT"/>
+	<xs:complexType name="PartyRole_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="partyRoleID" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation> 
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyRoleType">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Customer"/>
+						<xs:enumeration value="TroubleResolutionContributor"/>
+						<xs:enumeration value="TroubleResolutionLeader"/>
+						<xs:enumeration value="CustomerInterlocutor"/>
+						<xs:enumeration value="CustomerRepresentative"/>
+						<xs:enumeration value="TroubleETRAutomaticCalculation"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PartyRoleSet" type="tns:PartyRoleSet_REQ_CTT">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Party" type="tns:Party_REQ_CTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PartyRoleSet_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="partyRoleSetID" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_groupactioninprogress" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_groupactioninprogressdate" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Party_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PersonName" type="tns:PersonName_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="HasContactMethod" type="tns:HasContactMethod_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrganisationName_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PersonName_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="salutation" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="lastName" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="firstName" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="PhoneNumber" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                 <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="number" nillable="true" minOccurs="0" type="xs:string"/>
+                     </xs:sequence>
+                 </xs:complexType>
+            </xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HasContactMethod_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="EmailAddress" type="tns:EmailAddress_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PhoneNumber" type="tns:PhoneNumber_REQ_CTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EmailAddress_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="eMailAddress" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PhoneNumber_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="number" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="numberType" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Fax"/>
+						<xs:enumeration value="Telephone"/>
+						<xs:enumeration value="Mobile"/>
+						<xs:enumeration value=""/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InstalledService_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="installedServiceID" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceSpecification" type="tns:ServiceSpecification_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceSpecCharacteristic" type="tns:ServiceSpecCharacteristic_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceSpecCharacteristic_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="serviceSpecCharacteristicCode" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InstServiceCharacteristicValue" type="tns:InstServiceCharacteristicValue_REQ_CTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InstServiceCharacteristicValue_REQ_CTT">
+		<xs:sequence>
+		    <xs:element name="index" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="serviceCharacteristicValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceSpecification_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="serviceSpecificationCode" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InstalledResource_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="installedResourceID" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResourceSpecification" type="tns:ResourceSpecification_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResourceSpecCharacteristic" type="tns:ResourceSpecCharacteristic_REQ_CTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResourceSpecification_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="resourceSpecCodeCategory" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="resourceSpecificationCode" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResourceSpecCharacteristic_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="resourceSpecCharCode" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isPublicKey" type="xs:string"/>
+			<xs:element name="InstalledResourceCharValue" type="tns:InstalledResourceCharValue_REQ_CTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InstalledResourceCharValue_REQ_CTT">
+		<xs:sequence>
+		    <xs:element name="index" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="resourceCharacteristicValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Site_REQ_CTT"/>
+	<xs:complexType name="SitePartyRole_REQ_CTT"/>
+	<xs:complexType name="SiteParty_REQ_CTT"/>
+	<xs:complexType name="SiteOrganisationName_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SitePersonName_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salutation" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SiteHasContactMethod_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="EmailAddress" type="tns:SiteEmailAddress_REQ_CTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PhoneNumber" type="tns:SitePhoneNumber_REQ_CTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SiteEmailAddress_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="eMailAddress" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SitePhoneNumber_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="number" type="xs:string"/>
+			<xs:element name="numberType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Address_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="apartmentNumber" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="staircaseNumber" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="floorNumber" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="buildingName" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="residenceName" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="locality" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="postalCode" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="houseType" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Street" type="tns:Street_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="State" type="tns:State_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Country" type="tns:Country_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FormattedPostalAddress" type="tns:FormattedPostalAddress_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Street_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="streetNumber" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="streetLetter" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="streetType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="streetName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StreetNumberCode" type="tns:StreetNumberCode_REQ_CTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StreetCode" type="tns:StreetCode_REQ_CTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StreetNumberCode_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="referential" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="code" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StreetCode_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="referential" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="code" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="State_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="stateName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="stateCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Country_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="countryName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="countryCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FormattedPostalAddress_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="formatType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AddressLine" type="tns:AddressLine_REQ_CTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddressLine_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="line" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lineNumber" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccessInformation_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="accessInformationName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="accessInformationType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccessInfoSpecCharacteristic" type="tns:AccessInfoSpecCharacteristic_REQ_CTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccessInfoSpecCharacteristic_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="specCharacteristicCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="specCharacteristicLabel" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccessInfoCharacteristicValue" type="tns:AccessInfoCharacteristicValue_REQ_CTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccessInfoCharacteristicValue_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="characteristicValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Impacts_REQ_CTT"/>
+	<xs:complexType name="ImpInstalledResource_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="installedResourceID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResourceSpecification" type="tns:ImpResourceSpecification_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResourceSpecCharacteristic" type="tns:ImpResourceSpecCharacteristic_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpResourceSpecification_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="resourceSpecificationCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resourceSpecificationLabel" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpResourceSpecCharacteristic_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="resourceSpecCharCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resourceSpecCharLabel" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isPublicKey" type="xs:boolean"/>
+			<xs:element name="InstalledResourceCharValue" type="tns:ImpInstalledResourceCharValue_REQ_UTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpInstalledResourceCharValue_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="resourceCharacteristicValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpInstalledService_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="installedServiceID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceSpecification" type="tns:ImpServiceSpecification_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceSpecCharacteristic" type="tns:ImpServiceSpecCharacteristic_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpServiceSpecCharacteristic_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="serviceSpecCharacteristicCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceSpecCharacteristicLabel" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isPublicKey" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InstServiceCharacteristicValue" type="tns:ImpInstServiceCharacteristicValue_REQ_UTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpInstServiceCharacteristicValue_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="serviceCharacteristicValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpServiceSpecification_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="serviceSpecificationCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceSpecificationLabel" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceSpecificationType">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="01"/>
+						<xs:enumeration value="02"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagnosticAction_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="actionID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionRequestDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionDescription" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionResultCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyRole" type="tns:DiagPartyRole_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Test" type="tns:Test_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagPartyRole_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="partyRoleID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyRoleType">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="TroubleResolutionContributor"/>
+						<xs:enumeration value="TroubleResolutionLeader"/>
+						<xs:enumeration value="CustomerInterlocutor"/>
+						<xs:enumeration value="CustomerRepresentative"/>
+						<xs:enumeration value="Distributor"/>
+						<xs:enumeration value="User"/>
+						<xs:enumeration value="Competitor"/>
+						<xs:enumeration value="Supplier"/>
+						<xs:enumeration value="Delegate"/>
+						<xs:enumeration value="Partner"/>
+						<xs:enumeration value="Sponsor"/>
+						<xs:enumeration value="Employee"/>
+						<xs:enumeration value="Employer"/>
+						<xs:enumeration value="Proxy"/>
+						<xs:enumeration value="Guarantor"/>
+						<xs:enumeration value="Administrator"/>
+						<xs:enumeration value="Buyer"/>
+						<xs:enumeration value="DeliveryReceiver"/>
+						<xs:enumeration value="DeliveryDriver"/>
+						<xs:enumeration value="BillingAccountManager"/>
+						<xs:enumeration value="FieldTechnician"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Party" type="tns:DiagParty_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagParty_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:element name="OrganisationName" type="tns:DiagOrganisationName_REQ_CTT">
+					<xs:annotation>
+						<xs:documentation>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PersonName" type="tns:DiagPersonName_REQ_CTT">
+					<xs:annotation>
+						<xs:documentation>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagOrganisationName_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagPersonName_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salutation" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Test_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="testID" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResolutionAction_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="actionID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionRequestDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionDescription" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionResultCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyRole" type="tns:ResPartyRole_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InterventionOrder" type="tns:InterventionOrder_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceOrder" type="tns:ServiceOrder_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResPartyRole_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="partyRoleID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyRoleType">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="TroubleResolutionContributor"/>
+						<xs:enumeration value="TroubleResolutionLeader"/>
+						<xs:enumeration value="CustomerRepresentative"/>
+						<xs:enumeration value="Distributor"/>
+						<xs:enumeration value="User"/>
+						<xs:enumeration value="Competitor"/>
+						<xs:enumeration value="Supplier"/>
+						<xs:enumeration value="Delegate"/>
+						<xs:enumeration value="Partner"/>
+						<xs:enumeration value="Sponsor"/>
+						<xs:enumeration value="Employee"/>
+						<xs:enumeration value="Employer"/>
+						<xs:enumeration value="Proxy"/>
+						<xs:enumeration value="Guarantor"/>
+						<xs:enumeration value="Administrator"/>
+						<xs:enumeration value="Buyer"/>
+						<xs:enumeration value="DeliveryReceiver"/>
+						<xs:enumeration value="DeliveryDriver"/>
+						<xs:enumeration value="BillingAccountManager"/>
+						<xs:enumeration value="FieldTechnician"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Party" type="tns:ResParty_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResParty_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:element name="OrganisationName" type="tns:ResOrganisationName_REQ_CTT">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PersonName" type="tns:ResPersonName_REQ_CTT">
+					<xs:annotation>
+						<xs:documentation>
+							</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResOrganisationName_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResPersonName_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salutation" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InterventionOrder_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="interventionOrderID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceOrder_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="serviceOrderID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscalationAction_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="actionID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The Identifier of an action-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionRequestDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionResultCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="escalationLevel" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyRole" type="tns:EscPartyRole_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscPartyRole_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="partyRoleID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyRoleType">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="TroubleResolutionContributor"/>
+						<xs:enumeration value="TroubleResolutionLeader"/>
+						<xs:enumeration value="CustomerRepresentative"/>
+						<xs:enumeration value="Distributor"/>
+						<xs:enumeration value="User"/>
+						<xs:enumeration value="Competitor"/>
+						<xs:enumeration value="Supplier"/>
+						<xs:enumeration value="Delegate"/>
+						<xs:enumeration value="Partner"/>
+						<xs:enumeration value="Sponsor"/>
+						<xs:enumeration value="Employee"/>
+						<xs:enumeration value="Employer"/>
+						<xs:enumeration value="Proxy"/>
+						<xs:enumeration value="Guarantor"/>
+						<xs:enumeration value="Administrator"/>
+						<xs:enumeration value="Buyer"/>
+						<xs:enumeration value="DeliveryReceiver"/>
+						<xs:enumeration value="DeliveryDriver"/>
+						<xs:enumeration value="BillingAccountManager"/>
+						<xs:enumeration value="FieldTechnician"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Party" type="tns:EscParty_REQ_CTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscParty_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:element name="OrganisationName" type="tns:EscOrganisationName_REQ_CTT" nillable="true" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PersonName" type="tns:EscPersonName_REQ_CTT" nillable="true" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscOrganisationName_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscPersonName_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salutation" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ParentTroubleTicket_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="troubleTicketID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicketLink_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="linkType">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Relies on"/>
+						<xs:enumeration value="Support"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TroubleTicket" type="tns:TroubleTicket_REQ_CTT">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicket_REQ_CTT">
+		<xs:sequence>
+			<xs:element name="troubleTicketID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleTicketType">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ServiceTroubleTicket"/>
+						<xs:enumeration value="ResourceTroubleTicket"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FaultViewForCreateTroubleTicketFault">
+		<xs:sequence>
+			<xs:element name="faultLabel" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FaultDetail" type="tns:FaultDetail_FLT_CTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FaultDetail_FLT_CTT">
+		<xs:sequence>
+			<xs:element name="faultcode" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicketViewForCreateTroubleTicketResponse">
+		<xs:sequence>
+			<xs:element name="troubleTicketID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicketStatus_RES_CTT">
+		<xs:sequence>
+			<xs:element name="startDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="endDate" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="statusCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Initialised"/>
+						<xs:enumeration value="Open"/>
+						<xs:enumeration value="Canceled"/>
+						<xs:enumeration value="Cleared"/>
+						<xs:enumeration value="OnHold"/>
+						<xs:enumeration value="Closed"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="StatusOrigin" type="tns:StatusOrigin_RES_CTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StatusOrigin_RES_CTT">
+		<xs:sequence>
+			<xs:element name="originCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="originLabel" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PartyRole_RES_CTT"/>
+	<xs:complexType name="Party_RES_CTT"/>
+	<xs:complexType name="OrganisationName_RES_CTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PersonName_RES_CTT">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salutation" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicketViewForUpdateTroubleTicketRequest">
+		<xs:sequence>
+			<xs:element name="local_System" type="tns:System_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleTicketID" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleTicketCategory" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Trouble ticket's priority-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleTicketPriority" type="xs:integer" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Trouble ticket's priority-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_supervisionTool" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Trouble ticket's supervision Tool-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleTicketOriginator" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Trouble ticket's description-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleType" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Trouble Type.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleSeverity" type="xs:integer" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Trouble Type.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleUrgency" type="xs:integer" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Trouble Urgency-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="outageDuration" type="xs:duration" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Outage duration-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="restorationCommitmentDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Restoration commitment date-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="requestedRestorationDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Requested restoration date-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="plannedRestorationDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Planned restoration date-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_ExternalTicketPriority" type="xs:integer" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_Onbhfollowup" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Trouble Type.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_IsParent" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Trouble Type.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Local_parent" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" nillable="true" type="xs:string" minOccurs="0"/>
+                    <xs:element name="local_DesactivateMsRestoration" nillable="true" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+			<xs:element name="Local_servicecompl" nillable="true" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="local_associatedprd" type="xs:string" nillable="true"  minOccurs="0"/>
+                    <xs:element name="local_concernedres" nillable="true" type="xs:string" minOccurs="0"/>
+                    <xs:element name="local_eqplocalisation" nillable="true" type="xs:string" minOccurs="0"/>
+                    <xs:element name="local_rptposition" nillable="true" type="xs:string" minOccurs="0"/>
+                    <xs:element name="local_nivalm" nillable="true" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+			<xs:element name="CustomerProblem" type="tns:CustomerTroubleTicket_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TroubleTicketStatus" type="tns:TroubleTicketStatus_RES_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyRole" type="tns:PartyRole_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Entity 'http://ITFM/Logical View/GDM phase VII/Common business/Party/Party/Role:PartyRole'-->
+						<!--Description : The part played by a party in a given context with any characteristics, such as expected pattern of behavior, attributes, and/or associations that it entails. PartyRole is an abstract concept that should be used in places where the business refers to a Party playing a Role.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_Comment" type="tns:Comment_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						<!-- target Entity [1,1]: 'InstalledResource' -->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_ActionInProgress" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!-- target Entity [1,1]: 'InstalledResource' -->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_ComplementaryField" type="tns:ComplementaryField_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						<!-- target Entity [1,1]: 'InstalledResource' -->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_occupationCode" nillable="true" type="xs:string" minOccurs="0"/>
+              <xs:element name="local_escalationLevel" nillable="true" type="xs:string" minOccurs="0"/>
+              <xs:element name="local_nextcustomercallback" nillable="true" type="xs:string" minOccurs="0"/>
+              <xs:element name="local_localcontactapproved" nillable="true" type="xs:string" minOccurs="0"/>
+              <xs:element name="local_ExternalEvent" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" nillable="true" type="xs:string" minOccurs="0"/>
+                    <xs:element name="description" nillable="true" type="xs:string" minOccurs="0"/>
+                    <xs:element name="subject" nillable="true" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="local_Ourservicecomment" nillable="true" minOccurs="0" maxOccurs="unbounded">		  
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="type" nillable="true" type="xs:string" minOccurs="0"/>
+                    <xs:element name="label" nillable="true" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+			  <xs:element name="local_complementaryData" nillable="true" type="xs:string" minOccurs="0"/>
+			  <xs:element name="Local_URLlink" type="tns:URLlink" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+			  <xs:element name="local_TroubleTicketAction" type="tns:TroubleTicketAction" nillable="true" minOccurs="0"/>
+			  <xs:element name="TroubleCause" type="tns:TroubleCause_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+			  <xs:element name="local_TroubleTicketImpact" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="impactcalculationflag" type="xs:string" nillable="true"  minOccurs="0"/>
+                    <xs:element name="impactcalculationid" nillable="true" type="xs:string" minOccurs="0"/>
+					<xs:element name="impact" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+						  <xs:sequence>
+							<xs:element name="internalid" type="xs:string"/>
+							<xs:element name="impactid">
+								<xs:complexType>
+								  <xs:sequence>
+									<xs:element name="position" type="xs:integer" nillable="true" minOccurs="0"/>
+									<xs:element name="typeid" type="xs:string" nillable="true" minOccurs="0"/>
+									<xs:element name="value" type="xs:string"/>
+								  </xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="impactclass" type="xs:string"/>
+							<xs:element name="severity" type="xs:string"/>
+							<xs:element name="signalisationcount" type="xs:integer"/>
+							<xs:element name="finalnature" type="xs:string"/>
+							<xs:element name="tickettype"  type="xs:string"/>
+							<xs:element name="numberaccessimpacted" type="xs:integer"/>
+						  </xs:sequence>
+						</xs:complexType>
+					</xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+			  <xs:element name="local_Freezes" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+					<xs:element name="local_Freeze" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+						  <xs:sequence>
+							<xs:element name="internalid" type="xs:string" nillable="true" minOccurs="0"/>
+							<xs:element name="startdate"  type="xs:dateTime"/>
+							<xs:element name="enddate"  type="xs:dateTime" nillable="true" minOccurs="0"/>
+							<xs:element name="causeid" type="xs:string"/>
+							<xs:element name="PartyRole">
+								<xs:complexType>
+								  <xs:sequence>
+									<xs:element name="PartyRoleSet">
+										<xs:complexType>
+										  <xs:sequence>
+											<xs:element name="partyRoleSetID" type="xs:string" nillable="true" minOccurs="0"/>
+										  </xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Party">
+										<xs:complexType>
+										  <xs:sequence>
+											<xs:element name="partyID" type="xs:string" nillable="true" minOccurs="0"/>
+										  </xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								  </xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						  </xs:sequence>
+						</xs:complexType>
+					</xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustomerTroubleTicket_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="troubleTicketID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="System_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="code" type="xs:string"/>
+			<xs:element name="action" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Comment_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="internalid" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="code" type="xs:string"/>
+			<xs:element name="label" type="xs:string"/>
+			<xs:element name="operationType" type="xs:string"/>
+			<xs:element name="PartyRole" type="tns:CommentPartyRole_REQ_UTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_ActionInProgress" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplementaryField_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="Index" type="xs:integer"/>
+			<xs:element name="value" type="xs:string" nillable="true" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CommentPartyRole_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="Party" type="tns:CommentParty_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CommentParty_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicketStatus_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="statusCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Initialised"/>
+						<xs:enumeration value="Open"/>
+						<xs:enumeration value="Canceled"/>
+						<xs:enumeration value="Cleared"/>
+						<xs:enumeration value="OnHold"/>
+						<xs:enumeration value="Closed"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="startDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : startDate for the statusCode valid period-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="endDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : endDate for the statusCode valid period-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StatusOrigin" type="tns:StatusOrigin_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Entity 'http://ITFM/Common business/Common Entities:StatusOrigin'-->
+						<!--Description : StatusOrigin indicates the reason or the event that leads to the current status -->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StatusOrigin_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="originCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : OriginCode that justifies the current StatusCode-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="originLabel" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Label corresponding to the OriginCode-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustomerProblem_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="troubleTicketID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The unique trouble ticket identifier-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceQualifiedAlarm_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="alarmID" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResourceQualifiedAlarm_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="alarmID" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PartyRole_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyRoleID" type="xs:string" minOccurs="0" nillable="true">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The identifier of the PartyRole-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyRoleType">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The type of the PartyRole (payer, holder, bill receiver...)-->
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Customer"/>
+						<xs:enumeration value="TroubleResolutionContributor"/>
+						<xs:enumeration value="TroubleResolutionLeader"/>
+						<xs:enumeration value="CustomerInterlocutor"/>
+						<xs:enumeration value="CustomerRepresentative"/>
+						<xs:enumeration value="TroubleETRAutomaticCalculation"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PartyRoleSet" type="tns:PartyRoleSet_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Local_PartyIntervention" nillable="true" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="interventionStatus" nillable="true" maxOccurs="unbounded">
+						<xs:complexType>
+						  <xs:sequence>
+							<xs:element name="status">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="requested"/>
+										<xs:enumeration value="accepted"/>
+										<xs:enumeration value="refused"/>
+										<xs:enumeration value="completed"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="date" type="xs:dateTime"/>
+						  </xs:sequence>
+						</xs:complexType>
+					</xs:element>
+                    <xs:element name="requestor"  type="xs:string"/>
+                    <xs:element name="level" nillable="true" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+			<xs:element name="Party" type="tns:Party_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PartyRoleSet_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyRoleSetID" type="xs:string" minOccurs="0" nillable="true">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The identifier of the party-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_actionasked" type="xs:string" minOccurs="0" nillable="true">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The identifier of the party-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_groupactioninprogress" type="xs:string" minOccurs="0" nillable="true">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The identifier of the party-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_groupactioninprogressdate" type="xs:string" minOccurs="0" nillable="true">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The identifier of the party-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_associatedposition" type="xs:string" minOccurs="0" nillable="true">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The identifier of the party-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Party_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string" minOccurs="0"  nillable="true">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The identifier of the party-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PersonName" type="tns:PersonName_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="HasContactMethod" type="tns:HasContactMethod_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						<!-- target Entity [1,1]: 'ContactMethod' -->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrganisationName_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PersonName_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="lastName" type="xs:string" nillable="true"  minOccurs="0"/>
+			<xs:element name="firstName" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HasContactMethod_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="Local_FavouriteContactMethod" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="EmailAddress" type="tns:EmailAddress_REQ_UTT" minOccurs="0" nillable="true">
+				<xs:annotation>
+					<xs:documentation>
+				</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PhoneNumber" type="tns:PhoneNumber_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EmailAddress_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="eMailAddress" type="xs:string" minOccurs="0" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PhoneNumber_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="number" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="numberType" nillable="true" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Fax"/>
+						<xs:enumeration value="Telephone"/>
+						<xs:enumeration value="Mobile"/>
+						<xs:enumeration value=""/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Site_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="siteID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : site identifier-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="siteName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : site name-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyRole" type="tns:SitePartyRole_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Entity 'http://ITFM/Logical View/GDM phase VII/Common business/Party/Party/Role:PartyRole'-->
+						<!--Description : The part played by a party in a given context with any characteristics, such as expected pattern of behavior, attributes, and/or associations that it entails. PartyRole is an abstract concept that should be used in places where the business refers to a Party playing a Role.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccessInformation" type="tns:AccessInformation_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Entity 'http://ITFM/Common business/Location:AccessInformation'-->
+						<!--Description : the entity AccessInformation specifies the information to know to be able to access to a site, or a local place, for example the digicode of the entrance, if an authorisation is necessary, if a scale exist to access on the roof ...-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Address" type="tns:Address_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SitePartyRole_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyRoleID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The identifier of the PartyRole-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyRoleType">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The type of the PartyRole (payer, holder, bill receiver...)-->
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="SiteContact"/>
+						<xs:enumeration value="SiteAdministrator"/>
+						<xs:enumeration value="Keeper"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Party" type="tns:SiteParty_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SiteParty_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The identifier of the party-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:annotation>
+					<xs:documentation>
+						<!--Target entities of association 'Has'-->
+					</xs:documentation>
+				</xs:annotation>
+				<xs:element name="OrganisationName" type="tns:SiteOrganisationName_REQ_UTT">
+					<xs:annotation>
+						<xs:documentation>
+							<!--Entity 'http://ITFM/Logical View/GDM phase VII/Common business/Party/Party/Names:OrganisationName'-->
+							<!--Description : A word, term, or phrase by which an organisation is known and distinguished from other organisations. A name is an informal way of identifying an object. An OrganisationName is a type of PartyName.-->
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PersonName" type="tns:SitePersonName_REQ_UTT">
+					<xs:annotation>
+						<xs:documentation>
+							<!--Entity 'http://ITFM/Logical View/GDM phase VII/Common business/Party/Party/Names:PersonName'-->
+							<!--Description : A word, term, or phrase by which an individual is known and distinguished from other individuals. A name is an informal way of identifying an object. This entity allows for international naming variations. An IndividualName is a type of PartyName.-->
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="HasContactMethod" type="tns:SiteHasContactMethod_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						<!-- target Entity [1,1]: 'ContactMethod' -->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SiteOrganisationName_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SitePersonName_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : first name of the person (for instance andrew, charles...)-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : last name of the person (for instance smith, dupont...)-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salutation" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Contains the Salutation,e.g. Mr., Mrs., Hon., Dr.,Major, etc-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SiteHasContactMethod_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="EmailAddress" type="tns:SiteEmailAddress_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Entity 'http://ITFM/Logical View/GDM phase VII/Common business/Party/Party/ContactMethods:EmailAddress'-->
+						<!--Description : The eMail address to use when contacting a given Party. An eMailAddress is a type of ContactMethod.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PhoneNumber" type="tns:SitePhoneNumber_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SiteEmailAddress_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="eMailAddress" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SitePhoneNumber_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="number" type="xs:string"/>
+			<xs:element name="numberType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Fax or telephone number-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Address_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="apartmentNumber" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The apartment number, or the door number.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="staircaseNumber" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The number of the staircase.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="floorNumber" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The number of the floor.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="buildingName" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The name of the building.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="residenceName" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : the name of the residence.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="locality" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The locality represents the name of a place, it is usually used on country side instead of the road name and road number.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="postalCode" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The postal code of the postal address.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="houseType" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The type of house.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Street" type="tns:Street_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Entity 'http://ITFM/Common business/Location:Street'-->
+						<!--Description : the Street entity contains information to describe a street in an address-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="State" type="tns:State_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Entity 'http://ITFM/Common business/Location:State'-->
+						<!--Description : the State entity contains information to describe a state in an address-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Country" type="tns:Country_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Entity 'http://ITFM/Common business/Location:Country'-->
+						<!--Description : the Country entity contains information to describe a country in an address-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FormattedPostalAddress" type="tns:FormattedPostalAddress_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Street_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="streetNumber" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : the number in the street-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="streetLetter" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : the letter in the street (Bis, ...)-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="streetType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : the type of the street (avenue, ...)-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="streetName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : the name of the street-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StreetNumberCode" type="tns:StreetNumberCode_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StreetCode" type="tns:StreetCode_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StreetNumberCode_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="referential" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : specifies the referential use for this Code-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="code" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Code corresponding to an entity in the specified referential-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StreetCode_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="referential" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : specifies the referential use for this Code-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="code" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Code corresponding to an entity in the specified referential-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="State_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="stateName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="stateCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Country_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="countryName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="countryCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FormattedPostalAddress_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="formatType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : it gives the type of format used to the formattedPostalAddress-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AddressLine" type="tns:AddressLine_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddressLine_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="line" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lineNumber" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccessInformation_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="accessInformationName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="accessInformationType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccessInfoSpecCharacteristic" type="tns:AccessInfoSpecCharacteristic_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccessInfoSpecCharacteristic_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="specCharacteristicCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="specCharacteristicLabel" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AccessInfoCharacteristicValue" type="tns:AccessInfoCharacteristicValue_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccessInfoCharacteristicValue_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="characteristicValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InstalledService_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="installedServiceID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : InstalledService identifier-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceSpecification" type="tns:ServiceSpecification_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceSpecCharacteristic" type="tns:ServiceSpecCharacteristic_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceSpecCharacteristic_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="serviceSpecCharacteristicCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceSpecCharacteristicLabel" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isPublicKey" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InstServiceCharacteristicValue" type="tns:InstServiceCharacteristicValue_REQ_UTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InstServiceCharacteristicValue_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="index" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="serviceCharacteristicValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceSpecification_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="serviceSpecificationCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceSpecificationLabel" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceSpecificationType">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="01"/>
+						<xs:enumeration value="02"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InstalledResource_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="installedResourceID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResourceSpecification" type="tns:ResourceSpecification_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResourceSpecCharacteristic" type="tns:ResourceSpecCharacteristic_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResourceSpecification_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="resourceSpecCodeCategory" type="xs:string"/>
+			<xs:element name="resourceSpecificationCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resourceSpecificationLabel" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResourceSpecCharacteristic_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="resourceSpecCharCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resourceSpecCharLabel" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isPublicKey" type="xs:boolean"/>
+			<xs:element name="InstalledResourceCharValue" type="tns:InstalledResourceCharValue_REQ_UTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InstalledResourceCharValue_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="index" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="resourceCharacteristicValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Impacts_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="InstalledResource" type="tns:ImpInstalledResource_REQ_UTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InstalledService" type="tns:ImpInstalledService_REQ_UTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TroubleTicketLink" type="tns:ImpTroubleTicketLink_REQ_UTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpInstalledResource_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="installedResourceID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResourceSpecification" type="tns:ImpResourceSpecification_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ResourceSpecCharacteristic" type="tns:ImpResourceSpecCharacteristic_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpResourceSpecification_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="resourceSpecificationCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resourceSpecificationLabel" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpResourceSpecCharacteristic_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="resourceSpecCharCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="resourceSpecCharLabel" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isPublicKey" type="xs:boolean"/>
+			<xs:element name="InstalledResourceCharValue" type="tns:ImpInstalledResourceCharValue_REQ_UTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpInstalledResourceCharValue_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="index" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="resourceCharacteristicValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpInstalledService_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="installedServiceID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceSpecification" type="tns:ImpServiceSpecification_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceSpecCharacteristic" type="tns:ImpServiceSpecCharacteristic_REQ_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpServiceSpecCharacteristic_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="serviceSpecCharacteristicCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceSpecCharacteristicLabel" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isPublicKey" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InstServiceCharacteristicValue" type="tns:ImpInstServiceCharacteristicValue_REQ_UTT" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpInstServiceCharacteristicValue_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="index" type="xs:int" nillable="true" minOccurs="0"/>
+			<xs:element name="serviceCharacteristicValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpServiceSpecification_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="serviceSpecificationCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceSpecificationLabel" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Service Specification's Label, catalogue reference.-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceSpecificationType">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : ServiceSpecificationType can either be a CustomerFacingService or a ResourceFacingService-->
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="01"/>
+						<xs:enumeration value="02"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleCause_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="troubleCauseID" type="xs:string"  nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleCauseCodeCategory" type="xs:string"  nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleCauseCode" type="xs:string"  nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleCauseLabel" type="xs:string"  nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleCauseDescription" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleCauseStartDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleCauseEndDate" type="xs:dateTime" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleCauseDuration" type="xs:duration" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isRootCause" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_InternalComplement" type="xs:string"  nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_Responsability" type="xs:string"  nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CauseTroubleTicketLink_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="linkAction">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : Action involved to the link-->
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Add"/>
+						<xs:enumeration value="Remove"/>
+						<xs:enumeration value="Change"/>
+						<xs:enumeration value="Unchange"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ImpTroubleTicketLink_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="linkAction">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Add"/>
+						<xs:enumeration value="Remove"/>
+						<xs:enumeration value="Change"/>
+						<xs:enumeration value="Unchange"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagnosticAction_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="actionID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionRequestDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionDescription" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionResultCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyRole" type="tns:DiagPartyRole_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TroubleTicketLink" type="tns:DiagTroubleTicketLink_REQ_UTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Test" type="tns:Test_REQ_UTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagPartyRole_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyRoleID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The identifier of the PartyRole-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyRoleType">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The type of the PartyRole (payer, holder, bill receiver...)-->
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="TroubleResolutionContributor"/>
+						<xs:enumeration value="TroubleResolutionLeader"/>
+						<xs:enumeration value="CustomerInterlocutor"/>
+						<xs:enumeration value="CustomerRepresentative"/>
+						<xs:enumeration value="Distributor"/>
+						<xs:enumeration value="User"/>
+						<xs:enumeration value="Competitor"/>
+						<xs:enumeration value="Supplier"/>
+						<xs:enumeration value="Delegate"/>
+						<xs:enumeration value="Partner"/>
+						<xs:enumeration value="Sponsor"/>
+						<xs:enumeration value="Employee"/>
+						<xs:enumeration value="Employer"/>
+						<xs:enumeration value="Proxy"/>
+						<xs:enumeration value="Guarantor"/>
+						<xs:enumeration value="Administrator"/>
+						<xs:enumeration value="Buyer"/>
+						<xs:enumeration value="DeliveryReceiver"/>
+						<xs:enumeration value="DeliveryDriver"/>
+						<xs:enumeration value="BillingAccountManager"/>
+						<xs:enumeration value="FieldTechnician"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Party" type="tns:DiagParty_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagParty_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:element name="OrganisationName" type="tns:DiagOrganisationName_REQ_UTT">
+					<xs:annotation>
+						<xs:documentation>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PersonName" type="tns:DiagPersonName_REQ_UTT">
+					<xs:annotation>
+						<xs:documentation>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagOrganisationName_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagPersonName_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salutation" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiagTroubleTicketLink_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="linkAction">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Add"/>
+						<xs:enumeration value="Remove"/>
+						<xs:enumeration value="Change"/>
+						<xs:enumeration value="Unchange"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Test_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="testID" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResolutionAction_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="actionID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						<!--Description : The Identifier of an action-->
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionRequestDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionDescription" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionResultCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyRole" type="tns:ResPartyRole_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="InterventionOrder" type="tns:InterventionOrder_REQ_UTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceOrder" type="tns:ServiceOrder_REQ_UTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TroubleTicketLink" type="tns:ResTroubleTicketLink_REQ_UTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResPartyRole_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyRoleID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyRoleType">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="TroubleResolutionContributor"/>
+						<xs:enumeration value="TroubleResolutionLeader"/>
+						<xs:enumeration value="CustomerRepresentative"/>
+						<xs:enumeration value="Distributor"/>
+						<xs:enumeration value="User"/>
+						<xs:enumeration value="Competitor"/>
+						<xs:enumeration value="Supplier"/>
+						<xs:enumeration value="Delegate"/>
+						<xs:enumeration value="Partner"/>
+						<xs:enumeration value="Sponsor"/>
+						<xs:enumeration value="Employee"/>
+						<xs:enumeration value="Employer"/>
+						<xs:enumeration value="Proxy"/>
+						<xs:enumeration value="Guarantor"/>
+						<xs:enumeration value="Administrator"/>
+						<xs:enumeration value="Buyer"/>
+						<xs:enumeration value="DeliveryReceiver"/>
+						<xs:enumeration value="DeliveryDriver"/>
+						<xs:enumeration value="BillingAccountManager"/>
+						<xs:enumeration value="FieldTechnician"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Party" type="tns:ResParty_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResParty_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:element name="OrganisationName" type="tns:ResOrganisationName_REQ_UTT">
+					<xs:annotation>
+						<xs:documentation>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PersonName" type="tns:ResPersonName_REQ_UTT">
+					<xs:annotation>
+						<xs:documentation>
+							</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResOrganisationName_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResPersonName_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salutation" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResTroubleTicketLink_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="linkAction">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Add"/>
+						<xs:enumeration value="Remove"/>
+						<xs:enumeration value="Change"/>
+						<xs:enumeration value="Unchange"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InterventionOrder_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="interventionOrderID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceOrder_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="serviceOrderID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscalationAction_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="actionID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionRequestDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="actionResultCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="escalationLevel" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyRole" type="tns:EscPartyRole_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TroubleTicketLink" type="tns:EscTroubleTicketLink_REQ_UTT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscPartyRole_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyRoleID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyRoleType">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="TroubleResolutionContributor"/>
+						<xs:enumeration value="TroubleResolutionLeader"/>
+						<xs:enumeration value="CustomerRepresentative"/>
+						<xs:enumeration value="Distributor"/>
+						<xs:enumeration value="User"/>
+						<xs:enumeration value="Competitor"/>
+						<xs:enumeration value="Supplier"/>
+						<xs:enumeration value="Delegate"/>
+						<xs:enumeration value="Partner"/>
+						<xs:enumeration value="Sponsor"/>
+						<xs:enumeration value="Employee"/>
+						<xs:enumeration value="Employer"/>
+						<xs:enumeration value="Proxy"/>
+						<xs:enumeration value="Guarantor"/>
+						<xs:enumeration value="Administrator"/>
+						<xs:enumeration value="Buyer"/>
+						<xs:enumeration value="DeliveryReceiver"/>
+						<xs:enumeration value="DeliveryDriver"/>
+						<xs:enumeration value="BillingAccountManager"/>
+						<xs:enumeration value="FieldTechnician"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Party" type="tns:EscParty_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscParty_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:element name="OrganisationName" type="tns:EscOrganisationName_REQ_UTT">
+					<xs:annotation>
+						<xs:documentation>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PersonName" type="tns:EscPersonName_REQ_UTT">
+					<xs:annotation>
+						<xs:documentation>
+							</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscOrganisationName_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscPersonName_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salutation" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EscTroubleTicketLink_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="linkAction">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Add"/>
+						<xs:enumeration value="Remove"/>
+						<xs:enumeration value="Change"/>
+						<xs:enumeration value="Unchange"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ParentTroubleTicket_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="troubleTicketID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicketLink_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="linkAction">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Add"/>
+						<xs:enumeration value="Remove"/>
+						<xs:enumeration value="Change"/>
+						<xs:enumeration value="Unchange"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="linkType">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Brings"/>
+						<xs:enumeration value="Relies on"/>
+						<xs:enumeration value="Computes Event"/>
+						<xs:enumeration value="Support"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TroubleTicket" type="tns:TroubleTicket_REQ_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicket_REQ_UTT">
+		<xs:sequence>
+			<xs:element name="troubleTicketID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="troubleTicketType">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ServiceTroubleTicket"/>
+						<xs:enumeration value="ResourceTroubleTicket"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicketViewForUpdateTroubleTicketResponse">
+		<xs:sequence>
+			<xs:element name="troubleTicketID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TroubleTicketStatus_RES_UTT">
+		<xs:sequence>
+			<xs:element name="statusCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Initialised"/>
+						<xs:enumeration value="Open"/>
+						<xs:enumeration value="Canceled"/>
+						<xs:enumeration value="Cleared"/>
+						<xs:enumeration value="OnHold"/>
+						<xs:enumeration value="Closed"/>
+						<xs:enumeration value="Resolved"/>
+						<xs:enumeration value="Restored"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="startDate" type="xs:dateTime"  nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="local_ClosureValidation" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StatusOrigin" type="tns:StatusOrigin_RES_UTT" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StatusOrigin_RES_UTT">
+		<xs:sequence>
+			<!--<xs:element name="originCode" type="xs:string"/>-->
+			<xs:element name="originLabel" type="xs:string"  nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PartyRole_RES_UTT">
+		<xs:sequence>
+			<xs:element name="partyRoleID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="partyRoleType">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="TroubleResolutionContributor"/>
+						<xs:enumeration value="TroubleResolutionLeader"/>
+						<xs:enumeration value="CustomerInterlocutor"/>
+						<xs:enumeration value="CustomerRepresentative"/>
+						<xs:enumeration value="Distributor"/>
+						<xs:enumeration value="User"/>
+						<xs:enumeration value="Competitor"/>
+						<xs:enumeration value="Supplier"/>
+						<xs:enumeration value="Delegate"/>
+						<xs:enumeration value="Partner"/>
+						<xs:enumeration value="Sponsor"/>
+						<xs:enumeration value="Employee"/>
+						<xs:enumeration value="Employer"/>
+						<xs:enumeration value="Proxy"/>
+						<xs:enumeration value="Guarantor"/>
+						<xs:enumeration value="Administrator"/>
+						<xs:enumeration value="Buyer"/>
+						<xs:enumeration value="DeliveryReceiver"/>
+						<xs:enumeration value="DeliveryDriver"/>
+						<xs:enumeration value="BillingAccountManager"/>
+						<xs:enumeration value="FieldTechnician"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Party" type="tns:Party_RES_UTT">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Party_RES_UTT">
+		<xs:sequence>
+			<xs:element name="partyID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>
+						</xs:documentation>
+				</xs:annotation>
+				<xs:element name="OrganisationName" type="tns:OrganisationName_RES_UTT">
+					<xs:annotation>
+						<xs:documentation>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PersonName" type="tns:PersonName_RES_UTT">
+					<xs:annotation>
+						<xs:documentation>
+							</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrganisationName_RES_UTT">
+		<xs:sequence>
+			<xs:element name="tradingName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PersonName_RES_UTT">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+							</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salutation" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FaultViewForUpdateTroubleTicketFault">
+		<xs:sequence>
+			<xs:element name="faultLabel" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FaultDetail" type="tns:FaultDetail_FLT_UTT">
+				<xs:annotation>
+					<xs:documentation>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FaultDetail_FLT_UTT">
+		<xs:sequence>
+			<xs:element name="faultcode" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

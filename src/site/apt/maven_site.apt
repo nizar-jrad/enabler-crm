@@ -1,0 +1,33 @@
+Gestion de la documentation
+
+  La documentation (<<<doc/apt/*.apt>>>) de l'outil est rédigée au format APT
+  (<Almost Plain Text>), dans son implémentation Doxia :
+
+  * Le format APT (standard) : {{http://maven.apache.org/doxia/references/apt-format.html}}
+
+  * Extensions APT de Doxia 1.1 : {{http://maven.apache.org/doxia/references/doxia-apt.html}}
+
+  []
+
+  Pour la rédaction de la documentation, on peut s'aider sous Eclipse du plugin
+  {{{http://apteditor.sourceforge.net/}APTEditor}} qui implémente la prévisualisation
+  du document.
+
+  La compilation de la documentation s'effectue avec Maven, sous forme d'un site :
+
+  * Les sites Maven : {{http://maven.apache.org/guides/mini/guide-site.html}}
+
+  * Commande de compilation : <<<mvn clean site>>>
+
+  []
+
+  Le site compilé peut être déployé sur mvnserver :
+
+  * URL du site déployé : {{http://mvnserver.ms.fcm/projects_sites/castor-config/}}
+
+  * Commande de déploiement :  <<<mvn site:deploy>>>
+
+  * Commande combinée compilation+déploiement : <<<mvn clean site-deploy>>>
+
+  []
+

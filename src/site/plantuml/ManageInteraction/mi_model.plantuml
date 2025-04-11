@@ -1,0 +1,128 @@
+@startuml
+
+skinparam titleFontSize 12
+
+skinparam class {
+fontName arial
+arrowColor #666666
+borderColor #666666
+fontSize 11
+arrowFontSize 10
+arrowFontName arial 
+}
+ 
+skinparam arrow {
+fontName arial
+fontSize 11
+}
+
+title Modèle SOA Interaction
+class Interaction #FFD200 {
+	#String interactionID
+	#String description
+	#XMLGregorianCalendar interactionDate
+	#XMLGregorianCalendar interactionDateCompleted
+	#InteractionWay interactionWay
+}
+
+class CustomerProblem  {
+	#String priority
+	#String localTitle
+	#String localKeyword
+	#InteractionPriority localPriority
+}
+
+class Reason {
+	#String mainReason
+	#String reason
+	#String subReason
+}
+
+Interaction -- "0..*"  CustomerProblem
+
+Interaction -- "0..*" InteractionSubject
+
+InteractionSubject <|-- "Billing\nAccount"
+InteractionSubject <|-- "Installed\nContract"
+
+class TroubleTicket {
+	#String troubleTicketID
+}
+
+Interaction <|-- TroubleTicket
+
+TroubleTicket <|-- CustomerProblem
+
+class PartyRole {
+	#String partyRoleID
+}
+
+Interaction -up- Media
+
+Media <|-up- Phone
+Media <|-up- Fax
+Media <|-up- LocalShop
+Media <|-up- LocalLetter
+Media <|-up- LocalSocialMedia
+Media <|-up- Email
+Media <|-up- Sms
+Media <|-up- LocalSelfcare
+
+class LocalCRMInteractionStatus {
+	#LocalCRMInteractionStatusCode statusCode
+	#XMLGregorianCalendar startDate
+	#String localStatusReason
+}
+
+class CustomerProblemStatus {
+	#CustomerProblemStatusCode statusCode
+	#XMLGregorianCalendar startDate
+	#XMLGregorianCalendar endDate
+	#String localStatusReason
+	#String localPriority
+}
+
+Interaction -right- LocalCRMInteractionStatus
+
+CustomerProblem -down- CustomerProblemStatus
+
+Interaction -- "0..*" Interaction : references
+
+class LocalComment {
+	#String code
+	#String label
+	#XMLGregorianCalendar localCommentDate
+}
+
+LocalComment -- PartyRole
+
+Interaction -- "0..*" LocalComment
+
+Image <|-- InteractionAttachmentImage
+Interaction -- "0..*" InteractionAttachmentImage
+
+InteractionAttachmentImage -- LocalComment
+
+CustomerProblem -- Reason
+
+class InteractionActor {
+}
+
+InteractionActor <|-up- PartyRole
+
+Interaction -up- "0..2" InteractionActor : <b>from</b>
+Interaction -up- "0..1" InteractionActor : <b>to</b>
+
+class ContactMethod {
+}
+
+Interaction -up- "0..2" ContactMethod : <b>fromContactMehod</b>
+Interaction -up- "0..1" ContactMethod : <b>toContactMehod</b>
+
+ContactMethod <|-up- PhoneNumber
+ContactMethod <|-up- EmailAddress
+ContactMethod <|-up- PostalAddress
+ContactMethod <|-up- LocalSocialNetwork
+
+
+@enduml

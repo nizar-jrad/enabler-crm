@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="enablers-crm-ManageSVI" resourceRoot="" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ManageSVIProviderServiceSoapBinding" type="wsdl" bindingName="{http://provider.soa.svi.enabler.orangecaraibe.com/}ManageSVIProviderServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://enabler-crm.xtst.ms.fcm/enabler-crm/soa/manageSVI?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://enabler-crm.xtst.ms.fcm/enabler-crm/soa/manageSVI?wsdl"><con:part><con:url>http://enabler-crm.xtst.ms.fcm/enabler-crm/soa/manageSVI?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ManageSVIProviderService" targetNamespace="http://provider.soa.svi.enabler.orangecaraibe.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://provider.soa.svi.enabler.orangecaraibe.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageSVI">
+  <wsdl:import location="http://enabler-crm.xtst.ms.fcm/enabler-crm/soa/manageSVI?wsdl=manageSVI.wsdl" namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageSVI"></wsdl:import>
+  <wsdl:binding name="ManageSVIProviderServiceSoapBinding" type="ns1:manageSVI">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getSVIFormattedPortabilityInfo">
+      <soap:operation soapAction="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageSVI/getSVIFormatedPortabilityInfo" style="rpc"/>
+      <wsdl:input name="getSVIFormattedPortabilityInfo">
+        <soap:body namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageSVI" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSVIFormattedPortabilityInfoResponse">
+        <soap:body namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageSVI" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManageSVIProviderService">
+    <wsdl:port binding="tns:ManageSVIProviderServiceSoapBinding" name="ManageSVIProviderPort">
+      <soap:address location="http://enabler-crm.xtst.ms.fcm/enabler-crm/soa/manageSVI"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://enabler-crm.xtst.ms.fcm/enabler-crm/soa/manageSVI?wsdl=manageSVI.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="manageSVI" targetNamespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageSVI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageSVI">
+  <wsdl:message name="getSVIFormattedPortabilityInfoResponse">
+    <wsdl:part name="return" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSVIFormattedPortabilityInfo">
+    <wsdl:part name="msisdn" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="manageSVI">
+    <wsdl:operation name="getSVIFormattedPortabilityInfo">
+      <wsdl:input message="ns1:getSVIFormattedPortabilityInfo" name="getSVIFormattedPortabilityInfo"></wsdl:input>
+      <wsdl:output message="ns1:getSVIFormattedPortabilityInfoResponse" name="getSVIFormattedPortabilityInfoResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://enabler-crm.xdev.ms.fcm/enabler-crm/soa/manageSVI</con:endpoint><con:endpoint>http://enabler-crm.xtst.ms.fcm/enabler-crm/soa/manageSVI</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageSVI/getSVIFormatedPortabilityInfo" name="getSVIFormattedPortabilityInfo" bindingOperationName="getSVIFormattedPortabilityInfo" type="Request-Response" outputName="getSVIFormattedPortabilityInfoResponse" inputName="getSVIFormattedPortabilityInfo" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://enabler-crm.xdev.ms.fcm/enabler-crm/soa/manageSVI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:man="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageSVI">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <man:getSVIFormattedPortabilityInfo>
+         <msisdn>590690630250</msisdn>
+      </man:getSVIFormattedPortabilityInfo>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageSVI/getSVIFormatedPortabilityInfo"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions 
+	targetNamespace="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1"
+	xmlns:impl="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/">
+<wsdl:documentation>Ws Flow EAI to OREKA</wsdl:documentation> 
+  <wsdl:types>
+    <schema 
+			targetNamespace="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1"
+			xmlns="http://www.w3.org/2001/XMLSchema">
+		<xsd:element name="troubleticket">
+				<xsd:complexType>
+					<xsd:sequence>
+                <xsd:element name="system">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="actioncode" type="xsd:string"/>
+                      <xsd:element name="subactioncode" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="initiatorsystem" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="managersystem" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="sfu" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="code" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="isticketid" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="ticketid" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="objid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="msticketid" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="ticketid" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="objid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="agent" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="agentsystem" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="ticketid" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="objid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="group" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="role" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="ticket" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="natureid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="typeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="startdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="creationdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="description" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="thirdreference" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="customerref" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="customersupplierref" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="languageid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="calloriginid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="actioninprogress" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="currentstatus" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="classid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="customerimpactid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="interventionasked" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="urgencyid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="priorityid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="customerid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="restorationdeadline" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="closurewaiting" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="initialrestorationdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="expectedrestorationdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="restorationdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="fixdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="closuredate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="shortlabel" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="outageduration2424" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="contractoutageduration" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="totalfreezeduration2424" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="openhourtotalfreezeduration" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="mttrrespected" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="lastmodifdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="actor" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="group" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="name" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="subgroupphone" nillable="true" type="xsd:string" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="isparent" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="parentticketid" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="ticketid" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="objid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="keepmstcomtype" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="subgrprpt" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="ismaster" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="masterticketid" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="ticketid" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="objid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="issupport" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="supportticketid" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="ticketid" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="objid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="hasalreadyworked" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="outagedurationestimate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="webticket" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="criticity" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="nextcustomercallback" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="customerescalationid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="complementarydata" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="timestamp" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="customerinitialrestorationdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="customerinvoicing" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="disturbancerepetition" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="motive" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="undermotive" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="watchedmode" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="towatchmodecomment" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="watchedmodecomment" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="incidentmanager" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="supervisiontool" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="localcontactsapproved" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="numteltic" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="symptom" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="symptomfamily" nillable="true" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="idtfushor" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="groupcalculationrule" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="filternotifautoextcontact" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="nbdrgclo" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="internalgroupcomment" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="updateactorid" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="closurewaitingdate" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="closurewaitingreason" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="gtideadline" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="externalpriority" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="onbhfollowup" type="xsd:string" nillable="true" minOccurs="0"/>	
+							<xsd:element name="ticketvalidation" type="xsd:string" nillable="true" minOccurs="0"/>					  
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="alarms" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="alarm" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="code" type="xsd:string"/>
+                            <xsd:element name="label" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="group" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="sharednetwork" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="originserviceid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="destservid1" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="destservid2" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="destservid3" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="localswitch" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="terminswitch" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="carrier" nillable="true" type="xsd:string" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="tcndocument" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="closurecomment" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="tcnsentdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="contributor" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="initactor" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="actor" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="group" nillable="true" minOccurs="0">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="name" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subgroupphone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="pilotactor" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="actor" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="group" nillable="true" minOccurs="0">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="name" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subgroupphone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="pilotassociatedposition" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="pilotassociatedpositionlbl" nillable="true" type="xsd:string" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="activegroup" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="group" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="activegroups" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="activegroupnbr" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="active" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="group" nillable="true" minOccurs="0">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="actor" nillable="true" minOccurs="0">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="group" nillable="true" minOccurs="0">
+                                          <xsd:complexType>
+                                            <xsd:sequence>
+                                              <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                              <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                              <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                            </xsd:sequence>
+                                          </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="name" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="subgroupphone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="roleid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="acceptdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="askeddate" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="enddate" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="grouptotransfer" nillable="true" minOccurs="0">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="statustransfer" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="groupacktransfer" nillable="true" minOccurs="0">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="useracktransfer" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="grouprequesttransfer" nillable="true" minOccurs="0">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="userrequesttransfer" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="level" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="actiontypeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="actionsubtypeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="interventionpriority" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="actionasked" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="intercarriedout" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="endactiontypeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="activeassociatedposition" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="activeassociatedpositionlbl" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+					  <xsd:element name="resptransfer" nillable="true" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="group" nillable="true" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="id" type="xsd:string" nillable="true" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="grouprequesttransfer" nillable="true" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="id" type="xsd:string" nillable="true" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="userrequesttransfer" type="xsd:string" nillable="true" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+					</xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="notifier" nillable="true" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="name" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="phone" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="fax" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="email" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="companyname" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="favoritemedia" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="titleid" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="mobilenumber" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="workinghours" type="xsd:string" nillable="true" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+                <xsd:element name="site" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="extremity" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="contact" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="name" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="fax" nillable="true" type="xsd:string" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="openhours" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="zipcode" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="city" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="adress" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="adresscomplement" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="countryid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="customersite" nillable="true" type="xsd:string" minOccurs="0"/>
+					  <xsd:element name="companyname" type="xsd:string" nillable="true" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="service" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="internalid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="internalcontractid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="serviceid" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="position" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="typeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="value" nillable="true" type="xsd:string" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="idttypgar" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="mttrcode" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="mttrvalue" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="mttrtimeslot" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="companyname" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="typeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="familyid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="workinghoursid" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="rate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="belong" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="changeproduct" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="siren" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="productclass" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="serviceprivilege" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="extproduct" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="attributes" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="attribute" minOccurs="0" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="value" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="Order" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="parameters" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="value" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="market" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="address" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="addresscontinued" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="offer" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="code" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+					  <xsd:element name="customers" nillable="true" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="customer" nillable="true" minOccurs="0" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="source" type="xsd:string" nillable="true" minOccurs="0"/>
+													<xsd:element name="id" type="xsd:string" nillable="true" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="resource" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="researchtype" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="nonmanagedresource" nillable="true" type="xsd:string" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="impacts" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="impact" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="internalid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="impactid" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="position" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="typeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="value" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="typeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="mttrcode" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="mttrvalue" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="cdrs" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="belong" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="customerid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="internalcontractid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="impactclass" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="attributes" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="attribute" minOccurs="0" maxOccurs="unbounded">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="value" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="parameters" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="value" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+							<xsd:element name="severity" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="signalisationcount" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="finalnature" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="tickettype" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="numberaccessimpacted" type="xsd:string" nillable="true" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+					  <xsd:element name="impactcalculationtool" type="xsd:string" nillable="true" minOccurs="0"/>
+					  <xsd:element name="impactcalculationflag" type="xsd:string" nillable="true" minOccurs="0"/>
+					  <xsd:element name="impactcalculationid" type="xsd:string" nillable="true" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="causes" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="cause" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="internalid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="problemdetailid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="finalnature" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="responsabilityid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="duration2424" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="openhoursduration" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="customeroutageduration" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="maincause" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="startdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="enddate" nillable="true" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="internalcomplement" type="xsd:string" nillable="true" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="comments" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="comment" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="internalid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="recordingdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="typeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="operationtypeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="origincomment" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="actor" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="group" nillable="true" minOccurs="0">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="name" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subgroupphone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="attachment" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="name" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="type" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+							<xsd:element name="attachmentid" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="maincomment" type="xsd:string" nillable="true" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="freezes" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="freeze" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="internalid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="startdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="enddate" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="causeid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="actor" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="group" nillable="true" minOccurs="0">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="name" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subgroupphone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="escalations" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="escalation" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="escdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="level" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="accepted" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="priorityid" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="contactname" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="actor" nillable="true" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="group" nillable="true" minOccurs="0">
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                        <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="name" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="phone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="subgroupphone" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="interventionrequests" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="interventionrequest" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="numint" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="flag" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="activitycode" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="productcode" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="marketcode" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="diagnostic" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="idtessai" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="startdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="enddate" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="idtstatus" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="idtrel" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="codeui" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="inprogress" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="margin" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="meetingflag" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="interventioncomment" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="followup" minOccurs="0">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="code" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="datehour" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="status" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="comment" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="cause" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="appointmentaction" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="appointmentdate" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="appointmentmargin" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="appointmentcomment" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="appointmentactor" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="place1" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="place2" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="equipment1" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="equipment2" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="customerescalation" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="potentialduration" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="nbglobalizedir" nillable="true" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="meetingrefused" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="localisation" nillable="true" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="centre" type="xsd:string" nillable="true" minOccurs="0"/>
+													<xsd:element name="zone" type="xsd:string" nillable="true" minOccurs="0"/>
+													<xsd:element name="codebase42c" type="xsd:string" nillable="true" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+							</xsd:element>
+										<xsd:element name="datchgpidi" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="datreplanpidi" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="blnrdvask" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="coddisppidi" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="cmtdisppidi" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="idtpidista" type="xsd:string" nillable="true" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="attachments" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="attachment" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="label" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="filename" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="body" nillable="true" type="xsd:base64Binary" minOccurs="0"/>
+                            <xsd:element name="mimetype" type="xsd:string"/>
+							<xsd:element name="localuri" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="externaluri" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="deletion" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="internalid" type="xsd:string" nillable="true" minOccurs="0"/>
+							<xsd:element name="typeid" type="xsd:string" nillable="true" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="delete" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="deletedate" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="deleteactor" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="deleteent" nillable="true" type="xsd:string" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="diagnostic" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="returncode" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="diagcode" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="diagnosticsblocs" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="diagnosticbloc" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="type" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="typelabel" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="returncode" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="resultcode" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="detailresultcode" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="informationsdefaults" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="informations" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="information" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="code" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="value" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="defaults" nillable="true" minOccurs="0">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="default" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="code" nillable="true" type="xsd:string" minOccurs="0"/>
+                                  <xsd:element name="value" nillable="true" type="xsd:string" minOccurs="0"/>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="externalEvent" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="id" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="description" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="subject" nillable="true" type="xsd:string" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="trialResults" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="trialResult" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="emId" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="em1" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="em2" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="em3" nillable="true" type="xsd:string" minOccurs="0"/>
+                            <xsd:element name="em4" nillable="true" type="xsd:string" minOccurs="0"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="complements" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="complement1" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="complement2" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="complement3" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="complement4" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="complement5" nillable="true" type="xsd:string" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="maf" nillable="true" minOccurs="0">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="chpcompl1" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl2" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl3" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl4" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl5" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl6" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl7" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl8" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl9" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl9bis" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl10" nillable="true" type="xsd:string" minOccurs="0"/>
+                      <xsd:element name="chpcompl10bis" nillable="true" type="xsd:string" minOccurs="0"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+				<xsd:element name="ourservicescomments" nillable="true" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ourservicescomment" nillable="true" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="type" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="label" type="xsd:string" nillable="true" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="fieldinterventions" nillable="true" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+						<xsd:element name="fieldintervention" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="subactioncode" type="xsd:string" nillable="true" minOccurs="0"/>
+								<xsd:element name="id" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="numint" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="idtstatus" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="statuschangedate" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="enddateatthelatest" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="startdateattheearliest" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="description" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="interventioncomment" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="startdate" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="enddate" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="comment" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="iruserid" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="ordertype" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="orderdomain" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="externalfiusercode" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="externalfitaskid" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="fitechnicianname" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="firealstartdate" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="firealenddate" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="fiprdintervention" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="fitechniciancontact" type="xsd:string" nillable="true" minOccurs="0"/>
+							  <xsd:element name="figeoarea" type="xsd:string" nillable="true" minOccurs="0"/>
+							</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				 <xsd:element name="siteobjects" nillable="true" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="siteobject" nillable="true" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="siteidentifier" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitename" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitealias" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="siteaddress" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="siteaddresscomp" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitepostalcode" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitecity" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitearea" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitecountry" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitetimezone" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitelatitude" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitelongitude" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitetype" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitetypology" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitelocalcontact" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitesecuritycontact" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitewithstaff" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="siteaccesshours" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="siteworkhours" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitesupervhours" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitegenericinstructions" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitespecificinstructions" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="criticalsite" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitecustomerreference" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sitecommitment" type="xsd:string" nillable="true" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				 </xsd:element>
+				 <xsd:element name="suppliers" nillable="true" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="supplier" nillable="true" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="oceanetransferid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="supplierticketnumber" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="suppliertransferstatus" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="supplierpriority" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="enddate" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="supplierticketcloseddate" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="resolutioncode" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="requestedaction" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="partnerebondstatus" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="suppliergroup" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="supplierphone" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="suppliercontactname" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="transfergroupid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="transferuserid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="transferstartdate" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="typactionaskedid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sstypactionaskedid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="intervplanneddate" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="intervtech" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="intervackdate" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="onsitedate" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="realintervenddate" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="urgencyid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="tansferdeletiontuserid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="transferdeletiongroupid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="transferdeletiondate" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="intervdescription" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="typactionrealid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="sstypactionrealid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="intervrealdate" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="blnfacturation" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="impactprdid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="impactressid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="suppliermngtype" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="ref1circuitid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="ref2circuitid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="orangecircuitid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="circuittype" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="circuitspeed" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="suppliermail" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="suppliermmtsla" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="suplieresclevel" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="userupdateid" type="xsd:string" nillable="true" minOccurs="0"/>
+										<xsd:element name="groupupdateid" type="xsd:string" nillable="true" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+			  </xsd:element>
+				 <xsd:element name="notificationcontacts" nillable="true" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="notificationcontact" nillable="true" minOccurs="0" maxOccurs="unbounded">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="titleid" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="name" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="companyname" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="address" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="zipcode" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="city" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="phone" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="mobilenumber" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="email" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="fax" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="media" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="language" type="xsd:string" nillable="true" minOccurs="0"/>
+											<xsd:element name="notificationtypes" nillable="true" minOccurs="0">
+												<xsd:complexType>
+													<xsd:sequence>
+														<xsd:element name="notificationtype" nillable="true" minOccurs="0" maxOccurs="unbounded">
+															<xsd:complexType>
+																<xsd:sequence>
+																	<xsd:element name="id" type="xsd:string" nillable="true" minOccurs="0"/>
+																</xsd:sequence>
+															</xsd:complexType>
+														</xsd:element>
+													</xsd:sequence>
+												</xsd:complexType>
+											</xsd:element>
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+				  </xsd:element>
+              </xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+		<element name="troubleticketResponse">
+				<complexType>
+					<sequence>
+						<element name="troubleticketResultCode" type="xsd:string" nillable="true" minOccurs="0"/>
+						<element name="troubleticketResultString" type="xsd:string" nillable="true" minOccurs="0"/>
+					</sequence>
+				</complexType>
+			</element>
+		<element name="faultException">
+				<complexType>
+					<sequence>
+						<element name="faultExceptionCode" type="xsd:string" nillable="true" minOccurs="0"/>
+						<element name="faultExceptionString" type="xsd:string" nillable="true" minOccurs="0"/>
+					</sequence>
+				</complexType>
+			</element>
+	</schema>
+<!-- fin akh -->
+  </wsdl:types>
+  <!-- messages -->
+  <wsdl:message name="troubleticketResponse">
+    <wsdl:part name="TroubleTicket" element="impl:troubleticketResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="troubleticketRequest">
+    <wsdl:part name="TroubleTicket" element="impl:troubleticket">
+    </wsdl:part>
+  </wsdl:message>
+ <!-- akh -->
+  <wsdl:message name="faultExceptionReturn">
+    <wsdl:part name="fault" element="impl:faultException">
+    </wsdl:part>
+  </wsdl:message>
+ <!-- fin akh -->
+  <!-- les ports -->
+  <wsdl:portType name="WSTroubleTicket">
+    <wsdl:operation name="troubleticket">
+	<wsdl:documentation>Ws Flow EAI to OREKA</wsdl:documentation> 
+		<wsdl:input  message="impl:troubleticketRequest"></wsdl:input>
+		<wsdl:output message="impl:troubleticketResponse"></wsdl:output>
+		<wsdl:fault name="faultExceptionReturn" message="impl:faultExceptionReturn"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!-- bindings -->
+  <wsdl:binding name="WSTroubleTicketSoapBinding" type="impl:WSTroubleTicket">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="troubleticket">
+	<wsdl:documentation>Ws Flow EAI to OREKA</wsdl:documentation> 
+      <wsdlsoap:operation style="document" soapAction=""/>
+		<wsdl:input >
+			<wsdlsoap:body use="literal"/>
+		</wsdl:input>
+		<wsdl:output >
+			<wsdlsoap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="faultExceptionReturn">
+			<wsdlsoap:fault name="faultExceptionReturn" use="literal"/>
+		</wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <!-- service -->
+  <wsdl:service name="WSTroubleTicket">
+ <wsdl:documentation>Ws Flow EAI to OREKA</wsdl:documentation> 
+    <wsdl:port name="WSTroubleTicket" binding="impl:WSTroubleTicketSoapBinding">
+      <wsdlsoap:address location="http://localhost/Infocentre/interfaces/metro/collector.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

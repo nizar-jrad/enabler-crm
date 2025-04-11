@@ -1,0 +1,86 @@
+@startuml
+
+skinparam sequence {
+
+            ArrowColor #666666
+            ArrowFontSize 11
+            ActorBorderColor #666666
+            ActorBackgroundColor #BBBBBB
+            ActorFontColor black
+            ActorFontSize 12
+            ActorFontName Arial
+
+            ArrowFontColor Black
+            LifeLineBorderColor #666666
+            LifeLineBackgroundColor #F7F7F7
+
+            BoxBackgroundColor #F7F7F7
+            BoxBorderColor #FF6600
+            BoxFontName Arial
+            BoxFontSize 12
+            BoxFontColor #555555
+
+            ParticipantBorderColor #666666
+            ParticipantBackgroundColor #666666
+            ParticipantFontName Arial
+            ParticipantFontSize 12
+            ParticipantFontColor white
+
+            TitleFontSize 12
+            GroupFontSize 11
+            GroupHeaderFontSize 11
+            DividerFontSize 11
+}
+
+skinparam noteBackgroundColor #FEDE00
+skinparam noteFontSize 12
+skinparam noteFontName Arial
+skinparam noteFontColor black
+skinparam noteBorderColor white
+
+title Enabler CRM - create interaction
+
+Actor application
+
+box "enabler-crm"
+participant "WS SOA\nManageInteraction" as ManageInteraction
+end box
+
+box "DCRM"
+participant "WS DCRM\nManageInteraction" as ManageInteractionDCRM
+database DCRM as DBDCRM
+end box
+
+note right of application
+Création d'une interaction
+end note
+
+application -> ManageInteraction : create(Interaction)
+
+note right of ManageInteraction
+Adaptation de la requête
+end note
+
+note right of ManageInteraction
+Appel au WS DCRM
+de haut-niveau
+end note
+
+ManageInteraction ->  ManageInteractionDCRM : create
+ManageInteractionDCRM -> DBDCRM
+ManageInteractionDCRM <- DBDCRM
+
+note right of ManageInteraction
+Adaptation de la réponse
+end note
+
+ManageInteraction <- ManageInteractionDCRM
+
+note right of application
+Reponse interaction créée
+(ou exception)
+end note
+
+application <- ManageInteraction
+
+@enduml

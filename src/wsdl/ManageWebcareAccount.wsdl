@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions name="ManageWebcareAccount"
+	targetNamespace="http://www.orangecaraibe.com/webcare/v1.0/Interfaces/ManageWebcareAccount"
+	xmlns:ns1="http://www.orangecaraibe.com/webcare/v1.0/Interfaces/ManageWebcareAccount"
+	xmlns:ns2="http://www.orangecaraibe.com/webcare/v1.0/Interfaces/ManageWebcareAccount/Schemas"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xs:schema attributeFormDefault="unqualified"
+			elementFormDefault="qualified"
+			targetNamespace="http://www.orangecaraibe.com/webcare/v1.0/Interfaces/ManageWebcareAccount/Schemas"
+			xmlns:ns1="http://www.orangecaraibe.com/soa/v1.2/Model/Commons/Exception"
+			xmlns:tns="http://www.orangecaraibe.com/webcare/v1.0/Interfaces/ManageWebcareAccount/Schemas"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:import
+				namespace="http://www.orangecaraibe.com/soa/v1.2/Model/Commons/Exception" />
+			<xs:element name="create" type="tns:CriteriaCreate" />
+			<xs:element name="createAccountPROFault"
+				type="tns:CreateAccountPROFault" />
+			<xs:element name="createErrorEmailFault"
+				type="tns:CreateErrorEmailFault" />
+			<xs:element name="createExistingWebcareAccountFault"
+				type="tns:CreateExistingWebcareAccountFault" />
+			<xs:element name="createFault" type="tns:CreateFault" />
+			<xs:element name="createParametersFault"
+				type="tns:CreateParametersFault" />
+			<xs:element name="createResponse" type="tns:CreateResponse" />
+			<xs:element name="createUnauthorizedAccountFault"
+				type="tns:CreateUnauthorizedAccountFault" />
+			<xs:element name="createUnknownMCIBAccountFault"
+				type="tns:CreateUnknownMCIBAccountFault" />
+			<xs:element name="delete" type="tns:Delete" />
+			<xs:element name="deleteFault" type="tns:DeleteFault" />
+			<xs:element name="deleteResponse" type="tns:DeleteResponse" />
+			<xs:element name="deleteUnknownWebcareAccountFault"
+				type="tns:DeleteUnknownWebcareAccountFault" />
+			<xs:element name="findAndGet" type="tns:FindAndGet" />
+			<xs:element name="findAndGetResponse"
+				type="tns:FindAndGetResponse" />
+			<xs:element name="interfaceUnavailableFault"
+				type="tns:InterfaceUnavailableFault" />
+			<xs:element name="update" type="tns:Update" />
+			<xs:element name="updateFault" type="tns:UpdateFault" />
+			<xs:element name="updateResponse" type="tns:UpdateResponse" />
+			<xs:element name="updateUnknownWebcareAccountFault"
+				type="tns:UpdateUnknownWebcareAccountFault" />
+			<xs:complexType name="CriteriaCreate">
+				<xs:sequence>
+					<xs:element name="msisdn" type="xs:string" />
+					<xs:element name="email" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="CreateResponse">
+				<xs:sequence />
+			</xs:complexType>
+			<xs:complexType name="CreateParametersFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="CreateAccountPROFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="CreateUnauthorizedAccountFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="CreateErrorEmailFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="DeleteFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="CreateExistingWebcareAccountFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="UpdateFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="UpdateUnknownWebcareAccountFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="CreateUnknownMCIBAccountFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="DeleteUnknownWebcareAccountFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="CreateFault">
+				<xs:complexContent>
+					<xs:extension base="ns1:Fault">
+						<xs:sequence />
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="InterfaceUnavailableFault">
+				<xs:sequence />
+			</xs:complexType>
+			<xs:complexType name="Delete">
+				<xs:sequence>
+					<xs:element name="criteria" type="tns:Criteria" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Criteria">
+				<xs:sequence>
+					<xs:element name="billingAccountId"
+						type="xs:string" />
+					<xs:element name="msisdn" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="DeleteResponse">
+				<xs:sequence />
+			</xs:complexType>
+			<xs:complexType name="Update">
+				<xs:sequence>
+					<xs:element name="criteria" type="tns:Criteria" />
+					<xs:element name="update" type="tns:UpdatedFields" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="UpdatedFields">
+				<xs:sequence>
+					<xs:element name="billingAccountId"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="UpdateResponse">
+				<xs:sequence />
+			</xs:complexType>
+			<xs:complexType name="FindAndGet">
+				<xs:sequence>
+					<xs:element name="criteria"
+						type="tns:CriteriaFindAndGet" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="CriteriaFindAndGet">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="billingAccountId"
+						type="xs:string" />
+					<xs:element name="msisdn" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="FindAndGetResponse">
+				<xs:sequence>
+					<xs:element name="webcarecustomer"
+						type="tns:WebcareCustomer" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WebcareCustomer">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="billingAccountId"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msisdn"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="status"
+						type="xs:boolean" />
+					<xs:element minOccurs="0" name="creationDate"
+						type="xs:dateTime" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema elementFormDefault="qualified"
+			targetNamespace="http://www.orangecaraibe.com/soa/v1.2/Model/Commons/Exception"
+			version="1.0"
+			xmlns:tns="http://www.orangecaraibe.com/soa/v1.2/Model/Commons/Exception"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:complexType name="Fault">
+				<xs:sequence>
+					<xs:element name="label" type="xs:string" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="faultDetail" nillable="true" type="tns:FaultDetail" />
+					<xs:element name="code" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="FaultDetail">
+				<xs:sequence>
+					<xs:element name="fieldName" type="xs:string" />
+					<xs:element name="fieldValue" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="DeleteUnknownWebcareAccountException">
+		<wsdl:part element="ns2:deleteUnknownWebcareAccountFault"
+			name="DeleteUnknownWebcareAccountException" />
+	</wsdl:message>
+	<wsdl:message name="CreateException">
+		<wsdl:part element="ns2:createFault" name="CreateException" />
+	</wsdl:message>
+	<wsdl:message name="CreateUnknownMCIBAccountException">
+		<wsdl:part element="ns2:createUnknownMCIBAccountFault"
+			name="CreateUnknownMCIBAccountException" />
+	</wsdl:message>
+	<wsdl:message name="update">
+		<wsdl:part element="ns2:update" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="DeleteException">
+		<wsdl:part element="ns2:deleteFault" name="DeleteException" />
+	</wsdl:message>
+	<wsdl:message name="CreateErrorEmailException">
+		<wsdl:part element="ns2:createErrorEmailFault"
+			name="CreateErrorEmailException" />
+	</wsdl:message>
+	<wsdl:message name="CreateExistingWebcareAccountException">
+		<wsdl:part element="ns2:createExistingWebcareAccountFault"
+			name="CreateExistingWebcareAccountException" />
+	</wsdl:message>
+	<wsdl:message name="InterfaceUnavailableException">
+		<wsdl:part element="ns2:interfaceUnavailableFault"
+			name="InterfaceUnavailableException" />
+	</wsdl:message>
+	<wsdl:message name="UpdateException">
+		<wsdl:part element="ns2:updateFault" name="UpdateException" />
+	</wsdl:message>
+	<wsdl:message name="UpdateUnknownWebcareAccountException">
+		<wsdl:part element="ns2:updateUnknownWebcareAccountFault"
+			name="UpdateUnknownWebcareAccountException" />
+	</wsdl:message>
+	<wsdl:message name="create">
+		<wsdl:part element="ns2:create" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="findAndGetResponse">
+		<wsdl:part element="ns2:findAndGetResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="CreateParametersException">
+		<wsdl:part element="ns2:createParametersFault"
+			name="CreateParametersException" />
+	</wsdl:message>
+	<wsdl:message name="CreateAccountPROException">
+		<wsdl:part element="ns2:createAccountPROFault"
+			name="CreateAccountPROException" />
+	</wsdl:message>
+	<wsdl:message name="deleteResponse">
+		<wsdl:part element="ns2:deleteResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="updateResponse">
+		<wsdl:part element="ns2:updateResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="CreateUnauthorizedAccountException">
+		<wsdl:part element="ns2:createUnauthorizedAccountFault"
+			name="CreateUnauthorizedAccountException" />
+	</wsdl:message>
+	<wsdl:message name="createResponse">
+		<wsdl:part element="ns2:createResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="delete">
+		<wsdl:part element="ns2:delete" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="findAndGet">
+		<wsdl:part element="ns2:findAndGet" name="parameters" />
+	</wsdl:message>
+	<wsdl:portType name="ManageWebcareAccount">
+		<wsdl:operation name="create">
+			<wsdl:input message="ns1:create" name="create" />
+			<wsdl:output message="ns1:createResponse"
+				name="createResponse" />
+			<wsdl:fault message="ns1:CreateAccountPROException"
+				name="CreateAccountPROException" />
+			<wsdl:fault message="ns1:CreateParametersException"
+				name="CreateParametersException" />
+			<wsdl:fault message="ns1:CreateUnknownMCIBAccountException"
+				name="CreateUnknownMCIBAccountException" />
+			<wsdl:fault message="ns1:CreateException"
+				name="CreateException" />
+			<wsdl:fault message="ns1:CreateUnauthorizedAccountException"
+				name="CreateUnauthorizedAccountException" />
+			<wsdl:fault message="ns1:InterfaceUnavailableException"
+				name="InterfaceUnavailableException" />
+			<wsdl:fault message="ns1:CreateErrorEmailException"
+				name="CreateErrorEmailException" />
+			<wsdl:fault
+				message="ns1:CreateExistingWebcareAccountException"
+				name="CreateExistingWebcareAccountException" />
+		</wsdl:operation>
+		<wsdl:operation name="delete">
+			<wsdl:input message="ns1:delete" name="delete" />
+			<wsdl:output message="ns1:deleteResponse"
+				name="deleteResponse" />
+			<wsdl:fault message="ns1:DeleteException"
+				name="DeleteException" />
+			<wsdl:fault
+				message="ns1:DeleteUnknownWebcareAccountException"
+				name="DeleteUnknownWebcareAccountException" />
+			<wsdl:fault message="ns1:InterfaceUnavailableException"
+				name="InterfaceUnavailableException" />
+		</wsdl:operation>
+		<wsdl:operation name="update">
+			<wsdl:input message="ns1:update" name="update" />
+			<wsdl:output message="ns1:updateResponse"
+				name="updateResponse" />
+			<wsdl:fault message="ns1:InterfaceUnavailableException"
+				name="InterfaceUnavailableException" />
+			<wsdl:fault
+				message="ns1:UpdateUnknownWebcareAccountException"
+				name="UpdateUnknownWebcareAccountException" />
+			<wsdl:fault message="ns1:UpdateException"
+				name="UpdateException" />
+		</wsdl:operation>
+		<wsdl:operation name="findAndGet">
+			<wsdl:input message="ns1:findAndGet" name="findAndGet" />
+			<wsdl:output message="ns1:findAndGetResponse"
+				name="findAndGetResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

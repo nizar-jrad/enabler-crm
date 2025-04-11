@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="ManageDemandeService"
+	targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+	xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/Imports">
+			<xsd:import schemaLocation="ManageDemande.xsd"
+				namespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" />
+			<xsd:import schemaLocation="datacontract.xsd"
+				namespace="http://www.orange.com/sidom/soa/dcrm/datacontract" />
+			<xsd:import schemaLocation="schemas.microsoft.com.2003.10.Serialization.xsd"
+				namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+			<xsd:import schemaLocation="schemas.microsoft.com.2003.10.Serialization.Arrays.xsd"
+				namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ManageDemande_Create_InputMessage">
+		<wsdl:part name="parameters" element="tns:Create"/>
+	</wsdl:message>
+	<wsdl:message name="ManageDemande_Create_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CreateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ManageDemande_Create_ServiceFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q1:ServiceFault" xmlns:q1="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+	</wsdl:message>
+	<wsdl:message name="ManageDemande_Update_InputMessage">
+		<wsdl:part name="parameters" element="tns:Update"/>
+	</wsdl:message>
+	<wsdl:message name="ManageDemande_Update_OutputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ManageDemande_Update_ServiceFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q2:ServiceFault" xmlns:q2="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+	</wsdl:message>
+	<wsdl:message name="ManageDemande_FindAndGet_InputMessage">
+		<wsdl:part name="parameters" element="tns:FindAndGet"/>
+	</wsdl:message>
+	<wsdl:message name="ManageDemande_FindAndGet_OutputMessage">
+		<wsdl:part name="parameters" element="tns:FindAndGetResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ManageDemande_FindAndGet_ServiceFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q3:ServiceFault" xmlns:q3="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+	</wsdl:message>
+	<wsdl:portType name="ManageDemande">
+		<wsdl:operation name="Create">
+			<wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Create" message="tns:ManageDemande_Create_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/CreateResponse" message="tns:ManageDemande_Create_OutputMessage"/>
+			<wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/CreateServiceFaultFault" name="ServiceFaultFault" message="tns:ManageDemande_Create_ServiceFaultFault_FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Update">
+			<wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Update" message="tns:ManageDemande_Update_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/UpdateResponse" message="tns:ManageDemande_Update_OutputMessage"/>
+			<wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/UpdateServiceFaultFault" name="ServiceFaultFault" message="tns:ManageDemande_Update_ServiceFaultFault_FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="FindAndGet">
+			<wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet" message="tns:ManageDemande_FindAndGet_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGetResponse" message="tns:ManageDemande_FindAndGet_OutputMessage"/>
+			<wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGetServiceFaultFault" name="ServiceFaultFault" message="tns:ManageDemande_FindAndGet_ServiceFaultFault_FaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BasicHttpBinding_ManageDemande" type="tns:ManageDemande">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Create">
+			<soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Create" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ServiceFaultFault">
+				<soap:fault name="ServiceFaultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="Update">
+			<soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Update" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ServiceFaultFault">
+				<soap:fault name="ServiceFaultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="FindAndGet">
+			<soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ServiceFaultFault">
+				<soap:fault name="ServiceFaultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ManageDemandeService">
+		<wsdl:port name="BasicHttpBinding_ManageDemande" binding="tns:BasicHttpBinding_ManageDemande">
+			<soap:address location="http://localhost:59861/ManageDemande.svc"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

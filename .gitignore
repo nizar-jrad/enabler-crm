@@ -1,0 +1,13 @@
+#fichier d'element a ne pas prendre en compte dans git
+
+#dossier de configuration eclipse et fichier lier
+.classpath
+.project
+.settings/
+build/
+
+#dossier de configuraiton Idea
+.idea/
+
+#dossier de génération des sources
+target/

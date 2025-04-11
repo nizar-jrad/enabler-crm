@@ -1,0 +1,28 @@
+@startuml
+title Cycle de vie d'une interaction
+
+skinparam titleFontSize 12
+
+skinparam state {
+startColor #666666
+endColor #666666
+arrowColor #666666
+borderColor #666666
+fontSize 11
+}
+
+skinparam note {
+fontSize 11
+fontColor white
+backgroundColor #45B8EF
+borderColor white
+}
+
+[*] --> IN_PROGRESS
+[*] --> COMPLETED
+IN_PROGRESS -> COMPLETED
+IN_PROGRESS -> CANCELLED
+COMPLETED --> [*]
+CANCELLED --> [*]
+
+@enduml

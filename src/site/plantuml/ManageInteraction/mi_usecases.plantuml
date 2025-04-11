@@ -1,0 +1,30 @@
+@startuml
+
+left to right direction
+
+title Cas d'utilisation de l'interface ManageCustomerProblem
+
+skinparam titleFontSize 12
+ 
+skinparam actor {
+backgroundColor #FEDE00
+borderColor #666666
+fontName arial
+fontSize 12
+}
+
+skinparam usecase {
+borderColor #666666
+arrowColor #666666
+fontName arial
+fontSize 11
+}
+
+actor Application
+Application -down-> (Créer une interaction)
+Application -down-> (Rechercher\n des interaction)
+Application -down-> (Rechercher\n des Demande)
+
+(Rechercher\n des interaction) ..> (incluant les demandes associèes)
+
+@enduml

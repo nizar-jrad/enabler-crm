@@ -1,0 +1,13 @@
+Téléchargement de la documentation du Projet Enabler CRM
+
+*---------------------+-------------------------------+-------------------------------+
+<<Intitulé>>          | <<Description>>                                  | <<Lien>>
+*---------------------+-------------------------------+-------------------------------+
+Conception Enabler CRM| doc de conception |{{{./Conception_enabler_CRM.doc} télécharger}}
+*---------------------+-------------------------------+-------------------------------+
+Conception UML RIO | modèle UML|{{{./Conception_RIO.uml} télécharger}}
+*---------------------+-------------------------------+-------------------------------+
+ManageCRM	  |Contrat d'interface du webservice ManageCRM       |{{{./ManageCRM.wsdl} télécharger}}
+*---------------------+-------------------------------+-------------------------------+
+ManageUSSD	  |Contrat d'interface du webservice ManageUSSD       |{{{./ManageUSSD.wsdl} télécharger}}
+*---------------------+-------------------------------+-------------------------------+

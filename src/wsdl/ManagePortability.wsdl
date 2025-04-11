@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ManagePortabilityProviderService" targetNamespace="http://provider.soa.installedbase.enablers.orangecaraibe.com/" xmlns:ns1="http://www.orangecaraibe.com/soa/v2/Interfaces/ManagePortability" xmlns:ns3="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://provider.soa.installedbase.enablers.orangecaraibe.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="http://in-ixdev-as1.ms.fcm:9000/enabler-installed-base/soa/managePortability?wsdl=managePortability.wsdl" namespace="http://www.orangecaraibe.com/soa/v2/Interfaces/ManagePortability" />
+  <wsdl:binding name="ManagePortabilityProviderServiceSoapBinding" type="ns1:managePortability">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAvailablePnmDates">
+      <soap:operation soapAction="http://www.orangecaraibe.com/soa/v2/Interfaces/ManagePortability/getAvailablePnmDates" style="document" />
+      <wsdl:input name="getAvailablePnmDates">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAvailablePnmDatesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetAvailablePnmDatesException">
+        <soap:fault name="GetAvailablePnmDatesException" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InterfaceUnavailableException">
+        <soap:fault name="InterfaceUnavailableException" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOutgoingRIO">
+      <soap:operation soapAction="http://www.orangecaraibe.com/soa/v2/Interfaces/ManagePortability/getOutgoingRIO" style="document" />
+      <wsdl:input name="getOutgoingRIO">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getOutgoingRIOResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="GetOutgoingRIOException">
+        <soap:fault name="GetOutgoingRIOException" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InterfaceUnavailableException">
+        <soap:fault name="InterfaceUnavailableException" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkIncomingRIO">
+      <soap:operation soapAction="http://www.orangecaraibe.com/soa/v2/Interfaces/ManagePortability/checkIncomingRIO" style="document" />
+      <wsdl:input name="checkIncomingRIO">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="checkIncomingRIOResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InterfaceUnavailableException">
+        <soap:fault name="InterfaceUnavailableException" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CheckIncomingRIOException">
+        <soap:fault name="CheckIncomingRIOException" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPortabilityInfo">
+      <soap:operation soapAction="http://www.orangecaraibe.com/soa/v2/Interfaces/ManagePortability/getPortabilityInfo" style="document" />
+      <wsdl:input name="getPortabilityInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPortabilityInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EnablerInstalledBaseTechnicalException">
+        <soap:fault name="EnablerInstalledBaseTechnicalException" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="UnknownCustomerException">
+        <soap:fault name="UnknownCustomerException" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ContractUnknownException">
+        <soap:fault name="ContractUnknownException" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InterfaceUnavailableException">
+        <soap:fault name="InterfaceUnavailableException" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManagePortabilityProviderService">
+    <wsdl:port binding="tns:ManagePortabilityProviderServiceSoapBinding" name="ManagePortabilityProviderPort">
+      <soap:address location="http://in-ixdev-as1.ms.fcm:9000/enabler-installed-base/soa/managePortability" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

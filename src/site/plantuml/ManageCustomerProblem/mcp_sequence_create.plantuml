@@ -1,0 +1,86 @@
+@startuml
+
+skinparam sequence {
+
+            ArrowColor #666666
+            ArrowFontSize 11
+            ActorBorderColor #666666
+            ActorBackgroundColor #BBBBBB
+            ActorFontColor black
+            ActorFontSize 12
+            ActorFontName Arial
+
+            ArrowFontColor Black
+            LifeLineBorderColor #666666
+            LifeLineBackgroundColor #F7F7F7
+
+            BoxBackgroundColor #F7F7F7
+            BoxBorderColor #FF6600
+            BoxFontName Arial
+            BoxFontSize 12
+            BoxFontColor #555555
+
+            ParticipantBorderColor #666666
+            ParticipantBackgroundColor #666666
+            ParticipantFontName Arial
+            ParticipantFontSize 12
+            ParticipantFontColor white
+
+            TitleFontSize 11
+            GroupFontSize 11
+            GroupHeaderFontSize 11
+            DividerFontSize 11
+}
+
+skinparam noteBackgroundColor #FEDE00
+skinparam noteFontSize 11
+skinparam noteFontName Arial
+skinparam noteFontColor black
+skinparam noteBorderColor white
+
+title Enabler CRM - create CustomerProblem - création de demande
+
+Actor application
+
+box "enabler-crm"
+participant ManageCustomerProblem
+end box
+
+box "DCRM"
+participant "WS DCRM\nManageDemande" as ManageDemande
+database DCRM as DBDCRM
+end box
+
+note right of application
+Création d'une demande
+end note
+
+application -> ManageCustomerProblem : create(CustomerProblem)
+
+note right of ManageCustomerProblem
+Adaptation de la requête
+end note
+
+note right of ManageCustomerProblem
+Appel au WS Custo DCRM
+end note
+
+ManageCustomerProblem ->  ManageDemande : create
+
+ManageDemande -> DBDCRM
+ManageDemande <- DBDCRM
+
+note right of ManageCustomerProblem
+Adaptation de la réponse
+end note
+
+ManageCustomerProblem <- ManageDemande
+
+note right of application
+Reponse demande créée
+(ou exception)
+end note
+
+application <- ManageCustomerProblem
+
+@enduml

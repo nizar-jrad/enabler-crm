@@ -1,0 +1,86 @@
+@startuml
+
+skinparam sequence {
+
+            ArrowColor #666666
+            ArrowFontSize 11
+            ActorBorderColor #666666
+            ActorBackgroundColor #BBBBBB
+            ActorFontColor black
+            ActorFontSize 12
+            ActorFontName Arial
+
+            ArrowFontColor Black
+            LifeLineBorderColor #666666
+            LifeLineBackgroundColor #F7F7F7
+
+            BoxBackgroundColor #F7F7F7
+            BoxBorderColor #FF6600
+            BoxFontName Arial
+            BoxFontSize 12
+            BoxFontColor #555555
+
+            ParticipantBorderColor #666666
+            ParticipantBackgroundColor #666666
+            ParticipantFontName Arial
+            ParticipantFontSize 12
+            ParticipantFontColor white
+
+            TitleFontSize 12
+            GroupFontSize 11
+            GroupHeaderFontSize 11
+            DividerFontSize 11
+}
+
+skinparam noteBackgroundColor #FEDE00
+skinparam noteFontSize 12
+skinparam noteFontName Arial
+skinparam noteFontColor black
+skinparam noteBorderColor white
+
+title Enabler CRM - update - UC_UPD_STATUS
+
+Actor application
+
+box "enabler-crm"
+participant ManageCustomerProblem
+end box
+
+box "DCRM"
+participant "WS DCRM\nManageDemande" as ManageDemande
+database DCRM as DBDCRM
+end box
+
+note right of application
+Mise à jour d'une demande
+end note
+
+application -> ManageCustomerProblem : update(customerProblem,\nUC_UPD_STATUS)
+
+note right of ManageCustomerProblem
+Adaptation de la requête
+end note
+
+note right of ManageCustomerProblem
+Appel au WS DCRM
+de haut-niveau
+end note
+
+ManageCustomerProblem ->  ManageDemande
+ManageDemande -> DBDCRM : update
+ManageDemande <- DBDCRM
+
+ManageCustomerProblem <- ManageDemande
+
+note right of ManageCustomerProblem
+Adaptation de la réponse
+end note
+
+note right of application
+Reponse demande mise à jour
+(ou exception)
+end note
+
+application <- ManageCustomerProblem
+
+@enduml

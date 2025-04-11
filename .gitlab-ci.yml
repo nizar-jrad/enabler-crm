@@ -1,0 +1,8 @@
+variables:
+  JDK_VERSION: "openjdk-8"
+
+include:
+  - project: 'oag/tooling/cicd-templates'
+    ref:   exelcia-templates-1.0.0
+    file: 'pipelines/low-impact-ansible-projects.yml'
+  

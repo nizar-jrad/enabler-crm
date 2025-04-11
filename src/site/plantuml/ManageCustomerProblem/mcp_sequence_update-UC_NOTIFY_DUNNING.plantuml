@@ -1,0 +1,88 @@
+@startuml
+
+skinparam sequence {
+
+            ArrowColor #666666
+            ArrowFontSize 11
+            ActorBorderColor #666666
+            ActorBackgroundColor #BBBBBB
+            ActorFontColor black
+            ActorFontSize 12
+            ActorFontName Arial
+
+            ArrowFontColor Black
+            LifeLineBorderColor #666666
+            LifeLineBackgroundColor #F7F7F7
+
+            BoxBackgroundColor #F7F7F7
+            BoxBorderColor #FF6600
+            BoxFontName Arial
+            BoxFontSize 12
+            BoxFontColor #555555
+
+            ParticipantBorderColor #666666
+            ParticipantBackgroundColor #666666
+            ParticipantFontName Arial
+            ParticipantFontSize 12
+            ParticipantFontColor white
+
+            TitleFontSize 12
+            GroupFontSize 11
+            GroupHeaderFontSize 11
+            DividerFontSize 11
+}
+
+skinparam noteBackgroundColor #FEDE00
+skinparam noteFontSize 12
+skinparam noteFontName Arial
+skinparam noteFontColor black
+skinparam noteBorderColor white
+
+title Enabler CRM - update - UC_NOTIFY_DUNNING - Notification au Dunning
+
+Actor application
+
+box "enabler-crm"
+participant ManageCustomerProblem
+end box
+
+box "DUNNING"
+participant WbsDunningWorkitem
+database Prompt as DBDPRM
+end box
+
+note right of application
+Appel depuis le CRM
+Pour notifier Prompt
+- d'une mise en liquidation
+- d'un redressement
+end note
+
+application -> ManageCustomerProblem : update(customerProblem,\nUC_NOTIFY_DUNNING)
+
+note right of ManageCustomerProblem
+Adaptation de la requête
+end note
+
+note right of ManageCustomerProblem
+Appel au WS DUNNING
+end note
+
+ManageCustomerProblem -> WbsDunningWorkitem : createWokLoad
+WbsDunningWorkitem -> DBDPRM
+WbsDunningWorkitem <- DBDPRM
+
+ManageCustomerProblem <- WbsDunningWorkitem
+
+note right of ManageCustomerProblem
+Adaptation de la réponse
+end note
+
+note right of application
+Notification réussie
+end note
+
+application <- ManageCustomerProblem
+
+
+@enduml

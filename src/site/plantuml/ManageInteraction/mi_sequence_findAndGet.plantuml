@@ -1,0 +1,106 @@
+@startuml
+
+skinparam sequence {
+
+            ArrowColor #666666
+            ArrowFontSize 11
+            ActorBorderColor #666666
+            ActorBackgroundColor #BBBBBB
+            ActorFontColor black
+            ActorFontSize 12
+            ActorFontName Arial
+
+            ArrowFontColor Black
+            LifeLineBorderColor #666666
+            LifeLineBackgroundColor #F7F7F7
+
+            BoxBackgroundColor #F7F7F7
+            BoxBorderColor #FF6600
+            BoxFontName Arial
+            BoxFontSize 12
+            BoxFontColor #555555
+
+            ParticipantBorderColor #666666
+            ParticipantBackgroundColor #666666
+            ParticipantFontName Arial
+            ParticipantFontSize 12
+            ParticipantFontColor white
+
+            TitleFontSize 12
+            GroupFontSize 11
+            GroupHeaderFontSize 11
+            DividerFontSize 11
+}
+
+skinparam noteBackgroundColor #FEDE00
+skinparam noteFontSize 12
+skinparam noteFontName Arial
+skinparam noteFontColor black
+skinparam noteBorderColor white
+
+title Enabler CRM - Interaction - findAndGet
+
+Actor application
+
+box "enabler-crm"
+participant ManageInteraction
+end box
+
+box "DCRM"
+participant "WS DCRM\nManageInteraction" as ManageInteractionDCRM
+participant "WS DCRM\nManageCampagne" as ManageCampagneDCRM
+database DCRM as DBDCRM
+end box
+
+note right of application
+recherche d'une interaction d'une interaction
+end note
+
+application -> ManageInteraction : findAndGet(criteria)
+alt marketingCampagne
+note right of ManageInteraction
+Extraction des critères
+end note
+
+note right of ManageInteraction
+Adaptation de la requête 
+en recherche de campagne
+end note
+ManageInteraction ->  ManageCampagneDCRM : findAndGet(criteria,\nvalue,additionalCriteria)
+ManageCampagneDCRM -> DBDCRM
+ManageCampagneDCRM <- DBDCRM
+
+ManageInteraction <- ManageCampagneDCRM
+
+else 
+note right of ManageInteraction
+Extraction des critères
+end note
+
+note right of ManageInteraction
+Adaptation de la requête
+end note
+
+note right of ManageInteraction
+Appel au WS DCRM
+de haut-niveau
+end note
+
+ManageInteraction ->  ManageInteractionDCRM : findAndGet(criteria,\nvalue,additionalCriteria)
+ManageInteractionDCRM -> DBDCRM
+ManageInteractionDCRM <- DBDCRM
+
+ManageInteraction <- ManageInteractionDCRM
+end
+note right of ManageInteraction
+Adaptation de la réponse
+end note
+
+note right of application
+Reponse interaction(s)
+(ou exception)
+end note
+
+application <- ManageInteraction
+
+@enduml

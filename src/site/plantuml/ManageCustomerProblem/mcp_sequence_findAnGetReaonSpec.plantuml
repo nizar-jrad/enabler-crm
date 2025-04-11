@@ -1,0 +1,90 @@
+@startuml
+
+skinparam sequence {
+
+            ArrowColor #666666
+            ArrowFontSize 11
+            ActorBorderColor #666666
+            ActorBackgroundColor #BBBBBB
+            ActorFontColor black
+            ActorFontSize 12
+            ActorFontName Arial
+
+            ArrowFontColor Black
+            LifeLineBorderColor #666666
+            LifeLineBackgroundColor #F7F7F7
+
+            BoxBackgroundColor #F7F7F7
+            BoxBorderColor #FF6600
+            BoxFontName Arial
+            BoxFontSize 12
+            BoxFontColor #555555
+
+            ParticipantBorderColor #666666
+            ParticipantBackgroundColor #666666
+            ParticipantFontName Arial
+            ParticipantFontSize 12
+            ParticipantFontColor white
+
+            TitleFontSize 12
+            GroupFontSize 11
+            GroupHeaderFontSize 11
+            DividerFontSize 11
+}
+
+skinparam noteBackgroundColor #FEDE00
+skinparam noteFontSize 12
+skinparam noteFontName Arial
+skinparam noteFontColor black
+skinparam noteBorderColor white
+
+
+title Enabler CRM - findAndGetReasonSpec - Récupération des thèmes
+
+Actor application
+
+box "enabler-crm"
+participant ManageCustomerProblem
+end box
+
+box "DCRM"
+participant "WS DCRM\nManageTheme" as ManageTheme
+database DCRM as DBDCRM
+end box
+
+note right of application
+Récupération de la liste des thèmes
+Possibilité de filtrer la liste :
+- par canal
+- pat type de thèmes (question, réclamation)
+end note
+
+application -> ManageCustomerProblem : findAndGetReasonSpec(criteria)
+
+note right of ManageCustomerProblem
+Adaptation de la requête
+end note
+
+note right of ManageCustomerProblem
+Appel au WS DCRM
+de haut-niveau
+end note
+
+ManageCustomerProblem -> ManageTheme : findAndGet
+
+ManageTheme -> DBDCRM
+ManageTheme <- DBDCRM
+
+note right of ManageCustomerProblem
+Adaptation de la réponse
+end note
+
+ManageCustomerProblem <- ManageTheme
+
+note right of application
+liste des thèmes
+end note
+
+application <- ManageCustomerProblem : List<LocalReasonSpecification>
+
+@enduml

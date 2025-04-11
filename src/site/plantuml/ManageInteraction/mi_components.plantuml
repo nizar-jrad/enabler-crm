@@ -1,0 +1,97 @@
+@startuml
+title Interface SOA ManageInteraction - Position dans le SI DOM
+ 
+skinparam titleFontSize 12
+ 
+skinparam Actor {
+fontName arial
+borderColor #666666
+backgroundColor #FEDE00
+fontColor black
+fontSize 12
+}
+ 
+skinparam component {
+arrowColor #666666
+borderColor #666666
+fontSize 11
+}
+skinparam package {
+borderColor #666666
+fontSize 11
+}
+skinparam interface {
+borderColor black
+fontSize 12
+}
+skinparam node {
+fontSize 11
+}
+skinparam database {
+borderColor #666666
+fontSize 10
+}
+ 
+skinparam note {
+fontSize 11
+fontColor white
+backgroundColor #45B8EF
+borderColor white
+}
+ 
+package "Frontend" {
+[DCRM]
+[Vue360]
+[Webcare\nFEL, O&M,...] as SELFCARE
+[Prompt]
+[Autres]
+}
+[DCRM] .left.> [Vue360]
+ 
+package "Business Layer" as BL {
+[Business Layer] as BLCOMPONENT
+}
+ 
+[Vue360] - BL
+ 
+package "SOA Layer" as SOA {
+package "<color:white>enabler-crm" as ecrm #888888 {
+[ManageInteraction] #FFD200
+interface findAndGet
+interface create
+interface update
+ManageInteraction -up- findAndGet
+ManageInteraction -up- create
+ManageInteraction -up- update
+}
+
+ 
+package "autres enablers" {
+[ ]
+}
+}
+package "OM/TD" as OMTD {
+[OM]
+}
+
+BL -> ecrm
+SELFCARE -> ecrm
+Prompt -> ecrm
+Autres -> ecrm
+[ ] -> ecrm
+OM -> ecrm
+
+package "Backend DCRM" {
+[ManageDemande]
+[ManageInteraction] as ManageInteractionDCRM
+[ManageCampagne]
+database DCRM as DCRMDB
+DCRMDB -up- ManageDemande
+DCRMDB -up- ManageInteraction
+DCRMDB -up- ManageCampagne
+}
+ManageInteraction -> ManageDemande
+ManageInteraction -> ManageInteractionDCRM
+ManageInteraction -> ManageCampagne
+
+@enduml

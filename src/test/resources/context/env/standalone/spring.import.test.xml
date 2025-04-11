@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">	
+	
+	<import resource="classpath:/context/commons/spring.test.properties.xml"/>
+	<import resource="classpath:/context/env/standalone/spring.datasource.xml"/>
+	<import resource="classpath:/context/env/standalone/${CRM_HANDSET_IMPL_ENV}/spring.datasourceTx.xml"/>
+	<import resource="classpath:/context/commons/handset/pkg.${CRM_HANDSET_IMPL_ENV}.xml"/>
+	<import resource="classpath:/context/commons/log4j.xml"/>
+	<import resource="classpath:/context/env/standalone/pkg.dao.xml"/>
+	<import resource="classpath:/context/enabler-framework-persistence-beans.xml"/>
+	<import resource="classpath:/context/enabler-framework-beans.xml"/>
+	<import resource="classpath:/context/commons/pkg.bscs.jdbc.xml"/>
+	<import resource="classpath:/context/commons/pkg.hibernate.xml"/>
+	<import resource="classpath:/context/commons/pkg.soa.consumer.xml"/>
+	<import resource="classpath:/context/commons/pkg.externalws.xml"/>
+	<import resource="classpath:/context/commons/pkg.dao.xml"/>
+	<import resource="classpath:/context/commons/pkg.validator.xml"/>
+	<import resource="classpath:/context/commons/pkg.service.xml"/>
+	<import resource="classpath:/context/commons/pkg.soa.provider.xml"/>
+	<import resource="classpath:/context/commons/pkg.business.xml"/>
+	<import resource="classpath:/context/catalogue/catalogue-beans.xml"/>
+	<import resource="classpath:/context/commons/pkg.commons.xml"/>
+	<import resource="classpath:/context/commons/pkg.services.externalws.xml"/>
+	<import resource="classpath:/context/commons/pkg.helper.xml"/>
+	<import resource="classpath:/context/commons/handset/pkg.${CRM_HANDSET_IMPL_ENV}.xml"/>
+	
+
+</beans>

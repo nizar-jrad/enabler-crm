@@ -1,0 +1,29 @@
+@startuml
+
+left to right direction
+
+title Cas d'utilisation de l'interface ManageUSSD
+
+skinparam titleFontSize 12
+ 
+skinparam actor {
+backgroundColor #FEDE00
+borderColor #666666
+fontName arial
+fontSize 12
+}
+
+skinparam usecase {
+borderColor #666666
+arrowColor #666666
+fontName arial
+fontSize 11
+}
+
+actor Client
+actor USSD as Application
+Client -> Application
+Application -down-> (Obtenir les messages\nformatés pour l'USSD)
+(Obtenir les messages\nformatés pour l'USSD) ..> (Obtenir les informations de\nportabilités formatées) : <<include>>
+
+@enduml

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+
+<!--  T E S T -->
+<!--
+<bean id="bscsSessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="bscsDataSource" />
+		<property name="hibernateProperties" ref="bscsHibernateProperties" />
+	</bean>
+-->
+
+
+<!-- 	<bean id="bscs.jdbc.manageUSSDTestCaseDAO" -->
+<!-- 		class="com.orangecaraibe.enabler.ussd.soa.consumer.integrationtestsDAO.impl.ManageUSSDTestCaseDAOImpl"> -->
+<!-- 		<property name="sessionFactory" ref="bscsSessionFactory" /> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="bscs.jdbc.manageCRMCreateOrderRemoveServiceDAO" -->
+<!-- 		class="com.orangecaraibe.enabler.epoint.soa.consumer.integrationtestsDAO.impl.ManageCRMCreateOrderRemoveServiceDAOImpl"> -->
+<!-- 		<property name="sessionFactory" ref="bscsSessionFactory" /> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="useCaseTestFindAndGetDAO" class="com.orangecaraibe.enabler.UseCaseTestFindAndGetDAO"> -->
+<!-- 		<property name="sessionFactory" ref="bscsSessionFactory" /> -->
+<!-- 	</bean> -->
+	
+</beans>

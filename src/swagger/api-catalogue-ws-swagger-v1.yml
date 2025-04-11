@@ -1,0 +1,892 @@
+openapi: '3.0.2'
+info:
+  title: api-catalogue-ws swagger
+  description: Interrogation offres, classification,  tarif, ....
+  version: '1.0'
+tags: [
+  name: castor,
+  name: externalIdentifiers,
+  name: castorToLegacy,
+  name: legacyToCastor
+]
+
+servers:
+  - url: https://api.server.test/v1
+    description: api permettant de remonter les informations du catalogue statique
+paths:
+  /castor/classification/{offerCode}:
+    get:
+     security:
+        - basicAuth: []
+     tags: [
+          castor
+      ]
+     summary: Permet de remonter des classifications associées à une offre
+     description: cette api permet la récupération de toutes les classifications associées à une offre
+     parameters:
+        - in: path
+          name : offerCode
+          required: true
+          schema:
+            type: string
+            minLength: 3
+            maxLength: 90
+          description : le code l'offre rechercher
+     responses:
+      '200':
+          description: La liste des classifications associées à l'offre
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClassificationResponse'
+      '400':
+          description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+          $ref: '#/components/responses/BadRequest'
+      '404':
+          $ref: '#/components/responses/NotFound'
+      '503':
+          description: Le serveur est actuellement incapable de traiter la demande
+          $ref: '#/components/responses/ServiceUnavailable'
+      default:
+          description: unexpected Error
+          $ref: '#/components/responses/Error'
+  /castor/classifications:
+       get:
+        security:
+          - basicAuth: []
+        tags: [
+          castor
+        ]
+        summary: Permet de remonter des classifications associées à une offre
+        description: cette api permet la récupération de toutes les classifications associées à une offre
+        parameters:
+        - in: query
+          name : offerCodes
+          required: true
+          content:
+            application/json:  
+              schema:
+                type: array
+                maxItems: 100
+                items:
+                  type: string
+                  minLength: 3
+                  maxLength: 90
+          description : le code l'offre rechercher
+        responses:
+          '200':
+            description: La liste des classifications associées à l'offre
+            content:
+              application/json:
+                schema:
+                  type: array
+                  maxItems: 100
+                  items:
+                    $ref: '#/components/schemas/ClassificationResponse'
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable' 
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'
+  /castor/discount/{promotionCode}:
+       get:
+        security:
+          - basicAuth: []
+        tags: [
+          castor
+        ]
+        summary: Permet de remonter le détail d'une promotion à partir de  son code
+        parameters:
+        - in: path
+          required: true
+          name : promotionCode
+          schema:
+            type: string
+            minLength: 3
+            maxLength: 90
+          description : Le code de le promotion recherché
+        responses:
+          '200':
+            description: La promotion recherché
+            content:
+              application/json:
+                schema:
+                  type: object
+                  $ref: '#/components/schemas/DiscountSpecification'
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable'
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'      
+  /castor/discounts:
+       get:
+        security:
+          - basicAuth: []
+        tags: [
+          castor
+        ]
+        summary: Permet de remonter les promotions associées à une liste de code
+        description: Cette api permet la récupération des promotions associées à une liste de code
+        parameters:
+        - in: query
+          required: true
+          name : promotionfCode
+          content:
+            application/json:  
+              schema:
+                type: array
+                maxItems: 100
+                items:
+                  type: string
+                  minLength: 3
+                  maxLength: 90
+          description : Le code du promotion recherché
+        responses:
+          '200':
+            description: La liste des promotions associés à chaque code
+            content:
+              application/json:
+                schema:
+                  type: array
+                  maxItems: 100
+                  items:
+                    $ref: '#/components/schemas/DiscountSpecificationResponse'
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable'
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'
+  /castor/function/{functionCode}:
+       get:
+        security:
+          - basicAuth: []
+        tags: [
+          castor
+        ]
+        summary: Permet de remonter le détail d'une fonction a partir de sont code
+        parameters:
+        - in: path
+          required: true
+          name : functionCode
+          schema:
+            type: string
+            minLength: 3
+            maxLength: 90
+          description : le code de la fonction rechercher
+        responses:
+          '200':
+            description: La fonction rechercher
+            content:
+              application/json:
+                schema:
+                  type: object
+                  $ref: '#/components/schemas/FunctionSpecification'
+                    
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable'
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'      
+  /castor/function:
+       get:
+        security:
+          - basicAuth: []
+        tags: [
+          castor
+        ]
+        summary: Permet de remonter les fonctions associées à la liste de code
+        description: cette api permet la récupération de toutes les fonctions associées à la liste de code
+        parameters:
+        - in: query
+          required: true
+          name : functionCode
+          content:
+            application/json:  
+              schema:
+                type: array
+                maxItems: 100
+                items:
+                  type: string
+                  minLength: 3
+                  maxLength: 90
+          description : La liste des codes fonction recherchées
+        responses:
+          '200':
+            description: La liste des fonctions associées à chaque code
+            content:
+              application/json:
+                schema:
+                  type: array
+                  maxItems: 100
+                  items:
+                    $ref: '#/components/schemas/FunctionSpecificationResponse'
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable'
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'
+  /castor/offer/{offerCode}:
+       get:
+        security:
+          - basicAuth: []
+        tags: [
+          castor
+        ]
+        summary: Permet de remonter l'offre recherchée
+        description: cette api permet la récupération de l'offre recherchée
+        parameters:
+        - in: path
+          required: true
+          name : offerCode
+          schema:
+            type: string
+            minLength: 3
+            maxLength: 90
+          description : le code l'offre rechercher
+        responses:
+          '200':
+            description: L'offre recherchée
+            content:
+              application/json:
+                schema:
+                  type: object
+                  $ref: '#/components/schemas/OffersReponse'
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable'    
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'  
+  /castor/offers:
+       get:
+        security:
+          - basicAuth: []
+        tags: [
+          castor
+        ]
+        summary: Permet de remonter les offres associées à la liste de code
+        description: cette api permet la récupération de toutes les offres recherchées
+        parameters:
+        - in: query
+          required: true
+          name : offerCodes
+          content:
+            application/json:  
+              schema:
+                type: array
+                maxItems: 100
+                items:
+                  type: string
+                  minLength: 3
+                  maxLength: 90
+          description : la liste des code des offres recherchées
+        responses:
+          '200':
+            description: La liste des offres
+            content:
+              application/json:
+                schema:
+                  type: array
+                  maxItems: 100
+                  items:
+                    $ref: '#/components/schemas/OffersReponseResponse'
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable'
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'      
+  /castor/tariff/{tariffCode}:
+       get:
+        security:
+          - basicAuth: []
+        tags: [
+          castor
+        ]
+        summary: Permet de remonter le détail d'un tarif à partir de  son code
+        parameters:
+        - in: path
+          required: true
+          name : tariffCode
+          schema:
+            type: string
+            minLength: 3
+            maxLength: 90
+          description : le code de le tarif recherché
+        responses:
+          '200':
+            description: Le tarif recherché
+            content:
+              application/json:
+                schema:
+                  type: object
+                  $ref: '#/components/schemas/TariffSpecification'
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable'
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'      
+  /castor/tariffs:
+       get:
+        security:
+          - basicAuth: []
+        tags: [
+          castor
+        ]
+        summary: Permet de remonter les tarifs associées à une liste de code
+        description: cette api permet la récupération des tarifs associées à une liste de code
+        parameters:
+        - in: query
+          required: true
+          name : tariffCode
+          content:
+            application/json:  
+              schema:
+                type: array
+                maxItems: 100
+                items:
+                  type: string
+                  minLength: 3
+                  maxLength: 90
+          description : Le code du tarif recherché
+        responses:
+          '200':
+            description: La liste des tarifs associés à chaque code
+            content:
+              application/json:
+                schema:
+                  type: array
+                  maxItems: 100
+                  items:
+                    $ref: '#/components/schemas/TariffSpecificationResponse'
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable'
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'
+  /externalIdentifiers/{offerCode}:
+    get:
+      security:
+          - basicAuth: []
+      tags: [
+        externalIdentifiers
+      ]
+      summary: Permet de remonter les identifiants externe au code de l'offre passée en parametre
+      description: Cette api permet la récupération des identifiants externe d'une offre
+      parameters:
+        - in: path
+          required: true
+          name : offerCode
+          schema:
+            type: string
+            minLength: 3
+            maxLength: 90
+            description : Le code de l'offre pour laquel on souhaite les identifiants externes
+      responses:
+          '200':
+            description: La liste des identifiants externes associés à chaque code
+            content:
+              application/json:
+                schema:
+                  type: array
+                  maxItems: 100
+                  items:
+                    $ref: '#/components/schemas/ExternalIdentifier'
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable'
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'
+  /externalIdentifiers:
+    get:
+      security:
+          - basicAuth: []
+      tags: [
+        externalIdentifiers
+      ]
+      summary: Permet de remonter les identifiants externe au code de l'offre passée en parametre
+      description: Cette api permet la récupération des identifiants externes d'une liste offre
+      parameters:
+        - in: query
+          required: true
+          name: offerCodes
+          content:
+            application/json:  
+              schema:
+                type: array
+                maxItems: 100
+                items:
+                  type: string
+                  minLength: 3
+                  maxLength: 90
+                  description : La liste de code d'offre pour laquel on souhaite les identifiants externes
+      responses:
+          '200':
+            description: La liste des identifiants externes associés à chaque code
+            content:
+              application/json:
+                schema:
+                  type: array
+                  maxItems: 100
+                  items:
+                    $ref: '#/components/schemas/ExternalIdentifierResponse'
+          '400':
+            description: La requête entrante a une mauvaise syntaxe (corps manquant ou mal formé, paramètre manquant, valeur de paramètre incorrecte,etc).
+            $ref: '#/components/responses/BadRequest'
+          '404':
+            $ref: '#/components/responses/NotFound'
+          '503':
+            description: Le serveur est actuellement incapable de traiter la demande
+            $ref: '#/components/responses/ServiceUnavailable'
+          default:
+            description: unexpected Error
+            $ref: '#/components/responses/Error'
+components:
+  schemas:
+    Classification:
+      additionalProperties: false 
+      properties:
+          label:
+            type: string
+          code:
+           type: string
+          type: 
+            type: string
+    ClassificationResponse:
+      additionalProperties: false
+      properties:
+        offerCode:
+          type: string
+        classification:
+          type: array
+          maxItems: 100
+          items:
+            type: object
+            $ref: '#/components/schemas/Classification'
+    OffersReponse:
+      additionalProperties: false
+      properties:
+        atomicOfferSpecification:
+          type: object
+          $ref: '#/components/schemas/AtomicOfferSpecification'
+        CompositeOfferSpecification:
+          type: object
+          $ref: '#/components/schemas/CompositeOfferSpecification'
+    OffersReponseResponse:
+      additionalProperties: false
+      properties:
+        offerCode:
+          type: string
+        offer:
+          type: object
+          $ref: '#/components/schemas/OffersReponse'
+    AtomicOfferSpecification:
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          description: code de l'offre
+        label:
+          type: string
+          description: label de l'offre
+        shortLabel:
+          type: string
+          description: label court de l'offre
+        description: 
+          type: string
+          description: description de l'offer
+        genericProduct: 
+          type: string
+        commercialStartDate:
+          type: string
+          description: Date de début de la commercialisation au format RFC3339 avec secondes
+        commercialEndDate:
+          type: string
+          description: Date de din de la commercialisation au format RFC3339 avec secondes
+        classification:
+          type: array
+          maxItems: 100
+          items: 
+            type: object
+            $ref: '#/components/schemas/Classification'
+        externalIdentifier:
+          type: array
+          maxItems: 10
+          items: 
+            type: object
+            $ref: '#/components/schemas/ExternalIdentifier'
+        productSpecification:
+          type: object
+          $ref: '#/components/schemas/ProductSpecification'
+        tariffs:
+          type: array
+          maxItems: 100
+          items: 
+            type: object
+            $ref: '#/components/schemas/TariffSpecification'
+        productProperties:
+          type: array
+          maxItems: 100
+          items:
+            type: object
+            $ref: '#/components/schemas/CatalogueProperty'
+    CompositeOfferSpecification:
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          description: code de l'offre
+        label:
+          type: string
+          description: label de l'offre
+        shortLabel:
+          type: string
+          description: label court de l'offre
+        description: 
+          type: string
+          description: description de l'offer
+        genericProduct: 
+          type: string
+        commercialStartDate:
+          type: string
+          description: Date de début de la commercialisation au format RFC3339 avec secondes
+          pattern: /([0-9]{4})-(?:[0-9]{2})-([0-9]{2})T([0-2][0-9]):([0-5][0-9]):([0-6][0-9])Z/
+          example: "2019-05-17T09:12:29Z"
+        commercialEndDate:
+          type: string
+          description: Date de din de la commercialisation au format RFC3339 avec secondes
+          pattern: /([0-9]{4})-(?:[0-9]{2})-([0-9]{2})T([0-2][0-9]):([0-5][0-9]):([0-6][0-9])Z/
+          example: "2019-05-17T09:12:29Z"
+        classification:
+          type: array
+          maxItems: 100
+          items: 
+            type: object
+            $ref: '#/components/schemas/Classification'
+        externalIdentifier:
+          type: array
+          maxItems: 100
+          items: 
+            type: object
+            $ref: '#/components/schemas/ExternalIdentifier'
+        offerRoles:
+          type: array
+          maxItems: 100
+          items: 
+            type: object
+            $ref: '#/components/schemas/OfferRoles'
+        tariffs:
+          type: array
+          maxItems: 100
+          items: 
+            type: object
+            $ref: '#/components/schemas/TariffSpecification'
+        productProperties:
+          type: array
+          maxItems: 100
+          items:
+            type: object
+            $ref: '#/components/schemas/CatalogueProperty'
+    OfferSprecification: 
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          description: code de l'offre
+        label:
+          type: string
+          description: label de l'offre
+        shortLabel:
+          type: string
+          description: label court de l'offre
+        description: 
+          type: string
+          description: description de l'offer
+        genericProduct: 
+          type: string
+        commercialStartDate:
+          type: string
+          description: Date de début de la commercialisation au format RFC3339 avec secondes
+          pattern: /([0-9]{4})-(?:[0-9]{2})-([0-9]{2})T([0-2][0-9]):([0-5][0-9]):([0-6][0-9])Z/
+          example: "2019-05-17T09:12:29Z"
+        commercialEndDate:
+          type: string
+          description: Date de din de la commercialisation au format RFC3339 avec secondes
+          pattern: /([0-9]{4})-(?:[0-9]{2})-([0-9]{2})T([0-2][0-9]):([0-5][0-9]):([0-6][0-9])Z/
+          example: "2019-05-17T09:12:29Z"
+    ExternalIdentifier:
+      additionalProperties: false
+      properties:
+        referential:
+          type: string
+        identifier:
+          type: string
+    ExternalIdentifierResponse:
+      additionalProperties: false
+      properties:
+        offerCode:
+          type: string
+        function:
+          type: array
+          maxItems: 100
+          items: 
+            type: object
+            $ref: '#/components/schemas/ExternalIdentifier'
+    ProductSpecification:
+      additionalProperties: false
+      properties:
+        productType:
+          type: string
+        code:
+          type: string
+        label: 
+          type: string
+        shortLabel:
+          type: string
+        description:
+          type: string
+        function:
+          type: array
+          maxItems: 100
+          items: 
+            type: object
+            $ref: '#/components/schemas/FunctionSpecification'
+    FunctionSpecification:
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+        label: 
+          type: string
+        shortLabel:
+          type: string
+        description:
+          type: string
+    FunctionSpecificationResponse:
+      additionalProperties: false
+      properties:
+        functionCode:
+          type: string
+        function:
+          type: object
+          $ref: '#/components/schemas/FunctionSpecification'
+    OfferRoles:
+      additionalProperties: false
+      properties:
+        offerCode:
+          type: string
+        sortKey:
+          type: string
+        offer: 
+          type: array
+          maxItems: 100
+          items: 
+            type: object
+            $ref: "#/components/schemas/OfferSprecification"
+    CatalogueProperty:
+      additionalProperties: false
+      properties:
+        propertyCode:
+          type: string
+        propertyValue:
+          type: string
+        tableRuleCode:
+          type: string
+    TariffSpecification:
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+        Label:
+          type: string
+        shortLabel:
+          type: string
+        Description:
+          type: string
+        startDate:
+          type: string
+          description: Date de din de la commercialisation au format RFC3339 avec secondes
+          pattern: /([0-9]{4})-(?:[0-9]{2})-([0-9]{2})T([0-2][0-9]):([0-5][0-9]):([0-6][0-9])Z/
+          example: "2019-05-17T09:12:29Z"
+        endDate:
+          type: string
+          description: Date de din de la commercialisation au format RFC3339 avec secondes
+          pattern: /([0-9]{4})-(?:[0-9]{2})-([0-9]{2})T([0-2][0-9]):([0-5][0-9]):([0-6][0-9])Z/
+          example: "2019-05-17T09:12:29Z"
+        amountIncludingTax:
+          type: string
+        amountWithoutTax:
+          type: string
+        externalIdentifiers:
+          type: array
+          maxItems: 100
+          items: 
+            type: object
+            $ref: '#/components/schemas/ExternalIdentifier'
+        discount:
+          type: array
+          items:
+            $ref: '#/components/schemas/DiscountSpecification'
+    TariffSpecificationResponse:
+      additionalProperties: false
+      properties:
+        tariffCode:
+          type: string
+        Tariff:
+          type: object
+          $ref: '#/components/schemas/TariffSpecification'
+    DiscountSpecification:
+      additionalProperties: false
+      properties:
+        duration:
+          type: string
+        code:
+          type: string
+        Label:
+          type: string
+        shortLabel:
+          type: string
+        Description:
+          type: string
+        startDate:
+          type: string
+          description: Date de din de la commercialisation au format RFC3339 avec secondes
+          pattern: /([0-9]{4})-(?:[0-9]{2})-([0-9]{2})T([0-2][0-9]):([0-5][0-9]):([0-6][0-9])Z/
+          example: "2019-05-17T09:12:29Z"
+        endDate:
+          type: string
+          description: Date de din de la commercialisation au format RFC3339 avec secondes
+          pattern: /([0-9]{4})-(?:[0-9]{2})-([0-9]{2})T([0-2][0-9]):([0-5][0-9]):([0-6][0-9])Z/
+          example: "2019-05-17T09:12:29Z"
+        amountIncludingTax:
+          type: string
+        amountWithoutTax:
+          type: string
+    DiscountSpecificationResponse:
+      additionalProperties: false
+      properties:
+        promotionCode:
+          type: string
+        promotion:
+          type: object
+          $ref: '#/components/schemas/DiscountSpecification'
+    ErrorMessage:
+        additionalProperties: false
+        description: "Message d'erreur"
+        required:
+          - "code"
+          - "message"
+        properties:
+            code:
+              type: string
+            message: 
+              type: string
+            description:
+              type: string
+            infoUrl:
+              type: string
+  securitySchemes:
+    basicAuth:     
+      type: http
+      scheme: basic
+  responses:
+    NotFound:
+      description: Le code 404 est renvoyé 
+        - si l'enregistrement n'existe pas
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            code: 60
+            message: 'Resource not found'
+    BadRequest:
+      description: Le code 400 est renvoyé 
+        - si l'un des paramètres d'entrée n'est pas valide.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            code: 28
+            message: 'Invalid query-string parameter value'
+    ServiceUnavailable:
+      description: Le code 503 est retourné 
+        - si la base de données ne répond pas.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            code: 5
+            message: 'The service is temporarily unavailable'
+    Error:
+      description: Le message d'erreur est retourne en cas d'erreur inantendu
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            code: 1
+            message: 'The service is temporarily unavailable'
+security:
+  - basicAuth: []            
+            

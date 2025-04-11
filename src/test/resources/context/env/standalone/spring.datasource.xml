@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<!--
+		DataSource sans pool, disponible en mode standalone : "java main" ou "test unitaires",
+		ne pas utiliser dans un contexte J2EE
+		-->
+	<bean
+		id="crmDataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property
+			name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property
+			name="url"
+			value="${jdbc.enabler-crm-datasource.url}" />
+		<property
+			name="username"
+			value="${jdbc.enabler-crm-datasource.user}" />
+		<property
+			name="password"
+			value="${jdbc.enabler-crm-datasource.password}" />
+	</bean>
+
+	<bean
+		id="simappDataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property
+			name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property
+			name="url"
+			value="${jdbc.enabler-crm-simapp-datasource.url}" />
+		<property
+			name="username"
+			value="${jdbc.enabler-crm-simapp-datasource.user}" />
+		<property
+			name="password"
+			value="${jdbc.enabler-crm-simapp-datasource.password}" />
+	</bean>
+
+	<bean
+		id="techDataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property
+			name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property
+			name="url"
+			value="${jdbc.datasource-tech.url}" />
+		<property
+			name="username"
+			value="${jdbc.datasource-tech.user}" />
+		<property
+			name="password"
+			value="${jdbc.datasource-tech.password}" />
+	</bean>
+	<bean
+		id="bscsDataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property
+			name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property
+			name="url"
+			value="${jdbc.bscs-datasource.url}" />
+		<property
+			name="username"
+			value="${jdbc.bscs-datasource.user}" />
+		<property
+			name="password"
+			value="${jdbc.bscs-datasource.password}" />
+	</bean>
+	<!--
+		useful for logging stuff (log-beans.xml in enabler-framework) -->
+	<alias alias="enablerDatasource" name="techDataSource" />
+	<alias alias="dataSource" name="crmDataSource" />
+
+</beans>

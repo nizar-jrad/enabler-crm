@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="enabler-crm-ManageUSSD" resourceRoot="" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ManageUSSDProviderServiceSoapBinding" type="wsdl" bindingName="{http://provider.soa.ussd.enabler.orangecaraibe.com/}ManageUSSDProviderServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/sgandossi/Documents/soapui/WSDL/manageUSSD.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\sgandossi\Documents\soapui\WSDL\manageUSSD.wsdl"><con:part><con:url>file:\C:\Users\sgandossi\Documents\soapui\WSDL\manageUSSD.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ManageUSSDProviderService" targetNamespace="http://provider.soa.ussd.enabler.orangecaraibe.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD" xmlns:ns2="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://provider.soa.ussd.enabler.orangecaraibe.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="http://ua-ecli-vip.ms.fcm/enabler-crm/soa/manageUSSD?wsdl=manageUSSD.wsdl" namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD"/>
+  <wsdl:binding name="ManageUSSDProviderServiceSoapBinding" type="ns1:manageUSSD">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getUSSDFormatedPortabilityInfo">
+      <soap:operation soapAction="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD/getUSSDFormatedPortabilityInfo" style="rpc"/>
+      <wsdl:input name="getUSSDFormatedPortabilityInfo">
+        <soap:body namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUSSDFormatedPortabilityInfoResponse">
+        <soap:body namespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManageUSSDProviderService">
+    <wsdl:port binding="tns:ManageUSSDProviderServiceSoapBinding" name="ManageUSSDProviderPort">
+      <soap:address location="http://ua-ecli-vip.ms.fcm/enabler-crm/soa/manageUSSD"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://ua-ecli-vip.ms.fcm/enabler-crm/soa/manageUSSD?wsdl=manageUSSD.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="manageUSSD" targetNamespace="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD">
+  <wsdl:message name="getUSSDFormatedPortabilityInfoResponse">
+    <wsdl:part name="return" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUSSDFormatedPortabilityInfo">
+    <wsdl:part name="msisdn" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="manageUSSD">
+    <wsdl:operation name="getUSSDFormatedPortabilityInfo">
+      <wsdl:input message="ns1:getUSSDFormatedPortabilityInfo" name="getUSSDFormatedPortabilityInfo"></wsdl:input>
+      <wsdl:output message="ns1:getUSSDFormatedPortabilityInfoResponse" name="getUSSDFormatedPortabilityInfoResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ua-ecli-vip.ms.fcm/enabler-crm/soa/manageUSSD</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD/getUSSDFormatedPortabilityInfo" name="getUSSDFormatedPortabilityInfo" bindingOperationName="getUSSDFormatedPortabilityInfo" type="Request-Response" outputName="getUSSDFormatedPortabilityInfoResponse" inputName="getUSSDFormatedPortabilityInfo" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/enabler-crm/soa/manageUSSD</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Header>
+      <t:trackingHeader xmlns:t="http://www.francetelecom.com/iosw/v1" xmlns:date="http://exslt.org/dates-and-times" xmlns:regExp="http://exslt.org/regular-expressions" xmlns:str="http://exslt.org/strings">
+         <t:requestId>93df9e7a-192d-46d1-b1ee-c5c2935faf9d</t:requestId>
+         <t:timestamp>2021-06-12T19:57:57-03:00</t:timestamp>
+      </t:trackingHeader>
+   </soap:Header>
+   <soap:Body>
+      <ns1:getUSSDFormatedPortabilityInfo xmlns:ns1="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD">
+         <msisdn>590690485141</msisdn>
+      </ns1:getUSSDFormatedPortabilityInfo>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orangecaraibe.com/soa/v1.2/Interfaces/ManageUSSD/getUSSDFormatedPortabilityInfo"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

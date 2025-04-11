@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+	<!--
+		ENABLER_CRM_V1_CONFIG_FOLDER may be specified as JAVA_ARGS :
+		-DENABLER_CRM_V1_CONFIG_FOLDER=xxxxxxx
+		-->
+
+	<bean id="PropertyPlaceholderConfigurer"
+             class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+     	<property name="locations">
+             <list>
+             <value>
+					  classpath:default/*.properties
+				</value>
+				<value>
+					file:${ENABLER_CRM_V1_CONFIG_FOLDER}/application.properties
+				</value>
+				<value>
+					classpath:application-test.properties
+				</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Propriétés Hibernate propres à cet enabler -->
+	<util:properties id="enablerHibernateProperties"
+		location="file:${ENABLER_CRM_V1_CONFIG_FOLDER}/hibernate.enabler.properties" />
+
+	<!-- Propriétés Hibernate pour enabler-framework -->
+	<util:properties id="frameworkHibernateProperties"
+		location="file:${ENABLER_CRM_V1_CONFIG_FOLDER}/hibernate.framework.properties" />
+
+<!-- Propriétés Hibernate pour la bscsSessionFactory -->
+	<util:properties id="bscsHibernateProperties"
+		location="file:${ENABLER_CRM_V1_CONFIG_FOLDER}/hibernate.bscs.properties" />
+</beans>

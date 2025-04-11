@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Si Client - Enabler CRM">
+	<skin>
+			<groupId>org.apache.maven.skins</groupId>
+			<artifactId>maven-stylus-skin</artifactId>
+			<version>1.1</version>
+	</skin>
+
+	<bannerLeft>
+			<name>Orange</name>
+			<src>images/orange.gif</src>
+			<href>http://www.orangecaraibe.com</href>
+	</bannerLeft>
+
+	<body>
+			<links>
+				<item name="www.orangecaraibe.com" href="http://www.orangecaraibe.com" />
+			</links>
+			<menu name="Vue d'ensemble">
+				<item name="Introduction" href="index.html" />
+				<item name="FAQ" href="faq.html" />
+			</menu>
+
+			<menu name="Documentation du projet">
+				<item name="Téléchargement" href="/telechargement/index.html"/>
+				<item name="Documentation APT" href="maven_site.html" />
+			</menu>
+
+			<menu ref="reports" />
+
+	</body>
+</project>

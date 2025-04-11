@@ -1,0 +1,1580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="enabler-crm-WSTroubleTicket" resourceRoot="" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="WSTroubleTicketProviderServiceSoapBinding" type="wsdl" bindingName="{http://provider.soa.crm.enabler.orangecaraibe.com/}WSTroubleTicketProviderServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/sgandossi/Documents/soapui/WSDL/wsTroubleTicket.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/sgandossi/Documents/soapui/WSDL/wsTroubleTicket.wsdl"><con:part><con:url>file:/C:/Users/sgandossi/Documents/soapui/WSDL/wsTroubleTicket.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WSTroubleTicketProviderService" targetNamespace="http://provider.soa.crm.enabler.orangecaraibe.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://provider.soa.crm.enabler.orangecaraibe.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1">
+  <wsdl:import location="http://ua-ecli-vip.ms.fcm/enabler-crm/soa/wsTroubleTicket?wsdl=WSTroubleTicket.wsdl" namespace="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1"></wsdl:import>
+  <wsdl:binding name="WSTroubleTicketProviderServiceSoapBinding" type="ns1:WSTroubleTicket">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="troubleticket">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="troubleticket">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="troubleticketResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionReturn">
+        <soap:fault name="FaultExceptionReturn" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSTroubleTicketProviderService">
+    <wsdl:port binding="tns:WSTroubleTicketProviderServiceSoapBinding" name="WSTroubleTicketProviderPort">
+      <soap:address location="http://ua-ecli-vip.ms.fcm/enabler-crm/soa/wsTroubleTicket"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://ua-ecli-vip.ms.fcm/enabler-crm/soa/wsTroubleTicket?wsdl=WSTroubleTicket.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WSTroubleTicket" targetNamespace="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1">
+      <xs:import namespace="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1"/>
+      <xs:element name="faultException">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="faultExceptionCode" type="xs:string"/>
+            <xs:element name="faultExceptionString" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="troubleticket">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="system">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="actioncode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="subactioncode" type="xs:string"/>
+                  <xs:element name="initiatorsystem" type="xs:string"/>
+                  <xs:element name="managersystem" type="xs:string"/>
+                  <xs:element name="sfu">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="code" type="xs:string"/>
+                        <xs:element name="label" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="isticketid">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ticketid">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="objid" type="xs:string"/>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="subid" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="msticketid">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ticketid">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="objid" type="xs:string"/>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="subid" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="agent" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="agentsystem" type="xs:string"/>
+                        <xs:element name="ticketid">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="objid" type="xs:string"/>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="subid" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="group">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="label" type="xs:string"/>
+                              <xs:element name="phone" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" name="role">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="label" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ticket">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="natureid" type="xs:string"/>
+                  <xs:element name="typeid" type="xs:string"/>
+                  <xs:element name="startdate" type="xs:string"/>
+                  <xs:element name="creationdate" type="xs:string"/>
+                  <xs:element name="description" type="xs:string"/>
+                  <xs:element name="thirdreference" type="xs:string"/>
+                  <xs:element name="customerref" type="xs:string"/>
+                  <xs:element name="customersupplierref" type="xs:string"/>
+                  <xs:element name="languageid" type="xs:string"/>
+                  <xs:element name="calloriginid" type="xs:string"/>
+                  <xs:element name="actioninprogress" type="xs:string"/>
+                  <xs:element name="currentstatus" type="xs:string"/>
+                  <xs:element name="classid" type="xs:string"/>
+                  <xs:element name="customerimpactid" type="xs:string"/>
+                  <xs:element name="interventionasked" type="xs:string"/>
+                  <xs:element name="urgencyid" type="xs:string"/>
+                  <xs:element name="priorityid" type="xs:string"/>
+                  <xs:element name="customerid" type="xs:string"/>
+                  <xs:element name="restorationdeadline" type="xs:string"/>
+                  <xs:element name="closurewaiting" type="xs:string"/>
+                  <xs:element name="initialrestorationdate" type="xs:string"/>
+                  <xs:element name="expectedrestorationdate" type="xs:string"/>
+                  <xs:element name="restorationdate" type="xs:string"/>
+                  <xs:element name="fixdate" type="xs:string"/>
+                  <xs:element name="closuredate" type="xs:string"/>
+                  <xs:element name="shortlabel" type="xs:string"/>
+                  <xs:element name="outageduration2424" type="xs:string"/>
+                  <xs:element name="contractoutageduration" type="xs:string"/>
+                  <xs:element name="totalfreezeduration2424" type="xs:string"/>
+                  <xs:element name="openhourtotalfreezeduration" type="xs:string"/>
+                  <xs:element name="mttrrespected" type="xs:string"/>
+                  <xs:element name="lastmodifdate" type="xs:string"/>
+                  <xs:element name="actor">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="group">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="label" type="xs:string"/>
+                              <xs:element name="phone" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="id" type="xs:string"/>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="phone" type="xs:string"/>
+                        <xs:element name="subgroupphone" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="isparent" type="xs:string"/>
+                  <xs:element name="parentticketid">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ticketid">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="objid" type="xs:string"/>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="subid" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="keepmstcomtype" type="xs:string"/>
+                  <xs:element name="subgrprpt" type="xs:string"/>
+                  <xs:element name="ismaster" type="xs:string"/>
+                  <xs:element name="masterticketid">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ticketid">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="objid" type="xs:string"/>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="subid" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="issupport" type="xs:string"/>
+                  <xs:element name="supportticketid">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ticketid">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="objid" type="xs:string"/>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="subid" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="hasalreadyworked" type="xs:string"/>
+                  <xs:element name="outagedurationestimate" type="xs:string"/>
+                  <xs:element name="webticket" type="xs:string"/>
+                  <xs:element name="criticity" type="xs:string"/>
+                  <xs:element name="nextcustomercallback" type="xs:string"/>
+                  <xs:element name="customerescalationid" type="xs:string"/>
+                  <xs:element name="complementarydata" type="xs:string"/>
+                  <xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+                  <xs:element name="customerinitialrestorationdate" type="xs:string"/>
+                  <xs:element name="customerinvoicing" type="xs:string"/>
+                  <xs:element name="disturbancerepetition" type="xs:string"/>
+                  <xs:element name="motive" type="xs:string"/>
+                  <xs:element name="undermotive" type="xs:string"/>
+                  <xs:element name="watchedmode" type="xs:string"/>
+                  <xs:element name="towatchmodecomment" type="xs:string"/>
+                  <xs:element name="watchedmodecomment" type="xs:string"/>
+                  <xs:element name="incidentmanager" type="xs:string"/>
+                  <xs:element name="supervisiontool" type="xs:string"/>
+                  <xs:element name="localcontactsapproved" type="xs:string"/>
+                  <xs:element name="numteltic" type="xs:string"/>
+                  <xs:element name="symptom" type="xs:string"/>
+                  <xs:element name="symptomfamily" type="xs:string"/>
+                  <xs:element name="idtfushor" type="xs:string"/>
+                  <xs:element name="groupcalculationrule" type="xs:string"/>
+                  <xs:element name="filternotifautoextcontact" type="xs:string"/>
+                  <xs:element name="nbdrgclo" type="xs:string"/>
+                  <xs:element name="internalgroupcomment" type="xs:string"/>
+                  <xs:element name="updateactorid" type="xs:string"/>
+                  <xs:element name="closurewaitingdate" type="xs:string"/>
+                  <xs:element name="closurewaitingreason" type="xs:string"/>
+                  <xs:element name="gtideadline" type="xs:string"/>
+                  <xs:element name="externalpriority" type="xs:string"/>
+                  <xs:element name="onbhfollowup" type="xs:string"/>
+                  <xs:element name="ticketvalidation" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="alarms">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="alarm" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="code" type="xs:string"/>
+                        <xs:element minOccurs="0" name="label" type="xs:string"/>
+                        <xs:element minOccurs="0" name="group">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="label" type="xs:string"/>
+                              <xs:element name="phone" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="sharednetwork">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="originserviceid" type="xs:string"/>
+                  <xs:element name="destservid1" type="xs:string"/>
+                  <xs:element name="destservid2" type="xs:string"/>
+                  <xs:element name="destservid3" type="xs:string"/>
+                  <xs:element name="localswitch" type="xs:string"/>
+                  <xs:element name="terminswitch" type="xs:string"/>
+                  <xs:element name="carrier" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="tcndocument">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="closurecomment" type="xs:string"/>
+                  <xs:element name="tcnsentdate" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="contributor">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="initactor">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="actor">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="group">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="label" type="xs:string"/>
+                                    <xs:element name="phone" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="name" type="xs:string"/>
+                              <xs:element name="phone" type="xs:string"/>
+                              <xs:element name="subgroupphone" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="pilotactor">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="actor">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="group">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="label" type="xs:string"/>
+                                    <xs:element name="phone" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="name" type="xs:string"/>
+                              <xs:element name="phone" type="xs:string"/>
+                              <xs:element name="subgroupphone" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="pilotassociatedposition" type="xs:string"/>
+                        <xs:element name="pilotassociatedpositionlbl" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="activegroup">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="group">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="label" type="xs:string"/>
+                              <xs:element name="phone" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="activegroups">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="activegroupnbr" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="active" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="group">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="label" type="xs:string"/>
+                                    <xs:element name="phone" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="actor">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="group">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="id" type="xs:string"/>
+                                          <xs:element name="label" type="xs:string"/>
+                                          <xs:element name="phone" type="xs:string"/>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="name" type="xs:string"/>
+                                    <xs:element name="phone" type="xs:string"/>
+                                    <xs:element name="subgroupphone" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="roleid" type="xs:string"/>
+                              <xs:element name="acceptdate" type="xs:string"/>
+                              <xs:element name="askeddate" type="xs:string"/>
+                              <xs:element name="enddate" type="xs:string"/>
+                              <xs:element name="grouptotransfer">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="label" type="xs:string"/>
+                                    <xs:element name="phone" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="statustransfer" type="xs:string"/>
+                              <xs:element name="groupacktransfer">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="label" type="xs:string"/>
+                                    <xs:element name="phone" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="useracktransfer" type="xs:string"/>
+                              <xs:element name="grouprequesttransfer">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="label" type="xs:string"/>
+                                    <xs:element name="phone" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="userrequesttransfer" type="xs:string"/>
+                              <xs:element name="level" type="xs:string"/>
+                              <xs:element name="actiontypeid" type="xs:string"/>
+                              <xs:element name="actionsubtypeid" type="xs:string"/>
+                              <xs:element name="interventionpriority" type="xs:string"/>
+                              <xs:element name="actionasked" type="xs:string"/>
+                              <xs:element name="intercarriedout" type="xs:string"/>
+                              <xs:element name="endactiontypeid" type="xs:string"/>
+                              <xs:element name="activeassociatedposition" type="xs:string"/>
+                              <xs:element name="activeassociatedpositionlbl" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="resptransfer">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="group">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="id" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="grouprequesttransfer">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="id" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="userrequesttransfer" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="notifier">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="name" type="xs:string"/>
+                  <xs:element name="phone" type="xs:string"/>
+                  <xs:element name="fax" type="xs:string"/>
+                  <xs:element name="email" type="xs:string"/>
+                  <xs:element name="companyname" type="xs:string"/>
+                  <xs:element name="favoritemedia" type="xs:string"/>
+                  <xs:element name="titleid" type="xs:string"/>
+                  <xs:element name="mobilenumber" type="xs:string"/>
+                  <xs:element name="workinghours" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="site" nillable="true">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="extremity" type="xs:string"/>
+                  <xs:element name="contact">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="phone" type="xs:string"/>
+                        <xs:element name="fax" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="openhours" type="xs:string"/>
+                  <xs:element name="zipcode" type="xs:string"/>
+                  <xs:element name="city" type="xs:string"/>
+                  <xs:element name="adress" type="xs:string"/>
+                  <xs:element name="adresscomplement" type="xs:string"/>
+                  <xs:element name="countryid" type="xs:string"/>
+                  <xs:element name="customersite" type="xs:string"/>
+                  <xs:element name="companyname" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="service">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="internalid" type="xs:string"/>
+                  <xs:element name="internalcontractid" type="xs:string"/>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceid" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="position" type="xs:string"/>
+                        <xs:element name="typeid" type="xs:string"/>
+                        <xs:element name="value" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="idttypgar" type="xs:string"/>
+                  <xs:element name="mttrcode" type="xs:string"/>
+                  <xs:element name="mttrvalue" type="xs:string"/>
+                  <xs:element name="mttrtimeslot" type="xs:string"/>
+                  <xs:element name="companyname" type="xs:string"/>
+                  <xs:element name="typeid" type="xs:string"/>
+                  <xs:element name="familyid" type="xs:string"/>
+                  <xs:element name="workinghoursid" type="xs:string"/>
+                  <xs:element name="rate" type="xs:string"/>
+                  <xs:element name="belong" type="xs:string"/>
+                  <xs:element name="changeproduct" type="xs:string"/>
+                  <xs:element name="siren" type="xs:string"/>
+                  <xs:element name="productclass" type="xs:string"/>
+                  <xs:element name="serviceprivilege" type="xs:string"/>
+                  <xs:element name="extproduct" type="xs:string"/>
+                  <xs:element name="attributes">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="value" type="xs:string"/>
+                              <xs:element name="Order" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="parameters">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="parameter" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="value" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="market">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="id" type="xs:string"/>
+                        <xs:element name="label" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="address" type="xs:string"/>
+                  <xs:element name="addresscontinued" type="xs:string"/>
+                  <xs:element name="offer">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="code" type="xs:string"/>
+                        <xs:element name="label" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="customers">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="customer" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="source" type="xs:string"/>
+                              <xs:element name="id" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="resource">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="researchtype" type="xs:string"/>
+                  <xs:element name="nonmanagedresource" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="impacts">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="impact" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="internalid" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="impactid" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="position" type="xs:string"/>
+                              <xs:element name="typeid" type="xs:string"/>
+                              <xs:element name="value" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="typeid" type="xs:string"/>
+                        <xs:element name="mttrcode" type="xs:string"/>
+                        <xs:element name="mttrvalue" type="xs:string"/>
+                        <xs:element name="cdrs" type="xs:string"/>
+                        <xs:element name="belong" type="xs:string"/>
+                        <xs:element name="customerid" type="xs:string"/>
+                        <xs:element name="internalcontractid" type="xs:string"/>
+                        <xs:element name="impactclass" type="xs:string"/>
+                        <xs:element minOccurs="0" name="attributes">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="attribute" nillable="true">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="value" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="parameters">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="parameter" nillable="true">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="value" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="severity" type="xs:string"/>
+                        <xs:element name="signalisationcount" type="xs:string"/>
+                        <xs:element name="finalnature" type="xs:string"/>
+                        <xs:element name="tickettype" type="xs:string"/>
+                        <xs:element name="numberaccessimpacted" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="impactcalculationtool" type="xs:string"/>
+                  <xs:element name="impactcalculationflag" type="xs:string"/>
+                  <xs:element name="impactcalculationid" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="causes">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="cause" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="internalid" type="xs:string"/>
+                        <xs:element name="label" type="xs:string"/>
+                        <xs:element name="problemdetailid" type="xs:string"/>
+                        <xs:element name="finalnature" type="xs:string"/>
+                        <xs:element name="responsabilityid" type="xs:string"/>
+                        <xs:element name="duration2424" type="xs:string"/>
+                        <xs:element name="openhoursduration" type="xs:string"/>
+                        <xs:element name="customeroutageduration" type="xs:string"/>
+                        <xs:element name="maincause" type="xs:string"/>
+                        <xs:element name="startdate" type="xs:string"/>
+                        <xs:element name="enddate" type="xs:string"/>
+                        <xs:element name="internalcomplement" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="comments">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="comment" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="internalid" type="xs:string"/>
+                        <xs:element name="recordingdate" type="xs:string"/>
+                        <xs:element name="label" type="xs:string"/>
+                        <xs:element name="typeid" type="xs:string"/>
+                        <xs:element name="operationtypeid" type="xs:string"/>
+                        <xs:element name="origincomment" type="xs:string"/>
+                        <xs:element name="actor">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="group">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="label" type="xs:string"/>
+                                    <xs:element name="phone" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="name" type="xs:string"/>
+                              <xs:element name="phone" type="xs:string"/>
+                              <xs:element name="subgroupphone" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attachment" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="name" type="xs:string"/>
+                              <xs:element name="label" type="xs:string"/>
+                              <xs:element name="type" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="attachmentid" type="xs:string"/>
+                        <xs:element name="maincomment" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="freezes">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="freeze" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="internalid" type="xs:string"/>
+                        <xs:element name="startdate" type="xs:string"/>
+                        <xs:element name="enddate" type="xs:string"/>
+                        <xs:element name="causeid" type="xs:string"/>
+                        <xs:element name="actor">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="group">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="label" type="xs:string"/>
+                                    <xs:element name="phone" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="name" type="xs:string"/>
+                              <xs:element name="phone" type="xs:string"/>
+                              <xs:element name="subgroupphone" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="escalations">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="escalation" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="escdate" type="xs:string"/>
+                        <xs:element name="level" type="xs:string"/>
+                        <xs:element name="accepted" type="xs:string"/>
+                        <xs:element name="priorityid" type="xs:string"/>
+                        <xs:element name="contactname" type="xs:string"/>
+                        <xs:element name="actor">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="group">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                    <xs:element name="label" type="xs:string"/>
+                                    <xs:element name="phone" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="id" type="xs:string"/>
+                              <xs:element name="name" type="xs:string"/>
+                              <xs:element name="phone" type="xs:string"/>
+                              <xs:element name="subgroupphone" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="interventionrequests">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="interventionrequest" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="id" type="xs:string"/>
+                        <xs:element name="numint" type="xs:string"/>
+                        <xs:element name="flag" type="xs:string"/>
+                        <xs:element name="activitycode" type="xs:string"/>
+                        <xs:element name="productcode" type="xs:string"/>
+                        <xs:element name="marketcode" type="xs:string"/>
+                        <xs:element name="diagnostic" type="xs:string"/>
+                        <xs:element name="idtessai" type="xs:string"/>
+                        <xs:element name="startdate" type="xs:string"/>
+                        <xs:element name="enddate" type="xs:string"/>
+                        <xs:element name="idtstatus" type="xs:string"/>
+                        <xs:element name="idtrel" type="xs:string"/>
+                        <xs:element name="codeui" type="xs:string"/>
+                        <xs:element name="inprogress" type="xs:string"/>
+                        <xs:element name="margin" type="xs:string"/>
+                        <xs:element name="meetingflag" type="xs:string"/>
+                        <xs:element name="interventioncomment" type="xs:string"/>
+                        <xs:element minOccurs="0" name="followup">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="code" type="xs:string"/>
+                              <xs:element name="label" type="xs:string"/>
+                              <xs:element name="datehour" type="xs:string"/>
+                              <xs:element name="status" type="xs:string"/>
+                              <xs:element name="comment" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="cause" type="xs:string"/>
+                        <xs:element name="appointmentaction" type="xs:string"/>
+                        <xs:element name="appointmentdate" type="xs:string"/>
+                        <xs:element name="appointmentmargin" type="xs:string"/>
+                        <xs:element name="appointmentcomment" type="xs:string"/>
+                        <xs:element name="appointmentactor" type="xs:string"/>
+                        <xs:element name="place1" type="xs:string"/>
+                        <xs:element name="place2" type="xs:string"/>
+                        <xs:element name="equipment1" type="xs:string"/>
+                        <xs:element name="equipment2" type="xs:string"/>
+                        <xs:element name="customerescalation" type="xs:string"/>
+                        <xs:element name="potentialduration" type="xs:string"/>
+                        <xs:element name="nbglobalizedir" type="xs:string"/>
+                        <xs:element name="meetingrefused" type="xs:string"/>
+                        <xs:element name="localisation">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="centre" type="xs:string"/>
+                              <xs:element name="zone" type="xs:string"/>
+                              <xs:element name="codebase42c" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="datchgpidi" type="xs:string"/>
+                        <xs:element name="datreplanpidi" type="xs:string"/>
+                        <xs:element name="blnrdvask" type="xs:string"/>
+                        <xs:element name="coddisppidi" type="xs:string"/>
+                        <xs:element name="cmtdisppidi" type="xs:string"/>
+                        <xs:element name="idtpidista" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="attachments">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="attachment" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="label" type="xs:string"/>
+                        <xs:element name="filename" type="xs:string"/>
+                        <xs:element name="body" type="xs:base64Binary"/>
+                        <xs:element name="mimetype" type="xs:string"/>
+                        <xs:element name="localuri" type="xs:string"/>
+                        <xs:element name="externaluri" type="xs:string"/>
+                        <xs:element name="deletion" type="xs:string"/>
+                        <xs:element name="internalid" type="xs:string"/>
+                        <xs:element name="typeid" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="delete">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="deletedate" type="xs:string"/>
+                  <xs:element name="deleteactor" type="xs:string"/>
+                  <xs:element name="deleteent" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="diagnostic">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="returncode" type="xs:string"/>
+                  <xs:element name="diagcode" type="xs:string"/>
+                  <xs:element name="diagnosticsblocs">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="diagnosticbloc" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="type" type="xs:string"/>
+                              <xs:element name="typelabel" type="xs:string"/>
+                              <xs:element name="returncode" type="xs:string"/>
+                              <xs:element name="resultcode" type="xs:string"/>
+                              <xs:element name="detailresultcode" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="informationsdefaults">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="informations">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="information" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="code" type="xs:string"/>
+                              <xs:element name="value" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="defaults">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="default" nillable="true">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="code" type="xs:string"/>
+                              <xs:element name="value" type="xs:string"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="externalEvent">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" type="xs:string"/>
+                  <xs:element name="description" type="xs:string"/>
+                  <xs:element name="subject" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="trialResults">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="trialResult" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="emId" type="xs:string"/>
+                        <xs:element name="em1" type="xs:string"/>
+                        <xs:element name="em2" type="xs:string"/>
+                        <xs:element name="em3" type="xs:string"/>
+                        <xs:element name="em4" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="complements" nillable="true">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="complement1" type="xs:string"/>
+                  <xs:element name="complement2" type="xs:string"/>
+                  <xs:element name="complement3" type="xs:string"/>
+                  <xs:element name="complement4" type="xs:string"/>
+                  <xs:element name="complement5" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="maf">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="chpcompl1" type="xs:string"/>
+                  <xs:element name="chpcompl2" type="xs:string"/>
+                  <xs:element name="chpcompl3" type="xs:string"/>
+                  <xs:element name="chpcompl4" type="xs:string"/>
+                  <xs:element name="chpcompl5" type="xs:string"/>
+                  <xs:element name="chpcompl6" type="xs:string"/>
+                  <xs:element name="chpcompl7" type="xs:string"/>
+                  <xs:element name="chpcompl8" type="xs:string"/>
+                  <xs:element name="chpcompl9" type="xs:string"/>
+                  <xs:element name="chpcompl9bis" type="xs:string"/>
+                  <xs:element name="chpcompl10" type="xs:string"/>
+                  <xs:element name="chpcompl10bis" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ourservicescomments">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="ourservicescomment" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="type" type="xs:string"/>
+                        <xs:element name="label" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="fieldinterventions">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="fieldintervention" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="subactioncode" type="xs:string"/>
+                        <xs:element name="id" type="xs:string"/>
+                        <xs:element name="numint" type="xs:string"/>
+                        <xs:element name="idtstatus" type="xs:string"/>
+                        <xs:element name="statuschangedate" type="xs:string"/>
+                        <xs:element name="enddateatthelatest" type="xs:string"/>
+                        <xs:element name="startdateattheearliest" type="xs:string"/>
+                        <xs:element name="description" type="xs:string"/>
+                        <xs:element name="interventioncomment" type="xs:string"/>
+                        <xs:element name="startdate" type="xs:string"/>
+                        <xs:element name="enddate" type="xs:string"/>
+                        <xs:element name="comment" type="xs:string"/>
+                        <xs:element name="iruserid" type="xs:string"/>
+                        <xs:element name="ordertype" type="xs:string"/>
+                        <xs:element name="orderdomain" type="xs:string"/>
+                        <xs:element name="externalfiusercode" type="xs:string"/>
+                        <xs:element name="externalfitaskid" type="xs:string"/>
+                        <xs:element name="fitechnicianname" type="xs:string"/>
+                        <xs:element name="firealstartdate" type="xs:string"/>
+                        <xs:element name="firealenddate" type="xs:string"/>
+                        <xs:element name="fiprdintervention" type="xs:string"/>
+                        <xs:element name="fitechniciancontact" type="xs:string"/>
+                        <xs:element name="figeoarea" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="siteobjects">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="siteobject" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="siteidentifier" type="xs:string"/>
+                        <xs:element name="sitename" type="xs:string"/>
+                        <xs:element name="sitealias" type="xs:string"/>
+                        <xs:element name="siteaddress" type="xs:string"/>
+                        <xs:element name="siteaddresscomp" type="xs:string"/>
+                        <xs:element name="sitepostalcode" type="xs:string"/>
+                        <xs:element name="sitecity" type="xs:string"/>
+                        <xs:element name="sitearea" type="xs:string"/>
+                        <xs:element name="sitecountry" type="xs:string"/>
+                        <xs:element name="sitetimezone" type="xs:string"/>
+                        <xs:element name="sitelatitude" type="xs:string"/>
+                        <xs:element name="sitelongitude" type="xs:string"/>
+                        <xs:element name="sitetype" type="xs:string"/>
+                        <xs:element name="sitetypology" type="xs:string"/>
+                        <xs:element name="sitelocalcontact" type="xs:string"/>
+                        <xs:element name="sitesecuritycontact" type="xs:string"/>
+                        <xs:element name="sitewithstaff" type="xs:string"/>
+                        <xs:element name="siteaccesshours" type="xs:string"/>
+                        <xs:element name="siteworkhours" type="xs:string"/>
+                        <xs:element name="sitesupervhours" type="xs:string"/>
+                        <xs:element name="sitegenericinstructions" type="xs:string"/>
+                        <xs:element name="sitespecificinstructions" type="xs:string"/>
+                        <xs:element name="criticalsite" type="xs:string"/>
+                        <xs:element name="sitecustomerreference" type="xs:string"/>
+                        <xs:element name="sitecommitment" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="suppliers">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="supplier" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="oceanetransferid" type="xs:string"/>
+                        <xs:element name="supplierticketnumber" type="xs:string"/>
+                        <xs:element name="suppliertransferstatus" type="xs:string"/>
+                        <xs:element name="supplierpriority" type="xs:string"/>
+                        <xs:element name="enddate" type="xs:string"/>
+                        <xs:element name="supplierticketcloseddate" type="xs:string"/>
+                        <xs:element name="resolutioncode" type="xs:string"/>
+                        <xs:element name="requestedaction" type="xs:string"/>
+                        <xs:element name="partnerebondstatus" type="xs:string"/>
+                        <xs:element name="suppliergroup" type="xs:string"/>
+                        <xs:element name="supplierphone" type="xs:string"/>
+                        <xs:element name="suppliercontactname" type="xs:string"/>
+                        <xs:element name="transfergroupid" type="xs:string"/>
+                        <xs:element name="transferuserid" type="xs:string"/>
+                        <xs:element name="transferstartdate" type="xs:string"/>
+                        <xs:element name="typactionaskedid" type="xs:string"/>
+                        <xs:element name="sstypactionaskedid" type="xs:string"/>
+                        <xs:element name="intervplanneddate" type="xs:string"/>
+                        <xs:element name="intervtech" type="xs:string"/>
+                        <xs:element name="intervackdate" type="xs:string"/>
+                        <xs:element name="onsitedate" type="xs:string"/>
+                        <xs:element name="realintervenddate" type="xs:string"/>
+                        <xs:element name="urgencyid" type="xs:string"/>
+                        <xs:element name="tansferdeletiontuserid" type="xs:string"/>
+                        <xs:element name="transferdeletiongroupid" type="xs:string"/>
+                        <xs:element name="transferdeletiondate" type="xs:string"/>
+                        <xs:element name="intervdescription" type="xs:string"/>
+                        <xs:element name="typactionrealid" type="xs:string"/>
+                        <xs:element name="sstypactionrealid" type="xs:string"/>
+                        <xs:element name="intervrealdate" type="xs:string"/>
+                        <xs:element name="blnfacturation" type="xs:string"/>
+                        <xs:element name="impactprdid" type="xs:string"/>
+                        <xs:element name="impactressid" type="xs:string"/>
+                        <xs:element name="suppliermngtype" type="xs:string"/>
+                        <xs:element name="ref1circuitid" type="xs:string"/>
+                        <xs:element name="ref2circuitid" type="xs:string"/>
+                        <xs:element name="orangecircuitid" type="xs:string"/>
+                        <xs:element name="circuittype" type="xs:string"/>
+                        <xs:element name="circuitspeed" type="xs:string"/>
+                        <xs:element name="suppliermail" type="xs:string"/>
+                        <xs:element name="suppliermmtsla" type="xs:string"/>
+                        <xs:element name="suplieresclevel" type="xs:string"/>
+                        <xs:element name="userupdateid" type="xs:string"/>
+                        <xs:element name="groupupdateid" type="xs:string"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="notificationcontacts">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="notificationcontact" nillable="true">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="titleid" type="xs:string"/>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="companyname" type="xs:string"/>
+                        <xs:element name="address" type="xs:string"/>
+                        <xs:element name="zipcode" type="xs:string"/>
+                        <xs:element name="city" type="xs:string"/>
+                        <xs:element name="phone" type="xs:string"/>
+                        <xs:element name="mobilenumber" type="xs:string"/>
+                        <xs:element name="email" type="xs:string"/>
+                        <xs:element name="fax" type="xs:string"/>
+                        <xs:element name="media" type="xs:string"/>
+                        <xs:element name="language" type="xs:string"/>
+                        <xs:element name="notificationtypes">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="notificationtype" nillable="true">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="id" type="xs:string"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="troubleticketResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="troubleticketResultCode" type="xs:string"/>
+            <xs:element name="troubleticketResultString" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="troubleticketResponse">
+    <wsdl:part element="ns1:troubleticketResponse" name="TroubleTicket"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="troubleticket">
+    <wsdl:part element="ns1:troubleticket" name="TroubleTicket"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="FaultExceptionReturn">
+    <wsdl:part element="ns1:faultException" name="FaultExceptionReturn"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WSTroubleTicket">
+    <wsdl:operation name="troubleticket">
+      <wsdl:input message="ns1:troubleticket" name="troubleticket"></wsdl:input>
+      <wsdl:output message="ns1:troubleticketResponse" name="troubleticketResponse"></wsdl:output>
+      <wsdl:fault message="ns1:FaultExceptionReturn" name="FaultExceptionReturn"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ua-ecli-vip.ms.fcm/enabler-crm/soa/wsTroubleTicket</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="troubleticket" bindingOperationName="troubleticket" type="Request-Response" outputName="troubleticketResponse" inputName="troubleticket" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/enabler-crm/soa/wsTroubleTicket</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <SOAP-ENV:Header>
+      <t:trackingHeader xmlns:t="http://www.francetelecom.com/iosw/v1" xmlns:date="http://exslt.org/dates-and-times" xmlns:regExp="http://exslt.org/regular-expressions" xmlns:str="http://exslt.org/strings">
+         <t:requestId>a3915e35-f824-4854-8e79-22644831a864</t:requestId>
+         <t:timestamp>2021-05-31T17:37:18-03:00</t:timestamp>
+      </t:trackingHeader>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body>
+      <impl:troubleticket xmlns:impl="http://www.orange.com/DRM/Interfaces/WebserviceOREKA/v1">
+         <system>
+            <actioncode>UPTT</actioncode>
+            <initiatorsystem>OCA_OREKA</initiatorsystem>
+            <managersystem>OCEANE</managersystem>
+            <isticketid>
+               <ticketid>
+                  <id>2p66adhq-5uyhyzgy-4eijdymy</id>
+               </ticketid>
+            </isticketid>
+            <msticketid>
+               <ticketid>
+                  <id>2102B52396</id>
+                  <subid />
+               </ticketid>
+            </msticketid>
+         </system>
+         <ticket>
+            <natureid>2</natureid>
+            <typeid>23</typeid>
+            <startdate>202102090758</startdate>
+            <creationdate>202102091246</creationdate>
+            <description>596696364603 le client confirme ne pas avoir acces à sa messagerie  par le 888 , meme avec le numero long  étant actuellement en métropole
+il n ' a aucune réception d'appel le tout aboutit directement sur la MV
+il n 'arrive plus meme en rechargant son compte de pouvoir appeler,
+test croisé effectué mais en vain
+il dit avoir fait sa demande de résiliation depuis la métropole pour transfert a card  et tout  fonctionnait mais il pouvait passer ses appels
+merci de vérifier
+mail : Willy.prudent@laposte.net</description>
+            <thirdreference>2p66adhq-5uyhyzgy-4eijdymy</thirdreference>
+            <customerref />
+            <languageid>1</languageid>
+            <calloriginid>1</calloriginid>
+            <actioninprogress />
+            <currentstatus>1</currentstatus>
+            <classid>1</classid>
+            <customerimpactid />
+            <interventionasked>1</interventionasked>
+            <urgencyid>1</urgencyid>
+            <priorityid>3</priorityid>
+            <customerid>20240</customerid>
+            <restorationdeadline />
+            <closurewaiting>0</closurewaiting>
+            <initialrestorationdate />
+            <expectedrestorationdate />
+            <restorationdate />
+            <closuredate />
+            <shortlabel />
+            <outageduration2424>0</outageduration2424>
+            <contractoutageduration>0</contractoutageduration>
+            <totalfreezeduration2424>0</totalfreezeduration2424>
+            <openhourtotalfreezeduration>0</openhourtotalfreezeduration>
+            <mttrrespected>2</mttrrespected>
+            <lastmodifdate>202105312037</lastmodifdate>
+            <actor>
+               <group>
+                  <id>544033</id>
+                  <label>OCA_TMA_SELFCARE</label>
+               </group>
+               <id>MLJQ4606</id>
+               <name>BHAKKAN Laury</name>
+               <phone />
+               <subgroupphone>X</subgroupphone>
+            </actor>
+            <hasalreadyworked>1</hasalreadyworked>
+            <outagedurationestimate />
+            <webticket>0</webticket>
+            <criticity />
+            <nextcustomercallback />
+            <customerescalationid>0</customerescalationid>
+            <complementarydata />
+            <timestamp>20210531203715793</timestamp>
+            <customerinitialrestorationdate />
+            <watchedmode>0</watchedmode>
+            <towatchmodecomment />
+            <supervisiontool>OCA_OREKA</supervisiontool>
+            <localcontactsapproved>0</localcontactsapproved>
+            <numteltic>X</numteltic>
+            <symptom />
+            <symptomfamily />
+            <idtfushor>1</idtfushor>
+            <filternotifautoextcontact />
+            <nbdrgclo>89</nbdrgclo>
+            <closurewaitingdate />
+            <closurewaitingreason />
+            <gtideadline />
+            <externalpriority />
+            <onbhfollowup>0</onbhfollowup>
+         </ticket>
+         <sharednetwork>
+            <originserviceid />
+            <destservid1 />
+            <destservid2 />
+            <destservid3 />
+            <localswitch />
+            <terminswitch />
+            <carrier />
+         </sharednetwork>
+         <contributor>
+            <initactor>
+               <actor>
+                  <group>
+                     <id>544020</id>
+                     <label>OCA_SUP_TECH</label>
+                  </group>
+                  <id>NHQC9482</id>
+                  <name>SHOMOREAK - REJON Ségolène</name>
+                  <phone>0596427363</phone>
+                  <subgroupphone>X</subgroupphone>
+               </actor>
+            </initactor>
+            <pilotactor>
+               <actor>
+                  <group>
+                     <id>544020</id>
+                     <label>OCA_SUP_TECH</label>
+                     <phone />
+                  </group>
+                  <id />
+                  <name />
+                  <phone />
+                  <subgroupphone />
+               </actor>
+               <pilotassociatedposition>19551</pilotassociatedposition>
+               <pilotassociatedpositionlbl>Aucun</pilotassociatedpositionlbl>
+            </pilotactor>
+            <activegroups>
+               <activegroupnbr>0</activegroupnbr>
+               <active>
+                  <group>
+                     <id>544020</id>
+                     <label>OCA_SUP_TECH</label>
+                  </group>
+                  <actor>
+                     <id />
+                     <name />
+                     <phone />
+                     <subgroupphone />
+                  </actor>
+                  <roleid>ACT</roleid>
+                  <acceptdate />
+                  <askeddate>202102091246</askeddate>
+                  <enddate />
+                  <grouptotransfer>
+                     <id />
+                     <label />
+                  </grouptotransfer>
+                  <statustransfer />
+                  <groupacktransfer>
+                     <id />
+                     <label />
+                  </groupacktransfer>
+                  <useracktransfer />
+                  <grouprequesttransfer>
+                     <id>544020</id>
+                     <label>OCA_SUP_TECH</label>
+                  </grouprequesttransfer>
+                  <userrequesttransfer>NHQC9482</userrequesttransfer>
+                  <level />
+                  <actiontypeid />
+                  <actionsubtypeid />
+                  <actionasked />
+                  <intercarriedout />
+                  <endactiontypeid />
+                  <activeassociatedposition>19551</activeassociatedposition>
+                  <activeassociatedpositionlbl>Aucun</activeassociatedpositionlbl>
+               </active>
+               <active>
+                  <group>
+                     <id>544020</id>
+                     <label>OCA_SUP_TECH</label>
+                  </group>
+                  <roleid>RESP</roleid>
+                  <acceptdate />
+                  <askeddate>202102091246</askeddate>
+                  <enddate />
+                  <grouptotransfer>
+                     <id />
+                     <label />
+                  </grouptotransfer>
+                  <statustransfer />
+                  <groupacktransfer>
+                     <id />
+                     <label />
+                  </groupacktransfer>
+                  <useracktransfer />
+                  <grouprequesttransfer>
+                     <id>544020</id>
+                     <label>OCA_SUP_TECH</label>
+                  </grouprequesttransfer>
+                  <userrequesttransfer>NHQC9482</userrequesttransfer>
+                  <level />
+                  <actiontypeid />
+                  <actionsubtypeid />
+                  <actionasked />
+                  <intercarriedout />
+                  <endactiontypeid />
+                  <activeassociatedposition>19551</activeassociatedposition>
+                  <activeassociatedpositionlbl>Aucun</activeassociatedpositionlbl>
+               </active>
+            </activegroups>
+         </contributor>
+         <notifier>
+            <name>PRUDENT WILLY</name>
+            <phone />
+            <fax />
+            <email>willy.prudent@laposte.net</email>
+            <companyname />
+            <titleid />
+            <mobilenumber>596696364603</mobilenumber>
+            <workinghours />
+         </notifier>
+         <service>
+            <internalid>99047547</internalid>
+            <internalcontractid>392003</internalcontractid>
+            <serviceid>
+               <position>1</position>
+               <typeid>SVCNAME</typeid>
+               <value>VOIX_Orange Caraibe</value>
+            </serviceid>
+            <serviceid>
+               <position>2</position>
+               <typeid>SUBSVCNAME</typeid>
+               <value>VOIX</value>
+            </serviceid>
+            <serviceid>
+               <position>3</position>
+               <typeid>BUSUNIT</typeid>
+               <value>Orange Caraibe</value>
+            </serviceid>
+            <serviceid>
+               <position>4</position>
+               <typeid>UCMDBPRDID</typeid>
+               <value />
+            </serviceid>
+            <mttrcode />
+            <mttrvalue />
+            <companyname>ORANGE CARAIBE</companyname>
+            <typeid>SVCPARCOR</typeid>
+            <familyid>PRDMASSMKT</familyid>
+            <workinghoursid />
+            <rate />
+            <belong>124</belong>
+            <changeproduct>0</changeproduct>
+            <siren>379984891</siren>
+            <productclass>S</productclass>
+            <parameters>
+               <parameter>
+                  <id>AELEADER</id>
+                  <value>CA &amp; CHARGES-TRANSPORT DATA &amp;</value>
+               </parameter>
+               <parameter>
+                  <id>CODEDUPAYS</id>
+                  <value />
+               </parameter>
+               <parameter>
+                  <id>NIVSCE1</id>
+                  <value />
+               </parameter>
+               <parameter>
+                  <id>SVCGEN</id>
+                  <value />
+               </parameter>
+            </parameters>
+            <customers>
+               <customer>
+                  <source>RCE</source>
+                  <id>00054989</id>
+               </customer>
+            </customers>
+         </service>
+         <resource>
+            <nonmanagedresource>0</nonmanagedresource>
+         </resource>
+         <comments>
+            <comment>
+               <internalid>1172934579</internalid>
+               <recordingdate>202102091246</recordingdate>
+               <label>Description initiale du ticket: 596696364603 le client confirme ne pas avoir acces à sa messagerie  par le 888 , meme avec le numero long  étant actuellement en métropole
+il n ' a aucune réception d'appel le tout aboutit directement sur la MV
+il n 'arrive plus meme en rechargant son compte de pouvoir appeler,
+test croisé effectué mais en vain
+il dit avoir fait sa demande de résiliation depuis la métropole pour transfert a card  et tout  fonctionnait mais il pouvait passer ses appels
+merci de vérifier
+mail : Willy.prudent@laposte.net</label>
+               <typeid>INT</typeid>
+               <operationtypeid>9</operationtypeid>
+               <origincomment />
+               <actor>
+                  <group>
+                     <id>544020</id>
+                     <label>OCA_SUP_TECH</label>
+                  </group>
+                  <id>NHQC9482</id>
+                  <name>SHOMOREAK - REJON Ségolène</name>
+                  <phone>0596427363</phone>
+                  <subgroupphone>X</subgroupphone>
+               </actor>
+               <attachmentid />
+               <maincomment>0</maincomment>
+            </comment>
+         </comments>
+         <maf>
+            <chpcompl1>Actif</chpcompl1>
+            <chpcompl2>TELEPHONIE</chpcompl2>
+            <chpcompl3>4934536/5150029/</chpcompl3>
+            <chpcompl4>Mr WILLY PRUDENT 13/11/1989 97/PRUDENT/willy.prudent@laposte.net / MISDN=596696364603</chpcompl4>
+            <chpcompl5 />
+            <chpcompl6>card fidé</chpcompl6>
+            <chpcompl7>202102090758</chpcompl7>
+            <chpcompl8 />
+            <chpcompl9 />
+            <chpcompl9bis />
+            <chpcompl10 />
+            <chpcompl10bis />
+         </maf>
+      </impl:troubleticket>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://provider.soa.crm.enabler.orangecaraibe.com/WSTroubleTicket/troubleticket"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

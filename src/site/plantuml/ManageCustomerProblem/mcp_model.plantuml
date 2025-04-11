@@ -1,0 +1,125 @@
+@startuml
+
+skinparam titleFontSize 12
+
+skinparam class {
+fontName arial
+arrowColor #666666
+borderColor #666666
+fontSize 11
+arrowFontSize 10
+arrowFontName arial 
+}
+ 
+skinparam arrow {
+fontName arial
+fontSize 11
+}
+
+title Modèle SOA CustomerProblem (Demande) 
+
+class Interaction {
+    #String interactionID
+    #String description
+    #XMLGregorianCalendar interactionDate
+    #XMLGregorianCalendar interactionDateCompleted
+}
+
+class CustomerProblem #FFD200 {
+    #String priority
+    #String localTitle
+    #String localKeyword
+    +String getPriority()
+
+}
+
+class LocalReasonSpecification {
+    #String reasonSpecificationCode
+}
+
+class Reason {
+    #String mainReason
+    #String reason
+    #String subReason
+}
+
+Reason -- LocalReasonSpecification
+
+Interaction -- CustomerProblem
+
+CustomerProblem -- "0..*" InteractionSubject
+
+InteractionSubject <|-- "Billing\nAccount"
+InteractionSubject <|-- "Installed\nContract"
+InteractionSubject <|-- "Payment\nFacility"
+InteractionSubject <|-- "Refund"
+InteractionSubject <|-- "Customer\nOrder"
+
+class TroubleTicket {
+    #String troubleTicketID
+}
+
+Interaction <|-- TroubleTicket
+
+TroubleTicket <|-- CustomerProblem
+
+class PartyRole {
+    #String partyRoleID
+}
+
+CustomerServiceRepresentative <|-- PartyRole
+CustomerInterlocutor <|-- PartyRole
+
+CustomerInterlocutor -- ContactMethod : mayBeContactedUsing
+
+CustomerProblem -- Media
+
+class CustomerProblemStatus {
+    #CustomerProblemStatusCode statusCode
+    #XMLGregorianCalendar startDate
+    #XMLGregorianCalendar endDate
+    #String localStatusReason
+}
+
+CustomerProblem -up- CustomerProblemStatus
+CustomerProblem -up- InstalledPublicKey
+CustomerProblem -- CustomerServiceRepresentative
+CustomerProblem -- CustomerInterlocutor
+
+CustomerProblem -right- ResourceTroubleTicket : resourceTroubleTicket
+CustomerProblem -right- TroubleTicket : cfsTroubleTicket
+
+TroubleTicket <|-- ResourceTroubleTicket
+
+class SaleChannel {
+    #String label
+}
+
+class InstalledPublicKey {
+    #String installedPublicKeyID
+}
+
+class LocalComment {
+    #String code
+    #String label
+    #XMLGregorianCalendar localCommentDate
+}
+
+LocalComment -- PartyRole
+
+CustomerProblem -left- SaleChannel : localCommercialClassification
+CustomerProblem -- "0..*" LocalComment
+
+CustomerProblem -- "0..*" LocalCustomerProblemImage
+
+LocalCustomerProblemImage -- LocalComment
+
+Image <|-- LocalCustomerProblemImage
+
+CustomerProblem -- Reason
+
+class Media {
+}
+
+@enduml
+

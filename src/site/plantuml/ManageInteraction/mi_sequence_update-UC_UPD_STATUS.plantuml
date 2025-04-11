@@ -1,0 +1,39 @@
+@startuml
+title Enabler CRM - update interaction - UC_UPD_STATUS
+
+Actor application
+
+box "enabler-crm"
+participant ManageInteraction
+end box
+
+box "DCRM"
+participant "WS Custo Update Interaction"
+database DCRM as DBDCRM
+end box
+
+note right of application
+Mise à jour d'une interaction
+end note
+
+application -> ManageInteraction : Update(criteria,UC_STATUS_UPDATE)
+ManageInteraction ->  "WS Custo Update Interaction"
+"WS Custo Update Interaction" -> DBDCRM
+"WS Custo Update Interaction" <- DBDCRM
+
+note right of ManageInteraction
+Appel au WS Custo DCRM
+end note
+
+ManageInteraction <- "WS Custo Update Interaction"
+
+note right of application
+Reponse interaction mise à jour
+(ou exception)
+end note
+
+application <- ManageInteraction : 
+
+
+
+@enduml

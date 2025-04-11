@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="ManagePartyService" targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/Imports">
+			<xsd:import schemaLocation="ManageParty.xsd" namespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0"/>
+			<xsd:import schemaLocation="datacontract.xsd" namespace="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+			<xsd:import schemaLocation="schemas.microsoft.com.2003.10.Serialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ManageParty_Create_InputMessage">
+		<wsdl:part name="parameters" element="tns:Create"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_Create_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CreateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_Create_ServiceFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q1:ServiceFault" xmlns:q1="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_Update_InputMessage">
+		<wsdl:part name="parameters" element="tns:Update"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_Update_OutputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_Update_ServiceFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q2:ServiceFault" xmlns:q2="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_FindAndGet_InputMessage">
+		<wsdl:part name="parameters" element="tns:FindAndGet"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_FindAndGet_OutputMessage">
+		<wsdl:part name="parameters" element="tns:FindAndGetResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_FindAndGet_ServiceFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q3:ServiceFault" xmlns:q3="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_GetPartyHierarchy_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetPartyHierarchy"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_GetPartyHierarchy_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetPartyHierarchyResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ManageParty_GetPartyHierarchy_ServiceFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q4:ServiceFault" xmlns:q4="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+	</wsdl:message>
+	<wsdl:portType name="ManageParty">
+		<wsdl:operation name="Create">
+			<wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/Create" message="tns:ManageParty_Create_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/CreateResponse" message="tns:ManageParty_Create_OutputMessage"/>
+			<wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/CreateServiceFaultFault" name="ServiceFaultFault" message="tns:ManageParty_Create_ServiceFaultFault_FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="Update">
+			<wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/Update" message="tns:ManageParty_Update_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/UpdateResponse" message="tns:ManageParty_Update_OutputMessage"/>
+			<wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/UpdateServiceFaultFault" name="ServiceFaultFault" message="tns:ManageParty_Update_ServiceFaultFault_FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="FindAndGet">
+			<wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/FindAndGet" message="tns:ManageParty_FindAndGet_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/FindAndGetResponse" message="tns:ManageParty_FindAndGet_OutputMessage"/>
+			<wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/FindAndGetServiceFaultFault" name="ServiceFaultFault" message="tns:ManageParty_FindAndGet_ServiceFaultFault_FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetPartyHierarchy">
+			<wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/GetPartyHierarchy" message="tns:ManageParty_GetPartyHierarchy_InputMessage"/>
+			<wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/GetPartyHierarchyResponse" message="tns:ManageParty_GetPartyHierarchy_OutputMessage"/>
+			<wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/GetPartyHierarchyServiceFaultFault" name="ServiceFaultFault" message="tns:ManageParty_GetPartyHierarchy_ServiceFaultFault_FaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BasicHttpBinding_ManageParty" type="tns:ManageParty">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Create">
+			<soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/Create" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ServiceFaultFault">
+				<soap:fault name="ServiceFaultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="Update">
+			<soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/Update" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ServiceFaultFault">
+				<soap:fault name="ServiceFaultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="FindAndGet">
+			<soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/FindAndGet" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ServiceFaultFault">
+				<soap:fault name="ServiceFaultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetPartyHierarchy">
+			<soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/party/1.0/ManageParty/GetPartyHierarchy" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ServiceFaultFault">
+				<soap:fault name="ServiceFaultFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ManagePartyService">
+		<wsdl:port name="BasicHttpBinding_ManageParty" binding="tns:BasicHttpBinding_ManageParty">
+			<soap:address location="http://172.23.161.110:8080/ManageParty.svc"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

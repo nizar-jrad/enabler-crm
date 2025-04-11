@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="WbsDunningRegistercard"
+	targetNamespace="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+	xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard"
+	xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="WbsDunningRegistercardSoap"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified"
+			targetNamespace="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:import namespace="http://schemas.oc.gp.fcm/dunning/data" />
+			<xs:element name="AddContrat">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="param" nillable="true"
+							type="tns:RegisterCardData" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RegisterCardData">
+				<xs:sequence>
+					<xs:element name="coid" type="xs:unsignedInt">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="creationDate" nillable="true" type="xs:string">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userName" nillable="true" type="xs:string">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="codeRetour" type="xs:int" />
+					<xs:element minOccurs="0" name="messageRetour" nillable="true"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="RegisterCardData" nillable="true"
+				type="tns:RegisterCardData" />
+			<xs:element name="AddContratResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="AddContratResult"
+							nillable="true" type="tns:RegisterCardData" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AddContratHomologue">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="param" nillable="true"
+							type="tns:RegisterCardData" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AddContratHomologueResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="AddContratHomologueResult"
+							nillable="true" type="tns:RegisterCardData" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UpdateContratPreidentifie">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="param" nillable="true"
+							type="tns:RegisterCardData" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UpdateContratPreidentifieResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="UpdateContratPreidentifieResult"
+							nillable="true" type="tns:RegisterCardData" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UpdateContratHomologue">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="param" nillable="true"
+							type="tns:RegisterCardData" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UpdateContratHomologueResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="UpdateContratHomologueResult"
+							nillable="true" type="tns:RegisterCardData" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UpdateStatus">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="param" nillable="true"
+							type="tns:RegisterCardActionData" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="RegisterCardActionData">
+				<xs:sequence>
+					<xs:element name="coid" type="xs:unsignedInt">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="creationDate" nillable="true" type="xs:string">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="userName" nillable="true" type="xs:string">
+						<xs:annotation>
+							<xs:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="registerCardStatus"
+						type="q1:RegisterCardStatus" xmlns:q1="http://schemas.oc.gp.fcm/dunning/data" />
+					<xs:element minOccurs="0" name="codeRetour" type="xs:int" />
+					<xs:element minOccurs="0" name="messageRetour" nillable="true"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="RegisterCardActionData" nillable="true"
+				type="tns:RegisterCardActionData" />
+			<xs:element name="UpdateStatusResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="UpdateStatusResult"
+							nillable="true" type="tns:RegisterCardActionData" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+		<xs:schema attributeFormDefault="qualified"
+			elementFormDefault="qualified"
+			targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+			<xs:element name="anyType" nillable="true" type="xs:anyType" />
+			<xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+			<xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+			<xs:element name="boolean" nillable="true" type="xs:boolean" />
+			<xs:element name="byte" nillable="true" type="xs:byte" />
+			<xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+			<xs:element name="decimal" nillable="true" type="xs:decimal" />
+			<xs:element name="double" nillable="true" type="xs:double" />
+			<xs:element name="float" nillable="true" type="xs:float" />
+			<xs:element name="int" nillable="true" type="xs:int" />
+			<xs:element name="long" nillable="true" type="xs:long" />
+			<xs:element name="QName" nillable="true" type="xs:QName" />
+			<xs:element name="short" nillable="true" type="xs:short" />
+			<xs:element name="string" nillable="true" type="xs:string" />
+			<xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+			<xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+			<xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+			<xs:element name="unsignedShort" nillable="true"
+				type="xs:unsignedShort" />
+			<xs:element name="char" nillable="true" type="tns:char" />
+			<xs:simpleType name="char">
+				<xs:restriction base="xs:int" />
+			</xs:simpleType>
+			<xs:element name="duration" nillable="true" type="tns:duration" />
+			<xs:simpleType name="duration">
+				<xs:restriction base="xs:duration">
+					<xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+					<xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+					<xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="guid" nillable="true" type="tns:guid" />
+			<xs:simpleType name="guid">
+				<xs:restriction base="xs:string">
+					<xs:pattern
+						value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:attribute name="FactoryType" type="xs:QName" />
+			<xs:attribute name="Id" type="xs:ID" />
+			<xs:attribute name="Ref" type="xs:IDREF" />
+		</xs:schema>
+		<xs:schema elementFormDefault="qualified"
+			targetNamespace="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation">
+			<xs:import
+				namespace="http://schemas.datacontract.org/2004/07/Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WCF" />
+			<xs:complexType name="ValidationFault">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Details" nillable="true"
+						type="q1:ArrayOfValidationDetail"
+						xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WCF" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ValidationFault" nillable="true"
+				type="tns:ValidationFault" />
+		</xs:schema>
+		<xs:schema elementFormDefault="qualified"
+			targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WCF"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WCF">
+			<xs:complexType name="ArrayOfValidationDetail">
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="unbounded" name="ValidationDetail"
+						nillable="true" type="tns:ValidationDetail" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArrayOfValidationDetail" nillable="true"
+				type="tns:ArrayOfValidationDetail" />
+			<xs:complexType name="ValidationDetail">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Key" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="Message" nillable="true"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="Tag" nillable="true"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ValidationDetail" nillable="true"
+				type="tns:ValidationDetail" />
+		</xs:schema>
+		<xs:schema elementFormDefault="qualified"
+			targetNamespace="http://schemas.oc.gp.fcm/dunning/data" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://schemas.oc.gp.fcm/dunning/data">
+			<xs:simpleType name="RegisterCardStatus">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="ClientNonIdentifie" />
+					<xs:enumeration value="PreIdentification" />
+					<xs:enumeration value="Identifie" />
+					<xs:enumeration value="Homologue" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="RegisterCardStatus" nillable="true"
+				type="tns:RegisterCardStatus" />
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="WbsDunningRegistercardSoap_AddContrat_InputMessage">
+		<wsdl:part name="parameters" element="tns:AddContrat" />
+	</wsdl:message>
+	<wsdl:message name="WbsDunningRegistercardSoap_AddContrat_OutputMessage">
+		<wsdl:part name="parameters" element="tns:AddContratResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_AddContrat_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q1:ValidationFault"
+			xmlns:q1="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_AddContratHomologue_InputMessage">
+		<wsdl:part name="parameters" element="tns:AddContratHomologue" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_AddContratHomologue_OutputMessage">
+		<wsdl:part name="parameters" element="tns:AddContratHomologueResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_AddContratHomologue_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q2:ValidationFault"
+			xmlns:q2="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_UpdateContratPreidentifie_InputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateContratPreidentifie" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_UpdateContratPreidentifie_OutputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateContratPreidentifieResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_UpdateContratPreidentifie_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q3:ValidationFault"
+			xmlns:q3="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_UpdateContratHomologue_InputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateContratHomologue" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_UpdateContratHomologue_OutputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateContratHomologueResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_UpdateContratHomologue_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q4:ValidationFault"
+			xmlns:q4="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation" />
+	</wsdl:message>
+	<wsdl:message name="WbsDunningRegistercardSoap_UpdateStatus_InputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateStatus" />
+	</wsdl:message>
+	<wsdl:message name="WbsDunningRegistercardSoap_UpdateStatus_OutputMessage">
+		<wsdl:part name="parameters" element="tns:UpdateStatusResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="WbsDunningRegistercardSoap_UpdateStatus_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q5:ValidationFault"
+			xmlns:q5="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation" />
+	</wsdl:message>
+	<wsdl:portType name="WbsDunningRegistercardSoap">
+		<wsdl:operation name="AddContrat">
+			<wsdl:input
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/AddContrat"
+				message="tns:WbsDunningRegistercardSoap_AddContrat_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/AddContratResponse"
+				message="tns:WbsDunningRegistercardSoap_AddContrat_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/AddContratValidationFaultFault"
+				name="ValidationFaultFault"
+				message="tns:WbsDunningRegistercardSoap_AddContrat_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="AddContratHomologue">
+			<wsdl:input
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/AddContratHomologue"
+				message="tns:WbsDunningRegistercardSoap_AddContratHomologue_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/AddContratHomologueResponse"
+				message="tns:WbsDunningRegistercardSoap_AddContratHomologue_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/AddContratHomologueValidationFaultFault"
+				name="ValidationFaultFault"
+				message="tns:WbsDunningRegistercardSoap_AddContratHomologue_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="UpdateContratPreidentifie">
+			<wsdl:input
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateContratPreidentifie"
+				message="tns:WbsDunningRegistercardSoap_UpdateContratPreidentifie_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateContratPreidentifieResponse"
+				message="tns:WbsDunningRegistercardSoap_UpdateContratPreidentifie_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateContratPreidentifieValidationFaultFault"
+				name="ValidationFaultFault"
+				message="tns:WbsDunningRegistercardSoap_UpdateContratPreidentifie_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="UpdateContratHomologue">
+			<wsdl:input
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateContratHomologue"
+				message="tns:WbsDunningRegistercardSoap_UpdateContratHomologue_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateContratHomologueResponse"
+				message="tns:WbsDunningRegistercardSoap_UpdateContratHomologue_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateContratHomologueValidationFaultFault"
+				name="ValidationFaultFault"
+				message="tns:WbsDunningRegistercardSoap_UpdateContratHomologue_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="UpdateStatus">
+			<wsdl:input
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateStatus"
+				message="tns:WbsDunningRegistercardSoap_UpdateStatus_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateStatusResponse"
+				message="tns:WbsDunningRegistercardSoap_UpdateStatus_OutputMessage" />
+			<wsdl:fault
+				wsaw:Action="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateStatusValidationFaultFault"
+				name="ValidationFaultFault"
+				message="tns:WbsDunningRegistercardSoap_UpdateStatus_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="WbsDunningRegistercardSoap" type="tns:WbsDunningRegistercardSoap">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="AddContrat">
+			<soap:operation
+				soapAction="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/AddContrat"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault use="literal" name="ValidationFaultFault"
+					namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="AddContratHomologue">
+			<soap:operation
+				soapAction="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/AddContratHomologue"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault use="literal" name="ValidationFaultFault"
+					namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateContratPreidentifie">
+			<soap:operation
+				soapAction="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateContratPreidentifie"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault use="literal" name="ValidationFaultFault"
+					namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateContratHomologue">
+			<soap:operation
+				soapAction="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateContratHomologue"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault use="literal" name="ValidationFaultFault"
+					namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateStatus">
+			<soap:operation
+				soapAction="http://schemas.oc.gp.fcm/dunning/data/DunningRegistercard/WbsDunningRegistercardSoap/UpdateStatus"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault use="literal" name="ValidationFaultFault"
+					namespace="" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>

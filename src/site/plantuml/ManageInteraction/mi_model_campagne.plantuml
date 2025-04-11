@@ -1,0 +1,36 @@
+@startuml
+
+skinparam titleFontSize 12
+
+skinparam class {
+fontName arial
+arrowColor #666666
+borderColor #666666
+fontSize 11
+arrowFontSize 10
+arrowFontName arial 
+}
+ 
+skinparam arrow {
+fontName arial
+fontSize 11
+}
+
+title Modèle SOA Interaction - vue simplifiée
+
+class Campagne  {
+	#String name
+	#String description
+	#String offerCode
+	#XMLGregorianCalendar startDate
+	#XMLGregorianCalendar endDate
+	#XMLGregorianCalendar campangeDate
+	#EnumTypeCampagne type
+}
+
+enum EnumTypeCampagne{
+
+}
+
+Campagne -down- EnumTypeCampagne
+@enduml

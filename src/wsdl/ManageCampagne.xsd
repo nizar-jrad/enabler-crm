@@ -1,0 +1,19 @@
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/campagne/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.orange.com/sidom/soa/dcrm/servicecontract/campagne/1.0">
+	<xs:import schemaLocation="datacontract.xsd" namespace="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+	<xs:element name="FindAndGet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="criteria" type="q1:CampagneCriteriaType" xmlns:q1="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+				<xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+				<xs:element minOccurs="0" name="additionalCriteria" type="q2:FilterCriteriaCampagne" xmlns:q2="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FindAndGetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="FindAndGetResult" nillable="true" type="q3:FindAndGetCampagneResponse" xmlns:q3="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,1824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="DCRM-ManageDemande" resourceRoot="" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_ManageDemande" type="wsdl" bindingName="{http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0}BasicHttpBinding_ManageDemande" soapVersion="1_1" anonymous="optional" definition="http://in-w2k-dyn-as1:8080/ManageDemande.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://in-w2k-dyn-as1:8080/ManageDemande.svc?singleWsdl"><con:part><con:url>http://in-w2k-dyn-as1:8080/ManageDemande.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ManageDemandeService" targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+      <xs:element name="Create">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="demande" nillable="true" type="q1:Demande" xmlns:q1="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CreateResult" nillable="true" type="q2:CreateDemandeResponse" xmlns:q2="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Update">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="demande" nillable="true" type="q3:Demande" xmlns:q3="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="UpdateResult" nillable="true" type="q4:UpdateDemandeResponse" xmlns:q4="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FindAndGet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="criteria" type="q5:DemandeCriteriaType" xmlns:q5="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+            <xs:element minOccurs="0" name="value" nillable="true" type="xs:anyType"/>
+            <xs:element minOccurs="0" name="additionalCriteria" type="q6:FilterCriteriaDemande" xmlns:q6="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FindAndGetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="FindAndGetResult" nillable="true" type="q7:FindAndGetDemandeResponse" xmlns:q7="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:complexType name="Demande">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="AvoirRemboursement" nillable="true" type="tns:AvoirRemboursement"/>
+          <xs:element minOccurs="0" name="CanalCommunication" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="ClientFacturation" nillable="true" type="tns:ClientFacturation"/>
+          <xs:element minOccurs="0" name="ClotureLe" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="Consigne" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Contrat" nillable="true" type="tns:Contrat"/>
+          <xs:element minOccurs="0" name="Corbeille" nillable="true" type="tns:Proprietaire"/>
+          <xs:element minOccurs="0" name="CreePar" nillable="true" type="tns:EntityReference"/>
+          <xs:element minOccurs="0" name="DateCreation" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="DemandeMere" nillable="true" type="tns:EntityReference"/>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="EquipementConcerne" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="EstDemandeMere" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="GUIDDemande" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="GesteCommercial" nillable="true" type="tns:GesteCommercial"/>
+          <xs:element minOccurs="0" name="Interactions" nillable="true" type="tns:ArrayOfInteraction"/>
+          <xs:element minOccurs="0" name="MotClef" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:ArrayOfNote"/>
+          <xs:element minOccurs="0" name="NumeroDemande" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OffreConcernee" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PartyTitulaire" nillable="true" type="tns:Party"/>
+          <xs:element minOccurs="0" name="Priorite" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="PropositionsRetentions" nillable="true" type="tns:ArrayOfPropositionRetention"/>
+          <xs:element minOccurs="0" name="RaisonStatut" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Recouvrement" nillable="true" type="tns:Recouvrement"/>
+          <xs:element minOccurs="0" name="Resolution" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Statut" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="ThemeNiveau1" nillable="true" type="tns:ThemeNiveau1"/>
+          <xs:element minOccurs="0" name="TicketClientOceane" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TicketReseauOceane" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Titre" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Demande" nillable="true" type="tns:Demande"/>
+      <xs:complexType name="AvoirRemboursement">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CostCenter" nillable="true" type="tns:EntityReference"/>
+          <xs:element minOccurs="0" name="LignesComptables" nillable="true" type="tns:ArrayOfLigneComptable"/>
+          <xs:element minOccurs="0" name="Montant" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Statut" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="TypeAvoirRemboursement" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AvoirRemboursement" nillable="true" type="tns:AvoirRemboursement"/>
+      <xs:complexType name="EntityReference">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Id" type="ser:guid"/>
+          <xs:element name="LogicalName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EntityReference" nillable="true" type="tns:EntityReference"/>
+      <xs:complexType name="ArrayOfLigneComptable">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="LigneComptable" nillable="true" type="tns:LigneComptable"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfLigneComptable" nillable="true" type="tns:ArrayOfLigneComptable"/>
+      <xs:complexType name="LigneComptable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CostCenter" nillable="true" type="tns:EntityReference"/>
+          <xs:element minOccurs="0" name="GLCode" nillable="true" type="tns:EntityReference"/>
+          <xs:element minOccurs="0" name="Montant" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NumeroFacture" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Statut" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="LigneComptable" nillable="true" type="tns:LigneComptable"/>
+      <xs:complexType name="ClientFacturation">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Contrats" nillable="true" type="tns:ArrayOfContrat"/>
+          <xs:element minOccurs="0" name="Custcode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Segment" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ClientFacturation" nillable="true" type="tns:ClientFacturation"/>
+      <xs:complexType name="ArrayOfContrat">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Contrat" type="tns:Contrat"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfContrat" nillable="true" type="tns:ArrayOfContrat"/>
+      <xs:complexType name="Contrat">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IDContrat" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MSISDN" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Contrat" nillable="true" type="tns:Contrat"/>
+      <xs:complexType name="Proprietaire">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UtilisateurOuEquipe" nillable="true" type="tns:EntityReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Proprietaire" nillable="true" type="tns:Proprietaire"/>
+      <xs:complexType name="Equipe">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Proprietaire">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Equipe" nillable="true" type="tns:Equipe"/>
+      <xs:complexType name="Utilisateur">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Proprietaire">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Utilisateur" nillable="true" type="tns:Utilisateur"/>
+      <xs:complexType name="GesteCommercial">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Montant" nillable="true" type="xs:float"/>
+          <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TypeGesteCommercial" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Unite" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GesteCommercial" nillable="true" type="tns:GesteCommercial"/>
+      <xs:complexType name="ArrayOfInteraction">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Interaction" nillable="true" type="tns:Interaction"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfInteraction" nillable="true" type="tns:ArrayOfInteraction"/>
+      <xs:complexType name="Interaction">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="A" nillable="true" type="tns:ArrayOfActivityParty"/>
+          <xs:element minOccurs="0" name="De" nillable="true" type="tns:ArrayOfActivityParty"/>
+          <xs:element minOccurs="0" name="Demandes" nillable="true" type="tns:ArrayOfDemande"/>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Direction" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="EnregistrementCreeLe" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="GUIDInteraction" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:ArrayOfNote"/>
+          <xs:element minOccurs="0" name="PartyTitulaire" nillable="true" type="tns:Party"/>
+          <xs:element minOccurs="0" name="Proprietaire" nillable="true" type="tns:Proprietaire"/>
+          <xs:element minOccurs="0" name="RaisonStatut" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Statut" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Titre" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Interaction" nillable="true" type="tns:Interaction"/>
+      <xs:complexType name="ArrayOfActivityParty">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ActivityParty" type="tns:ActivityParty"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfActivityParty" nillable="true" type="tns:ArrayOfActivityParty"/>
+      <xs:complexType name="ActivityParty">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdresseUtilisee" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PartyOuContact" nillable="true" type="tns:EntityReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ActivityParty" nillable="true" type="tns:ActivityParty"/>
+      <xs:complexType name="ArrayOfDemande">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Demande" nillable="true" type="tns:Demande"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDemande" nillable="true" type="tns:ArrayOfDemande"/>
+      <xs:complexType name="ArrayOfNote">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Note" nillable="true" type="tns:Note"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfNote" nillable="true" type="tns:ArrayOfNote"/>
+      <xs:complexType name="Note">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateCreation" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="EstDocument" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="GUIDNote" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="PieceJointe" nillable="true" type="tns:PieceJointe"/>
+          <xs:element minOccurs="0" name="Sujet" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Texte" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Utilisateur" nillable="true" type="tns:EntityReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Note" nillable="true" type="tns:Note"/>
+      <xs:complexType name="PieceJointe">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Document" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PieceJointe" nillable="true" type="tns:PieceJointe"/>
+      <xs:complexType name="Party">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompteParent" nillable="true" type="tns:EntityReference"/>
+          <xs:element minOccurs="0" name="ConnaissanceClient" nillable="true" type="tns:ConnaissanceClient"/>
+          <xs:element minOccurs="0" name="Connexions" nillable="true" type="tns:ArrayOfConnexion"/>
+          <xs:element minOccurs="0" name="DateCompletude" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="GUIDParty" nillable="true" type="ser:guid"/>
+          <xs:element minOccurs="0" name="HierarchieParties" nillable="true" type="tns:ArrayOfParty"/>
+          <xs:element minOccurs="0" name="Libelle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MoyensDeContact" nillable="true" type="tns:ArrayOfMoyenDeContact"/>
+          <xs:element minOccurs="0" name="NumeroParty" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RolesClient" nillable="true" type="tns:ArrayOfRoleClient"/>
+          <xs:element minOccurs="0" name="Segment" nillable="true" type="tns:EntityReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Party" nillable="true" type="tns:Party"/>
+      <xs:complexType name="ConnaissanceClient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MiseSousResponsabilite" nillable="true" type="tns:MiseSousResponsabilite"/>
+          <xs:element minOccurs="0" name="NomGerant" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConnaissanceClient" nillable="true" type="tns:ConnaissanceClient"/>
+      <xs:complexType name="MiseSousResponsabilite">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConnaissanceClient" nillable="true" type="tns:EntityReference"/>
+          <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="Motif" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Responsable" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MiseSousResponsabilite" nillable="true" type="tns:MiseSousResponsabilite"/>
+      <xs:complexType name="ArrayOfConnexion">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Connexion" nillable="true" type="tns:Connexion"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfConnexion" nillable="true" type="tns:ArrayOfConnexion"/>
+      <xs:complexType name="Connexion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Party" nillable="true" type="tns:EntityReference"/>
+          <xs:element minOccurs="0" name="Role" nillable="true" type="tns:EntityReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Connexion" nillable="true" type="tns:Connexion"/>
+      <xs:complexType name="ArrayOfParty">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Party" nillable="true" type="tns:Party"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfParty" nillable="true" type="tns:ArrayOfParty"/>
+      <xs:complexType name="ArrayOfMoyenDeContact">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="MoyenDeContact" nillable="true" type="tns:MoyenDeContact"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfMoyenDeContact" nillable="true" type="tns:ArrayOfMoyenDeContact"/>
+      <xs:complexType name="MoyenDeContact">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NPAI" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="OptIn" nillable="true" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MoyenDeContact" nillable="true" type="tns:MoyenDeContact"/>
+      <xs:complexType name="Adresse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:MoyenDeContact">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="CodePostal" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="EntreeImmeubleBatimentResidence" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="EtageEscalierAppartement" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="LieuDitBoitePostaleSection" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="NumeroVoie" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="Pays" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="TypeEtNomVoie" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="Ville" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Adresse" nillable="true" type="tns:Adresse"/>
+      <xs:complexType name="IdentiteReseauSocial">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:MoyenDeContact">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="Reseau" type="tns:TypeReseauSocial"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="IdentiteReseauSocial" nillable="true" type="tns:IdentiteReseauSocial"/>
+      <xs:simpleType name="TypeReseauSocial">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Facebook"/>
+          <xs:enumeration value="Twitter"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TypeReseauSocial" nillable="true" type="tns:TypeReseauSocial"/>
+      <xs:complexType name="Telephone">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:MoyenDeContact">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="Type" type="tns:TypeTelephone"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Telephone" nillable="true" type="tns:Telephone"/>
+      <xs:simpleType name="TypeTelephone">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Telephone1"/>
+          <xs:enumeration value="Telephone2"/>
+          <xs:enumeration value="Mobile"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TypeTelephone" nillable="true" type="tns:TypeTelephone"/>
+      <xs:complexType name="ContactFax">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:MoyenDeContact">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="NumeroDuFax" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ContactFax" nillable="true" type="tns:ContactFax"/>
+      <xs:complexType name="AdresseEmail">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:MoyenDeContact">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="AdresseEmail" nillable="true" type="tns:AdresseEmail"/>
+      <xs:complexType name="ArrayOfRoleClient">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleClient" nillable="true" type="tns:RoleClient"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfRoleClient" nillable="true" type="tns:ArrayOfRoleClient"/>
+      <xs:complexType name="RoleClient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientFacturation" nillable="true" type="tns:ClientFacturation"/>
+          <xs:element minOccurs="0" name="MoyensDeContact" nillable="true" type="tns:ArrayOfMoyenDeContact"/>
+          <xs:element minOccurs="0" name="RaisonStatut" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Role" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RoleClient" nillable="true" type="tns:RoleClient"/>
+      <xs:complexType name="Organisation">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Party">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="EstAdministration" nillable="true" type="xs:boolean"/>
+              <xs:element minOccurs="0" name="RaisonSociale" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="SIREN" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="SIRET" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Organisation" nillable="true" type="tns:Organisation"/>
+      <xs:complexType name="Individu">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Party">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="DateNaissance" nillable="true" type="xs:dateTime"/>
+              <xs:element minOccurs="0" name="DepartementNaissance" nillable="true" type="xs:int"/>
+              <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="NomMaritalUsage" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="Prenom" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Individu" nillable="true" type="tns:Individu"/>
+      <xs:complexType name="Email">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Interaction">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Cc" nillable="true" type="tns:ArrayOfActivityParty"/>
+              <xs:element minOccurs="0" name="Cci" nillable="true" type="tns:ArrayOfActivityParty"/>
+              <xs:element minOccurs="0" name="PiecesJointes" nillable="true" type="tns:ArrayOfPieceJointe"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Email" nillable="true" type="tns:Email"/>
+      <xs:complexType name="ArrayOfPieceJointe">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PieceJointe" nillable="true" type="tns:PieceJointe"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPieceJointe" nillable="true" type="tns:ArrayOfPieceJointe"/>
+      <xs:complexType name="Selfcare">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Interaction">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Selfcare" nillable="true" type="tns:Selfcare"/>
+      <xs:complexType name="SMS">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Interaction">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="NumeroTelephone" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="SMS" nillable="true" type="tns:SMS"/>
+      <xs:complexType name="ReseauSocial">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Interaction">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Reseau" nillable="true" type="xs:int"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ReseauSocial" nillable="true" type="tns:ReseauSocial"/>
+      <xs:complexType name="AppelTelephonique">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Interaction">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="NumeroTelephone" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="AppelTelephonique" nillable="true" type="tns:AppelTelephonique"/>
+      <xs:complexType name="Courrier">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Interaction">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Courrier" nillable="true" type="tns:Courrier"/>
+      <xs:complexType name="Fax">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Interaction">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string"/>
+              <xs:element minOccurs="0" name="NumeroTelecopie" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Fax" nillable="true" type="tns:Fax"/>
+      <xs:complexType name="PDVPhysique">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Interaction">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="PDVPhysique" nillable="true" type="tns:PDVPhysique"/>
+      <xs:complexType name="ArrayOfPropositionRetention">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PropositionRetention" nillable="true" type="tns:PropositionRetention"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPropositionRetention" nillable="true" type="tns:ArrayOfPropositionRetention"/>
+      <xs:complexType name="PropositionRetention">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Statut" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PropositionRetention" nillable="true" type="tns:PropositionRetention"/>
+      <xs:complexType name="Recouvrement">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateDelai" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="DateEcheance1" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="DateEcheance2" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="DateEcheance3" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="MontantDelai" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="MontantEcheance1" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="MontantEcheance2" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="MontantEcheance3" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="TypeFacilite" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Recouvrement" nillable="true" type="tns:Recouvrement"/>
+      <xs:complexType name="ThemeNiveau1">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUIDThemeNiveau1" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Libelle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ThemesNiveau2" nillable="true" type="tns:ArrayOfThemeNiveau2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ThemeNiveau1" nillable="true" type="tns:ThemeNiveau1"/>
+      <xs:complexType name="ArrayOfThemeNiveau2">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ThemeNiveau2" nillable="true" type="tns:ThemeNiveau2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfThemeNiveau2" nillable="true" type="tns:ArrayOfThemeNiveau2"/>
+      <xs:complexType name="ThemeNiveau2">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUIDThemeNiveau2" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Libelle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ThemesNiveau3" nillable="true" type="tns:ArrayOfThemeNiveau3"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ThemeNiveau2" nillable="true" type="tns:ThemeNiveau2"/>
+      <xs:complexType name="ArrayOfThemeNiveau3">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ThemeNiveau3" nillable="true" type="tns:ThemeNiveau3"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfThemeNiveau3" nillable="true" type="tns:ArrayOfThemeNiveau3"/>
+      <xs:complexType name="ThemeNiveau3">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUIDThemeNiveau3" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Libelle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Type" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ThemeNiveau3" nillable="true" type="tns:ThemeNiveau3"/>
+      <xs:complexType name="CreateDemandeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUIDDemande" type="ser:guid"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CreateDemandeResponse" nillable="true" type="tns:CreateDemandeResponse"/>
+      <xs:complexType name="ServiceFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int"/>
+          <xs:element minOccurs="0" name="InnerFault" nillable="true" type="tns:ServiceFault"/>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="TraceText" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ServiceFault" nillable="true" type="tns:ServiceFault"/>
+      <xs:complexType name="UpdateDemandeResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:element name="UpdateDemandeResponse" nillable="true" type="tns:UpdateDemandeResponse"/>
+      <xs:simpleType name="DemandeCriteriaType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="GUIDParty"/>
+          <xs:enumeration value="CustomerID"/>
+          <xs:enumeration value="MSISDN"/>
+          <xs:enumeration value="CoID"/>
+          <xs:enumeration value="GUIDInteraction"/>
+          <xs:enumeration value="GUIDDemande"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="DemandeCriteriaType" nillable="true" type="tns:DemandeCriteriaType"/>
+      <xs:complexType name="FilterCriteriaDemande">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FilterNotes" nillable="true" type="tns:FilterCriteriaNotes"/>
+          <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="NombreMaxEnregistrements" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Statuts" nillable="true" type="q1:ArrayOfint" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          <xs:element minOccurs="0" name="ThemesNiveau1" type="tns:ThemesNiveau1Filter"/>
+          <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FilterCriteriaDemande" nillable="true" type="tns:FilterCriteriaDemande"/>
+      <xs:complexType name="FilterCriteriaNotes">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetNote" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="GetPieceJointe" nillable="true" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FilterCriteriaNotes" nillable="true" type="tns:FilterCriteriaNotes"/>
+      <xs:complexType name="ThemesNiveau1Filter">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExcludeThemes" nillable="true" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="ThemesNiveau1" nillable="true" type="tns:ArrayOfEntityReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ThemesNiveau1Filter" nillable="true" type="tns:ThemesNiveau1Filter"/>
+      <xs:complexType name="ArrayOfEntityReference">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityReference" type="tns:EntityReference"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfEntityReference" nillable="true" type="tns:ArrayOfEntityReference"/>
+      <xs:complexType name="FindAndGetDemandeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Demandes" nillable="true" type="tns:ArrayOfDemande"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FindAndGetDemandeResponse" nillable="true" type="tns:FindAndGetDemandeResponse"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xs:complexType name="ArrayOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ManageDemande_Create_InputMessage">
+    <wsdl:part name="parameters" element="tns:Create"/>
+  </wsdl:message>
+  <wsdl:message name="ManageDemande_Create_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ManageDemande_Create_ServiceFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:ServiceFault" xmlns:q1="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+  </wsdl:message>
+  <wsdl:message name="ManageDemande_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update"/>
+  </wsdl:message>
+  <wsdl:message name="ManageDemande_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ManageDemande_Update_ServiceFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:ServiceFault" xmlns:q2="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+  </wsdl:message>
+  <wsdl:message name="ManageDemande_FindAndGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAndGet"/>
+  </wsdl:message>
+  <wsdl:message name="ManageDemande_FindAndGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAndGetResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ManageDemande_FindAndGet_ServiceFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:ServiceFault" xmlns:q3="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+  </wsdl:message>
+  <wsdl:portType name="ManageDemande">
+    <wsdl:operation name="Create">
+      <wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Create" message="tns:ManageDemande_Create_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/CreateResponse" message="tns:ManageDemande_Create_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/CreateServiceFaultFault" name="ServiceFaultFault" message="tns:ManageDemande_Create_ServiceFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Update" message="tns:ManageDemande_Update_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/UpdateResponse" message="tns:ManageDemande_Update_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/UpdateServiceFaultFault" name="ServiceFaultFault" message="tns:ManageDemande_Update_ServiceFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindAndGet">
+      <wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet" message="tns:ManageDemande_FindAndGet_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGetResponse" message="tns:ManageDemande_FindAndGet_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGetServiceFaultFault" name="ServiceFaultFault" message="tns:ManageDemande_FindAndGet_ServiceFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ManageDemande" type="tns:ManageDemande">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Create">
+      <soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Create" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap:fault use="literal" name="ServiceFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Update" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap:fault use="literal" name="ServiceFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAndGet">
+      <soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap:fault use="literal" name="ServiceFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManageDemandeService">
+    <wsdl:port name="BasicHttpBinding_ManageDemande" binding="tns:BasicHttpBinding_ManageDemande">
+      <soap:address location="http://in-w2k-dyn-as1:8080/ManageDemande.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.128.100.17:8080/ManageDemande.svc</con:endpoint><con:endpoint>http://in-crm-ws1.oc.gp:8080/ManageDemande.svc</con:endpoint><con:endpoint>http://in-w2k-dyn-as1:8080/ManageDemande.svc</con:endpoint><con:endpoint>http://ioswoca-si.ms.fcm/DCRM/ManageDemande-1</con:endpoint><con:endpoint>http://ioswocapp-si.ms.fcm/DCRM/ManageDemande-1</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Create" name="Create" bindingOperationName="Create" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.128.100.65:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<ns2:Create xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0" xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+			<ns2:interaction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Courrier">
+				<A>
+					<ActivityParty>
+						<PartyOuContact>
+							<Id>FF0347F4-D628-E611-80BA-00505682F3FF</Id>
+							<LogicalName>systemuser</LogicalName>
+						</PartyOuContact>
+					</ActivityParty>
+				</A>
+				<De>
+					<ActivityParty>
+						<PartyOuContact>
+							<Id>3F4E37D4-86CE-E511-80BA-00505682F3FF</Id>
+							<LogicalName>account</LogicalName>
+						</PartyOuContact>
+					</ActivityParty>
+				</De>
+				<Demandes>
+					<Demande>
+						<Application>Scan courrier</Application>
+						<Contrat>
+							<IDContrat xsi:nil="true"/>
+							<MSISDN xsi:nil="true"/>
+						</Contrat>
+						<Description xsi:nil="true"/>
+						<EquipementConcerne xsi:nil="true"/>
+						<MotClef xsi:nil="true"/>
+						<Notes>
+							<Note>
+								<EstDocument>true</EstDocument>
+								<PieceJointe>
+									<Document>JVBERi0xLjEgDSXi48/TDQoxIDAgb2JqDTw8IA0vVHlwZSAvQ2F0YWxvZyANL1BhZ2VzIDMgMCBSIA0+Pg1lbmRvYmoNMiAwIG9iag08PCANL0NyZWF0aW9uRGF0ZSAoRDoyMDE3MDIyMDEyMzcwNCkNL01vZERhdGUgKEQ6MjAxNzAyMjAxMjM3MDQpDS9Qcm9kdWNlciAobGlidGlmZiAvIHRpZmYycGRmIC0gMjAwNjAzMjMgLyBkKQ0vQ3JlYXRvciAoRW52aXNpb24gSW1hZ2UgTGlicmFyeSkNPj4gDWVuZG9iag0zIDAgb2JqDTw8IA0vVHlwZSAvUGFnZXMgDS9LaWRzIFsgNCAwIFIgOSAwIFIgXSANL0NvdW50IDIgDT4+IA1lbmRvYmoNNCAwIG9iag08PA0vVHlwZSAvUGFnZSANL1BhcmVudCAzIDAgUiANL01lZGlhQm94IFswLjAwMDAgMC4wMDAwIDYwMS4yMDAwIDI1NS45NjAwXSANL0NvbnRlbnRzIDUgMCBSIA0vUmVzb3VyY2VzIDw8IA0vWE9iamVjdCA8PA0vSW0xIDcgMCBSID4+DS9Qcm9jU2V0IFsgL0ltYWdlQiBdDT4+DT4+DWVuZG9iag01IDAgb2JqDTw8IA0vTGVuZ3RoIDYgMCBSIA0gPj4Nc3RyZWFtDQpxICA2MDEuMjAwMCAwLjAwMDAgMC4wMDAwIDI1NS45NjAwIDAuMDAwMCAwLjAwMDAgY20gL0ltMSBEbyBRDQ1lbmRzdHJlYW0NZW5kb2JqDTYgMCBvYmoNNjINZW5kb2JqDTcgMCBvYmoNPDwgDS9MZW5ndGggOCAwIFIgDS9UeXBlIC9YT2JqZWN0IA0vU3VidHlwZSAvSW1hZ2UgDS9OYW1lIC9JbTENL1dpZHRoIDE2NzANL0hlaWdodCA3MTENL0JpdHNQZXJDb21wb25lbnQgMQ0vQ29sb3JTcGFjZSAvRGV2aWNlR3JheSANL0ZpbHRlciAvQ0NJVFRGYXhEZWNvZGUgL0RlY29kZVBhcm1zIDw8IC9LIC0xIC9Db2x1bW5zIDE2NzAgL1Jvd3MgNzExPj4NID4+DXN0cmVhbQ0KJqBkL5AphvBB4IO5DA+QKQMkeqZBIIJBB3IO5B4IO5B3IO+WoIFJx//pp6apkEsh7IXiE3/K0B3jAIXB/a2q32hERER87qA2mXBy4ZANRcHMA5HAzDSMAhsOIiZjEREREfOxcDMMwuDlwwXBy4OYBDAIYBmLg5gEMAjTIJBBIIO5Bocg7kHggkEEi9MgkEEgg7kFdyCQQSyHwhcIWyHwh8IQDKZdedkgLYZhgEMA5gEdppr5BIIO5B4v/XTIe007u1TTQaDOOdmC3MnDJBnMAnX/17TVNO/01TiIiIiIiPmVQHg0lwcwCFwcuDmAcuDmAQwCGw9b1T+GmmSHQiIiIiIiL5kFhoIYIbDtU07TTTRpF8RERERERHwYINCIiIiIiP2PoP0DLOL/mRYDV9GQsC58CBfRBA36QZDO2xfzWCIQGPScpAT/Br+wYX9CWyNJ/Vfjf2h8MLx//IGvT9rx9///////////zJSyPEcFbsyEgPN/+ScgYcpyHf8REfyBW5n/J+XhVlOeCuPBUGgIX+uIiDCERIr/kKOJGOccSoKg457PP8k6DKCRTd/4zbLmRwoIqxH8RERYP8MzIjj+GUL/Q35Dbq/Ia4j8I0v6MBP4ow1+gn/QXK4vfHmWgU6InCkYjUH+QLxzWGDMZmZ4MHUFygggZ8YIGCDC/IZ59A7uDg04fDtfkHT1u+77pQoRCD/kCKhyLe+RxkR2nI7doi5ThA/2fvD90DdB09+taH6Q63r+//7X/vv/q//4f0vp/+v+ElZBGuCeEbvBJ/7/X1u/oIcVfYJR3QX12H+FtDjqSfoKmOShmgf47ZIfChU/WyTvcN/yLdXgoJfa88L4b/oN/JKCKGLtu0mwhYP9buH9PvWLf7//Xv1L3/er/e/cQ/613+++wRBRAr7wXf5Fz3xIUcEyIP/iv+g++008L+t+oT0GtgqDsL5Cj2CDTgwhERERETxf4iIj+/54CT6f6X7/v+3+2QxH7BAl+IS/YX3C+h//9//////shlJg14//+Woj/8sw+QLO0kdg0pVV5ZxuUl5MjIgmp0IJ5pHAhQwgz95Z3Hr5u7SCB6V2v+g+uvIr5xVf8mO7v+9L/VpNKXcfhB1/5reOl9jjtr/39b5Fkv/fnmSIoZmZ/OIuzhf939+fLPEcj+CBnQIlnhDwz0RyCBmIIM4L4QZwIEGEGmhoNL9Fj/68J6aqmo6pxfpp9J2mn6/aVPf/p6b6JjtdUTHdtYaRN9hZoaom+a/SLt1x9zP/Oykzsv2Eps6LvaoIPLvou8INycWFsFCbiheTt0IvwW6+vt/6cUt9NvXdfuvXX/e11//3T//3/2v2F3676f9DsL+dBvUaXLt2nsfr8eh2saX/H9/y8ZgJ6gvr9Oh/7VTW/+q///+t1/X5E1X97/TXyaMJ1l1/+TR/5Yzy4+8u/yxn9f9od62YMdNr/X//pf6X7/8v+/j3+1f9//79f96r3Xa0+/nZT7/+eVr6t/93YXX7Lza/ZhrxS3//bIW8GXqYuPY5C34Pg5CoFMa7Fx+x9Vvv9/7H7+/v707vTvtU7CYQiP+4ap2g0yQ6aDJug07TTQaDhggzgQQiIqIj+IiIiIiIiIiIiIiNf/9fj8Lx/////////zsoX39eP//////////lqDSKDIGRVI6DOETxHyBikGRojghcMowJ5aRTEjJ80FNBDcSIzFPQIGCDMZpBM0MnZowiE9oMIQyfPyZhnpA0719MJpw1QaYT00k9bVb709K/0qr707rVEh3ouFLP5evuaw5jmhy9dyz+a3yyCzm8xv//n5zH8EDfQ19aa4f3pqqv36//VdvtUn//v9/f///f/vmH///f/pTu+/Xv79e//mHow/b3uYdqvsORe8ioMO5h6v8i40ocXIvHf2lyJPyKbv+/S/kS7zD/4cNe90v97jkRG++P/v90vv/92vDdf/6V61X+31/yY6//V/l02lp+G5keara9/zHM7mrNymRY5nez6eEP7aXF/W/v4fX9iuL69+v/D6//x//xX/btf+v+3/79///66+62vSr+1y86+///1//tc39L99LMJbbu/6ewlf2ve+9wZdLyIbj//bjkS9bFaHISyI5EchKX0m4qQkbkIfyEu/fEP7/a0uFe+1tX39f17+7/vTtf7/9b1QaaYTTtBoREWgwR1xENCIOIiIkhCI+IiIiIiIiIiIiIiI///5XE/0/v///2vHy1FtEFMqGZh/LSKAhQZOjTOClApwZnH82ENjMAhoKcEPBCPGkEDX00DTTTTQaaenp32oT/e/+/qW88ct3NGaekTtn35aQK5o/NUY5r3zUQtUH29+E9fVN/1//90/qrf//173//rt1/6X/d6zD62/q6/r/OxR9pfdl1aXfIlh+sciW63/tY/kQ4hx7+w+Ot1//qv+u/DfXLP//1/mqMd7FzavhTO6tK1/6mf/zR335Z0+//8F7f/v+/Vvx9fidgctP1/e//37a/p13f+/5pr+9tWEv9bdsLIyCJe95COK/uQnWP+q+Kg73/rffaa/X22v/adpraENNBgh+ELQhhBoGEIiIiIiIj7QiI//+vv4////////+TYH+vv4//////////////+WuH/JMhVw/lq6kH8tIqI4FNjMyMzNRGkfj+YENs/nI/BBj6emmEGEHdqtqn/pvpqqbrX3y2gs6LuTs0kXea2i+X1Mh/19XV1avQq2v9//9b1rMO+u+//dL4/3Y7mH8w/v9c+PmH9JdSJiv2+RGgX8apf39v7//71f9e9V37HLaCzupQf/oXzIse9eWkC1B/+9////1v/9vf/S+tW0X3//9LW1erOdX3tbw/LSKBFPhWONjV+Ql33kI0C3qqaaev//9hNBhBhBoME0LQaEREfERERER/////////////v//r/////////////////////////8thZXqUf5u/pb8tSaPIzjNGwyZVfyywi8RMZHiPEdm8vl0aIwBtAjD/ldKA5Ayb/r//r/kvGxSdmkft//h2n//IG0MvUocrCGgcmUHcpdT/36/yC2C45BpsqCnNh3PM7QE810/wg1+RtMU+/fb//6zD/xzS//0uYd71//Ht/jX//Xt4tf/a3t4//Ne/j+v249/yy0yTzqydk7NDOrJCMxf9Pf8t7FNjPhDMiHGYzMj4yGM+M8MzGSBnxnhnhToz4hoaYQYQYQYTCDCaf/Jv/9NBphU0wmmmmmmE00019U1TTTC1+lCB9yBX9W6QW00THaLdosei3aJupb0W7RMdzPCzaeW9Fw0XGa6ListuX8a39/y5muUSL1khzXhPQdIN0HhDTaTwg4h9VVJunp16eYfX1T71/W/TKf77/X6XVP+dL1p1td/sf3hVu01/+lj9elpbr/+tr6/112u/eIiIiP/+vS3DWGvvyKQK+nS5FmYejP4324pfkVvX/u1WQmkzHuxTFfdoN/8F2Gk9f/v/D/5EgVV6Xu/x2/+vaWvzD//8P//3V+mvvJxT/28hv0v/9P8hv/9KXfJB+qftU6LHf+aPdVtP/0kXf//5czR6fD6U1ua2uT1aQf9f4iL+0vq9Lf/rbS//V1f++n+6f/X7939f/33/b663Xf/V9dWQtmHV0+/rf//+trf9990lr91a/mjFptbW0rSsKmcgl//dWlnILDCTDC2rGYCRUbHF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8mazvjNDIzJAzUZPmefzYpzM89mecE/Mka/+dicaGSEaCk8TxmR8Z8Z4Z8eQSMxMiwh5npA0DTQYINNNNNB2na/9Bb87GMzMnI+RmeEGEGEwqpppppp4TVU77tQmqvX9r/j/naiPinxnxnh4QaDCYTCD08Lrpqqa6y4CeXH5ozQ7l8pebtZjvvmlX8yExns4WG/CaaaaemtKui3cztZelUXGa3Nea6Lt60K09+3TqkKQ/Xr1/p6D39Zoot2i4aLh6Lii4aLoa3Nb6cX6VabV0r33yCPf/p9+qTde+/17W7MF+LdB66fp6dLffSfM7/699Kv7/v11ndrzPiv//5r819awel+v1juukv/7VGH7/9//D7Wd/1er0Z+lvBzDvnd8iyI//7sL/rvtLqWPftf/S4NGf6X/sV/wfGt9raX5sf21B7v/f//4ruu2xsfv8hMFf+bF4fpP/+/+3+/FR99+/9rt///pdanx/TX9hbf//YaX///+4b77+l8P9tTHsexzSr/HxiO/7/7HLin3/5IP0v/9P9SG+buxwoUdh9D6//+v9v00/3ptPr80e62q//o1v/f9+ZBq3//vb//3qSH0i3aLh95o/mz7+3vERDtf9X/f/V/Vvv7//+Z/Nf3tUnpv0q9K///379a7//9/m/7Z5Iv3++//t+3/+/7/1039rWpozR3TrdX66r2r/9sPsLX3v8iSR/f+n/rX/W+/SVtI3rZzSp7CxTGxsVVnAmx7+k7GxHfISPvf/+lqc1bW9v4amEEmNjjeNCjgSK9immqasEHXX1XtMiDp/33/9+PBBxUUxUVsUhVU6tNdPTTTQaa9rhYuIiDCBghEQ0IiINf99adNbW000GmE4MIMIT6ERERHEcREREf2mnhbQaDQYQYWDBCIjiI/+IiKiIiOP//rX+///79fr13/92d4yMyOBoBJ/qdjYU5l0bR5F8jgSw1fsrWXA7g3+I///ZA7hpDkKORAhTlDgiOvkCaGaOQisocpyvKZX8gaY5A8M7TSuyB4F3Kgg45hzOVM7Z14iIiI///5kUX//teP//mRR/f/0+P/6///////////////////////////+WkQjRPllU0mR3fmQrmeTZZRiuLv8x2oT58/qFfB//6f3tQrlKX7+uZFi/Ps1ynWMZ1yJZDidkL//O9URWJVmWapZ9kCyoyJZsUgRrh1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bX/1f+gu++govffDILgbr/9f7mvkv/6T/tq7F/fhf16+9fSJf7X3f/dAiPV/92T+va5ifbSvDYf64aTYX2+GFu2Kpiov4/cjpFR/2KivvjemtrEQwn2IMX8RDQYQiIhmFAQiIt4f8REfb/vb/fZDOo/eG/32v7w5u/LcFihGecjwz+fRmT7r+dkhECzGdkqCDTwg0HphO8OP6aqqrp+tPtkfPf//NDVZombVZm9Hvt/zDfOwaNIn00nXS6pa9lD+/1KI6DzZnkRzPDOEeGcI2GAgzAiZn99bpem3jG/6ZHi4gVpNCwoTCaenbX4P9+DyI3x+P794p8sdy3ct6Ldy3LdouM16H9fSXt8P+wua6Nee3NbQTwnQT09U9f/9f1zXb2y6///T/3Ff+vj///S8e8MX9fuk8f+YE6Q9///XrXbbcN/f///r36//1+qVeGHsEYX//8x/81/Zz/n5f69f+bkh2IP//bXOf6pba2br+0/2/Vtde1w//6+2n7DW1jtf7X7NOK+K62KUP/+7HFfGxuxW+xVbav01XTWyFz/+7VU7u1W0wnFp2ELgwhER3/2mqZtEImkIR8QiIiIiIjhv8RERE1Xa2mvsccgxtaJhZQ5dZMMocnZCOP6aZBUciVn2akUsFxER+GgwhEREehHv+v8tw0Zs+ZwQ2R4Znnx+ZFGmEwnaaevmQz1Roc0M0kXDmiFnt//TaT1T04VW/skWejrGbPx9n2q9a1+9fR2SojmXM4NMIYQZoIEGEGEGEyfSp/pfwff0ItP1lu5not3M+Z3aBF146T8V/8ty4o12EjXnt0HSeE9Ok3Vfqvfr90776TpPVtdjb04pfpVa3/9V1f9r4kcmDgxjX8JbFI2d/r9fri/CsNh8Q/QSsER+m/X///r0XEGz7mzeoSof/r//75+rELLoNkdPWzwFfWf/Xv7/evX/7i+1M8XbpLtbrdf/tdvtbRh2haMO+O6jkJdimPiuv2KhxsVFMRsU1WwtpphbX17ThgiPtUybncJoNCIiIiI9iIiIiMzUGf9rx///////r/7///r+////////rv//r////+//////+v/////////v//vkDYG05BxyJBCjlDlFyI5Bqcg3wnIgo2qxERERERIHgy2QzuQ/moQYslZVlTI8I6FbA8RERERER4AIAIANZW5kc3RyZWFtDWVuZG9iag0xMyAwIG9iag0xMDg2MA1lbmRvYmoNeHJlZg0wIDE0IA0wMDAwMDAwMDAwIDY1NTM1IGYNCjAwMDAwMDAwMTcgMDAwMDAgbg0KMDAwMDAwMDA2OSAwMDAwMCBuDQowMDAwMDAwMjMzIDAwMDAwIG4NCjAwMDAwMDAzMDMgMDAwMDAgbg0KMDAwMDAwMDQ3OSAwMDAwMCBuDQowMDAwMDAwNTk4IDAwMDAwIG4NCjAwMDAwMDA2MTYgMDAwMDAgbg0KMDAwMDAwNzQ1NyAwMDAwMCBuDQowMDAwMDA3NDc3IDAwMDAwIG4NCjAwMDAwMDc2NTUgMDAwMDAgbg0KMDAwMDAwNzc3NiAwMDAwMCBuDQowMDAwMDA3Nzk1IDAwMDAwIG4NCjAwMDAwMTg4OTkgMDAwMDAgbg0KdHJhaWxlcg08PA0vU2l6ZSAxNA0vUm9vdCAxIDAgUiANL0luZm8gMiAwIFIgDS9JRFs8Njc0NUZGNkJGRjIzN0IzMjY5RkYzQzY0NzM0ODMzNjY+PDY3NDVGRjZCRkYyMzdCMzI2OUZGM0M2NDczNDgzMzY2Pl0NPj4Nc3RhcnR4cmVmDTE4OTIxDSUlRU9GDQ==</Document>
+									<Nom>TCC_101_20170220_123704_00000020.PDF</Nom>
+									<Type>application/pdf</Type>
+								</PieceJointe>
+							</Note>
+						</Notes>
+						<NumeroImei xsi:nil="true"/>
+						<PartyTitulaire xsi:type="Individu">
+							<GUIDParty>3F4E37D4-86CE-E511-80BA-00505682F3FF</GUIDParty>
+						</PartyTitulaire>
+						<RaisonStatut>100000000</RaisonStatut>
+						<Statut>0</Statut>
+						<ThemeNiveau1>
+							<GUIDThemeNiveau1>c331c11b-baf5-e511-80ba-00505682f3ff</GUIDThemeNiveau1>
+							<Libelle xsi:nil="true"/>
+							<ThemesNiveau2>
+								<ThemeNiveau2>
+									<GUIDThemeNiveau2>f4af50d8-e044-e611-80ba-00505682f3ff</GUIDThemeNiveau2>
+									<Libelle xsi:nil="true"/>
+									<ThemesNiveau3>
+										<ThemeNiveau3>
+											<GUIDThemeNiveau3>9f010b16-e144-e611-80ba-00505682f3ff</GUIDThemeNiveau3>
+											<Libelle xsi:nil="true"/>
+										</ThemeNiveau3>
+									</ThemesNiveau3>
+								</ThemeNiveau2>
+							</ThemesNiveau2>
+						</ThemeNiveau1>
+						<TicketClientOceane xsi:nil="true"/>
+						<Titre>Gestion client . .</Titre>
+						<routecase>1</routecase>
+					</Demande>
+				</Demandes>
+				<Direction>false</Direction>
+				<EnregistrementCreeLe xsi:nil="true"/>
+				<GUIDInteraction xsi:nil="true"/>
+				<Notes>
+					<Note>
+						<EstDocument>true</EstDocument>
+						<PieceJointe>
+							<Document>JVBERi0xLjEgDSXi48/TDQoxIDAgb2JqDTw8IA0vVHlwZSAvQ2F0YWxvZyANL1BhZ2VzIDMgMCBSIA0+Pg1lbmRvYmoNMiAwIG9iag08PCANL0NyZWF0aW9uRGF0ZSAoRDoyMDE3MDIyMDEyMzcwNCkNL01vZERhdGUgKEQ6MjAxNzAyMjAxMjM3MDQpDS9Qcm9kdWNlciAobGlidGlmZiAvIHRpZmYycGRmIC0gMjAwNjAzMjMgLyBkKQ0vQ3JlYXRvciAoRW52aXNpb24gSW1hZ2UgTGlicmFyeSkNPj4gDWVuZG9iag0zIDAgb2JqDTw8IA0vVHlwZSAvUGFnZXMgDS9LaWRzIFsgNCAwIFIgOSAwIFIgXSANL0NvdW50IDIgDT4+IA1lbmRvYmoNNCAwIG9iag08PA0vVHlwZSAvUGFnZSANL1BhcmVudCAzIDAgUiANL01lZGlhQm94IFswLjAwMDAgMC4wMDAwIDYwMS4yMDAwIDI1NS45NjAwXSANL0NvbnRlbnRzIDUgMCBSIA0vUmVzb3VyY2VzIDw8IA0vWE9iamVjdCA8PA0vSW0xIDcgMCBSID4+DS9Qcm9jU2V0IFsgL0ltYWdlQiBdDT4+DT4+DWVuZG9iag01IDAgb2JqDTw8IA0vTGVuZ3RoIDYgMCBSIA0gPj4Nc3RyZWFtDQpxICA2MDEuMjAwMCAwLjAwMDAgMC4wMDAwIDI1NS45NjAwIDAuMDAwMCAwLjAwMDAgY20gL0ltMSBEbyBRDQ1lbmRzdHJlYW0NZW5kb2JqDTYgMCBvYmoNNjINZW5kb2JqDTcgMCBvYmoNPDwgDS9MZW5ndGggOCAwIFIgDS9UeXBlIC9YT2JqZWN0IA0vU3VidHlwZSAvSW1hZ2UgDS9OYW1lIC9JbTENL1dpZHRoIDE2NzANL0hlaWdodCA3MTENL0JpdHNQZXJDb21wb25lbnQgMQ0vQ29sb3JTcGFjZSAvRGV2aWNlR3JheSANL0ZpbHRlciAvQ0NJVFRGYXhEZWNvZGUgL0RlY29kZVBhcm1zIDw8IC9LIC0xIC9Db2x1bW5zIDE2NzAgL1Jvd3MgNzExPj4NID4+DXN0cmVhbQ0KJqBkL5AphvBB4IO5DA+QKQMkeqZBIIJBB3IO5B4IO5B3IO+WoIFJx//pp6apkEsh7IXiE3/K0B3jAIXB/a2q32hERER87qA2mXBy4ZANRcHMA5HAzDSMAhsOIiZjEREREfOxcDMMwuDlwwXBy4OYBDAIYBmLg5gEMAjTIJBBIIO5Bocg7kHggkEEi9MgkEEgg7kFdyCQQSyHwhcIWyHwh8IQDKZdedkgLYZhgEMA5gEdppr5BIIO5B4v/XTIe007u1TTQaDOOdmC3MnDJBnMAnX/17TVNO/01TiIiIiIiPmVQHg0lwcwCFwcuDmAcuDmAQwCGw9b1T+GmmSHQiIiIiIiL5kFhoIYIbDtU07TTTRpF8RERERERHwYINCIiIiIiP2PoP0DLOL/mRYDV9GQsC58CBfRBA36QZDO2xfzWCIQGPScpAT/Br+wYX9CWyNJ/Vfjf2h8MLx//IGvT9rx9///////////zJSyPEcFbsyEgPN/+ScgYcpyHf8REfyBW5n/J+XhVlOeCuPBUGgIX+uIiDCERIr/kKOJGOccSoKg457PP8k6DKCRTd/4zbLmRwoIqxH8RERYP8MzIjj+GUL/Q35Dbq/Ia4j8I0v6MBP4ow1+gn/QXK4vfHmWgU6InCkYjUH+QLxzWGDMZmZ4MHUFygggZ8YIGCDC/IZ59A7uDg04fDtfkHT1u+77pQoRCD/kCKhyLe+RxkR2nI7doi5ThA/2fvD90DdB09+taH6Q63r+//7X/vv/q//4f0vp/+v+ElZBGuCeEbvBJ/7/X1u/oIcVfYJR3QX12H+FtDjqSfoKmOShmgf47ZIfChU/WyTvcN/yLdXgoJfa88L4b/oN/JKCKGLtu0mwhYP9buH9PvWLf7//Xv1L3/er/e/cQ/613+++wRBRAr7wXf5Fz3xIUcEyIP/iv+g++008L+t+oT0GtgqDsL5Cj2CDTgwhERERETxf4iIj+/54CT6f6X7/v+3+2QxH7BAl+IS/YX3C+h//9//////shlJg14//+Woj/8sw+QLO0kdg0pVV5ZxuUl5MjIgmp0IJ5pHAhQwgz95Z3Hr5u7SCB6V2v+g+uvIr5xVf8mO7v+9L/VpNKXcfhB1/5reOl9jjtr/39b5Fkv/fnmSIoZmZ/OIuzhf939+fLPEcj+CBnQIlnhDwz0RyCBmIIM4L4QZwIEGEGmhoNL9Fj/68J6aqmo6pxfpp9J2mn6/aVPf/p6b6JjtdUTHdtYaRN9hZoaom+a/SLt1x9zP/Oykzsv2Eps6LvaoIPLvou8INycWFsFCbiheTt0IvwW6+vt/6cUt9NvXdfuvXX/e11//3T//3/2v2F3676f9DsL+dBvUaXLt2nsfr8eh2saX/H9/y8ZgJ6gvr9Oh/7VTW/+q///+t1/X5E1X97/TXyaMJ1l1/+TR/5Yzy4+8u/yxn9f9od62YMdNr/X//pf6X7/8v+/j3+1f9//79f96r3Xa0+/nZT7/+eVr6t/93YXX7Lza/ZhrxS3//bIW8GXqYuPY5C34Pg5CoFMa7Fx+x9Vvv9/7H7+/v707vTvtU7CYQiP+4ap2g0yQ6aDJug07TTQaDhggzgQQiIqIj+IiIiIiIiIiIiIiNf/9fj8Lx/////////zsoX39eP//////////lqDSKDIGRVI6DOETxHyBikGRojghcMowJ5aRTEjJ80FNBDcSIzFPQIGCDMZpBM0MnZowiE9oMIQyfPyZhnpA0719MJpw1QaYT00k9bVb709K/0qr707rVEh3ouFLP5evuaw5jmhy9dyz+a3yyCzm8xv//n5zH8EDfQ19aa4f3pqqv36//VdvtUn//v9/f///f/vmH///f/pTu+/Xv79e//mHow/b3uYdqvsORe8ioMO5h6v8i40ocXIvHf2lyJPyKbv+/S/kS7zD/4cNe90v97jkRG++P/v90vv/92vDdf/6V61X+31/yY6//V/l02lp+G5keara9/zHM7mrNymRY5nez6eEP7aXF/W/v4fX9iuL69+v/D6//x//xX/btf+v+3/79///66+62vSr+1y86+///1//tc39L99LMJbbu/6ewlf2ve+9wZdLyIbj//bjkS9bFaHISyI5EchKX0m4qQkbkIfyEu/fEP7/a0uFe+1tX39f17+7/vTtf7/9b1QaaYTTtBoREWgwR1xENCIOIiIkhCI+IiIiIiIiIiIiIiI///5XE/0/v///2vHy1FtEFMqGZh/LSKAhQZOjTOClApwZnH82ENjMAhoKcEPBCPGkEDX00DTTTTQaaenp32oT/e/+/qW88ct3NGaekTtn35aQK5o/NUY5r3zUQtUH29+E9fVN/1//90/qrf//173//rt1/6X/d6zD62/q6/r/OxR9pfdl1aXfIlh+sciW63/tY/kQ4hx7+w+Ot1//qv+u/DfXLP//1/mqMd7FzavhTO6tK1/6mf/zR335Z0+//8F7f/v+/Vvx9fidgctP1/e//37a/p13f+/5pr+9tWEv9bdsLIyCJe95COK/uQnWP+q+Kg73/rffaa/X22v/adpraENNBgh+ELQhhBoGEIiIiIiIj7QiI//+vv4////////+TYH+vv4//////////////+WuH/JMhVw/lq6kH8tIqI4FNjMyMzNRGkfj+YENs/nI/BBj6emmEGEHdqtqn/pvpqqbrX3y2gs6LuTs0kXea2i+X1Mh/19XV1avQq2v9//9b1rMO+u+//dL4/3Y7mH8w/v9c+PmH9JdSJiv2+RGgX8apf39v7//71f9e9V37HLaCzupQf/oXzIse9eWkC1B/+9////1v/9vf/S+tW0X3//9LW1erOdX3tbw/LSKBFPhWONjV+Ql33kI0C3qqaaev//9hNBhBhBoME0LQaEREfERERER/////////////v//r/////////////////////////8thZXqUf5u/pb8tSaPIzjNGwyZVfyywi8RMZHiPEdm8vl0aIwBtAjD/ldKA5Ayb/r//r/kvGxSdmkft//h2n//IG0MvUocrCGgcmUHcpdT/36/yC2C45BpsqCnNh3PM7QE810/wg1+RtMU+/fb//6zD/xzS//0uYd71//Ht/jX//Xt4tf/a3t4//Ne/j+v249/yy0yTzqydk7NDOrJCMxf9Pf8t7FNjPhDMiHGYzMj4yGM+M8MzGSBnxnhnhToz4hoaYQYQYQYTCDCaf/Jv/9NBphU0wmmmmmmE00019U1TTTC1+lCB9yBX9W6QW00THaLdosei3aJupb0W7RMdzPCzaeW9Fw0XGa6ListuX8a39/y5muUSL1khzXhPQdIN0HhDTaTwg4h9VVJunp16eYfX1T71/W/TKf77/X6XVP+dL1p1td/sf3hVu01/+lj9elpbr/+tr6/112u/eIiIiP/+vS3DWGvvyKQK+nS5FmYejP4324pfkVvX/u1WQmkzHuxTFfdoN/8F2Gk9f/v/D/5EgVV6Xu/x2/+vaWvzD//8P//3V+mvvJxT/28hv0v/9P8hv/9KXfJB+qftU6LHf+aPdVtP/0kXf//5czR6fD6U1ua2uT1aQf9f4iL+0vq9Lf/rbS//V1f++n+6f/X7939f/33/b663Xf/V9dWQtmHV0+/rf//+trf9990lr91a/mjFptbW0rSsKmcgl//dWlnILDCTDC2rGYCRUbHF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8mazvjNDIzJAzUZPmefzYpzM89mecE/Mka/+dicaGSEaCk8TxmR8Z8Z4Z8eQSMxMiwh5npA0DTQYINNNNNB2na/9Bb87GMzMnI+RmeEGEGEwqpppppp4TVU77tQmqvX9r/j/naiPinxnxnh4QaDCYTCD08Lrpqqa6y4CeXH5ozQ7l8pebtZjvvmlX8yExns4WG/CaaaaemtKui3cztZelUXGa3Nea6Lt60K09+3TqkKQ/Xr1/p6D39Zoot2i4aLh6Lii4aLoa3Nb6cX6VabV0r33yCPf/p9+qTde+/17W7MF+LdB66fp6dLffSfM7/699Kv7/v11ndrzPiv//5r819awel+v1juukv/7VGH7/9//D7Wd/1er0Z+lvBzDvnd8iyI//7sL/rvtLqWPftf/S4NGf6X/sV/wfGt9raX5sf21B7v/f//4ruu2xsfv8hMFf+bF4fpP/+/+3+/FR99+/9rt///pdanx/TX9hbf//YaX///+4b77+l8P9tTHsexzSr/HxiO/7/7HLin3/5IP0v/9P9SG+buxwoUdh9D6//+v9v00/3ptPr80e62q//o1v/f9+ZBq3//vb//3qSH0i3aLh95o/mz7+3vERDtf9X/f/V/Vvv7//+Z/Nf3tUnpv0q9K///379a7//9/m/7Z5Iv3++//t+3/+/7/1039rWpozR3TrdX66r2r/9sPsLX3v8iSR/f+n/rX/W+/SVtI3rZzSp7CxTGxsVVnAmx7+k7GxHfISPvf/+lqc1bW9v4amEEmNjjeNCjgSK9immqasEHXX1XtMiDp/33/9+PBBxUUxUVsUhVU6tNdPTTTQaa9rhYuIiDCBghEQ0IiINf99adNbW000GmE4MIMIT6ERERHEcREREf2mnhbQaDQYQYWDBCIjiI/+IiKiIiOP//rX+///79fr13/92d4yMyOBoBJ/qdjYU5l0bR5F8jgSw1fsrWXA7g3+I///ZA7hpDkKORAhTlDgiOvkCaGaOQisocpyvKZX8gaY5A8M7TSuyB4F3Kgg45hzOVM7Z14iIiI///5kUX//teP//mRR/f/0+P/6///////////////////////////+WkQjRPllU0mR3fmQrmeTZZRiuLv8x2oT58/qFfB//6f3tQrlKX7+uZFi/Ps1ynWMZ1yJZDidkL//O9URWJVmWapZ9kCyoyJZsUgRrh1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bX/1f+gu++govffDILgbr/9f7mvkv/6T/tq7F/fhf16+9fSJf7X3f/dAiPV/92T+va5ifbSvDYf64aTYX2+GFu2Kpiov4/cjpFR/2KivvjemtrEQwn2IMX8RDQYQiIhmFAQiIt4f8REfb/vb/fZDOo/eG/32v7w5u/LcFihGecjwz+fRmT7r+dkhECzGdkqCDTwg0HphO8OP6aqqrp+tPtkfPf//NDVZombVZm9Hvt/zDfOwaNIn00nXS6pa9lD+/1KI6DzZnkRzPDOEeGcI2GAgzAiZn99bpem3jG/6ZHi4gVpNCwoTCaenbX4P9+DyI3x+P794p8sdy3ct6Ldy3LdouM16H9fSXt8P+wua6Nee3NbQTwnQT09U9f/9f1zXb2y6///T/3Ff+vj///S8e8MX9fuk8f+YE6Q9///XrXbbcN/f///r36//1+qVeGHsEYX//8x/81/Zz/n5f69f+bkh2IP//bXOf6pba2br+0/2/Vtde1w//6+2n7DW1jtf7X7NOK+K62KUP/+7HFfGxuxW+xVbav01XTWyFz/+7VU7u1W0wnFp2ELgwhER3/2mqZtEImkIR8QiIiIiIjhv8RERE1Xa2mvsccgxtaJhZQ5dZMMocnZCOP6aZBUciVn2akUsFxER+GgwhEREehHv+v8tw0Zs+ZwQ2R4Znnx+ZFGmEwnaaevmQz1Roc0M0kXDmiFnt//TaT1T04VW/skWejrGbPx9n2q9a1+9fR2SojmXM4NMIYQZoIEGEGEGEyfSp/pfwff0ItP1lu5not3M+Z3aBF146T8V/8ty4o12EjXnt0HSeE9Ok3Vfqvfr90776TpPVtdjb04pfpVa3/9V1f9r4kcmDgxjX8JbFI2d/r9fri/CsNh8Q/QSsER+m/X///r0XEGz7mzeoSof/r//75+rELLoNkdPWzwFfWf/Xv7/evX/7i+1M8XbpLtbrdf/tdvtbRh2haMO+O6jkJdimPiuv2KhxsVFMRsU1WwtpphbX17ThgiPtUybncJoNCIiIiI9iIiIiMzUGf9rx///////r/7///r+////////rv//r////+//////+v/////////v//vkDYG05BxyJBCjlDlFyI5Bqcg3wnIgo2qxERERERIHgy2QzuQ/moQYslZVlTI8I6FbA8RERERER4AIAIANZW5kc3RyZWFtDWVuZG9iag0xMyAwIG9iag0xMDg2MA1lbmRvYmoNeHJlZg0wIDE0IA0wMDAwMDAwMDAwIDY1NTM1IGYNCjAwMDAwMDAwMTcgMDAwMDAgbg0KMDAwMDAwMDA2OSAwMDAwMCBuDQowMDAwMDAwMjMzIDAwMDAwIG4NCjAwMDAwMDAzMDMgMDAwMDAgbg0KMDAwMDAwMDQ3OSAwMDAwMCBuDQowMDAwMDAwNTk4IDAwMDAwIG4NCjAwMDAwMDA2MTYgMDAwMDAgbg0KMDAwMDAwNzQ1NyAwMDAwMCBuDQowMDAwMDA3NDc3IDAwMDAwIG4NCjAwMDAwMDc2NTUgMDAwMDAgbg0KMDAwMDAwNzc3NiAwMDAwMCBuDQowMDAwMDA3Nzk1IDAwMDAwIG4NCjAwMDAwMTg4OTkgMDAwMDAgbg0KdHJhaWxlcg08PA0vU2l6ZSAxNA0vUm9vdCAxIDAgUiANL0luZm8gMiAwIFIgDS9JRFs8Njc0NUZGNkJGRjIzN0IzMjY5RkYzQzY0NzM0ODMzNjY+PDY3NDVGRjZCRkYyMzdCMzI2OUZGM0M2NDczNDgzMzY2Pl0NPj4Nc3RhcnR4cmVmDTE4OTIxDSUlRU9GDQ==</Document>
+							<Nom>TCC_101_20170220_123704_00000020.PDF</Nom>
+							<Type>application/pdf</Type>
+						</PieceJointe>
+					</Note>
+				</Notes>
+				<Notification>false</Notification>
+				<PartyTitulaire>
+					<GUIDParty>3F4E37D4-86CE-E511-80BA-00505682F3FF</GUIDParty>
+				</PartyTitulaire>
+				<RaisonStatut>100000001</RaisonStatut>
+				<Statut>1</Statut>
+				<Titre>Courrier du 22/02/2017 07:21:45</Titre>
+				<Application>Scan courrier</Application>
+			</ns2:interaction>
+		</ns2:Create>
+	</soap:Body>
+</soap:Envelope>
+]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="TestCreateTunnel"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://in-w2k-dyn-as1:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:Create xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+         <ns2:demande>
+            <Application>CRM360</Application>
+            <Corbeille xsi:type="Utilisateur" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <UtilisateurOuEquipe>
+                  <Id>7F84206E-0179-E511-80BA-00505682F3FF</Id>
+                  <LogicalName>systemuser</LogicalName>
+                  <Name>USER</Name>
+               </UtilisateurOuEquipe>
+            </Corbeille>
+            <Description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <MotClef xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <Notes>
+               <Note>
+                  <EstDocument>false</EstDocument>
+                  <Texte xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                  <Utilisateur>
+                     <Id>7F84206E-0179-E511-80BA-00505682F3FF</Id>
+                     <LogicalName xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                     <Name>USER</Name>
+                  </Utilisateur>
+               </Note>
+            </Notes>
+            <RaisonStatut>100000000</RaisonStatut>
+            <Statut>0</Statut>
+            <ThemeNiveau1>
+               <GUIDThemeNiveau1>bb31c11b-baf5-e511-80ba-00505682f3ff</GUIDThemeNiveau1>
+               <Libelle>Acte commercial</Libelle>
+               <ThemesNiveau2>
+                  <ThemeNiveau2>
+                     <GUIDThemeNiveau2>b143e9af-bcf5-e511-80ba-00505682f3ff</GUIDThemeNiveau2>
+                     <Libelle>Option et services</Libelle>
+                     <ThemesNiveau3>
+                        <ThemeNiveau3>
+                           <GUIDThemeNiveau3>4f614e0f-bdf5-e511-80ba-00505682f3ff</GUIDThemeNiveau3>
+                           <Libelle>Modification</Libelle>
+                        </ThemeNiveau3>
+                     </ThemesNiveau3>
+                  </ThemeNiveau2>
+               </ThemesNiveau2>
+            </ThemeNiveau1>
+            <TicketClientOceane xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <Titre>Acte commercial Option et services Modifications</Titre>
+         </ns2:demande>
+      </ns2:Create>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="createCopletude"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.128.100.17:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:Create xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/interaction/1.0" xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+         <ns2:interaction xsi:type="Email" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <A>
+               <ActivityParty>
+                  <PartyOuContact>
+                     <Id>89E65949-A143-E611-80C7-00505682274D</Id>
+                     <LogicalName>account</LogicalName>
+                  </PartyOuContact>
+               </ActivityParty>
+            </A>
+            <De>
+               <ActivityParty>
+                  <PartyOuContact>
+                     <Id>633451BD-094D-E611-80C7-00505682274D</Id>
+                     <LogicalName>systemuser</LogicalName>
+                  </PartyOuContact>
+               </ActivityParty>
+            </De>
+            <Direction>true</Direction>
+            <EnregistrementCreeLe xsi:nil="true"/>
+            <GUIDInteraction>a4bf5008-95c1-4a82-b213-e49d9e7615ad</GUIDInteraction>
+            <Notes>
+               <Note>
+                  <EstDocument>true</EstDocument>
+                  <PieceJointe>
+                     <Document>
+                     <xop:Include xmlns:xop="http://www.w3.org/2004/08/xop/include" href="cid:0a1bc8ef-00fc-43e0-8418-ccf0e66c06ab-1@www.orangecaraibe.com" />
+                     </Document>
+                     <Nom>LivraisonBDD_PROC_MEI_OREKA_DELTA_ADM_BSCS_LISTENER.pdf</Nom>
+                     <Type>application/pdf</Type>
+                  </PieceJointe>
+               </Note>
+            </Notes>
+            <Notification>false</Notification>
+            <PartyTitulaire>
+               <GUIDParty>89E65949-A143-E611-80C7-00505682274D</GUIDParty>
+            </PartyTitulaire>
+            <RaisonStatut>3</RaisonStatut>
+            <Statut>1</Statut>
+            <Titre>Test envoi SMS avec creation interaction (OREKA)</Titre>
+            <Application>FLOTTEENLIGNE</Application>
+         </ns2:interaction>
+      </ns2:Create>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:attachment><con:name>LivraisonBDD_PROC_MEI_OREKA_DELTA_ADM_BSCS_LISTENER.pdf</con:name><con:contentType>application/pdf</con:contentType><con:contentId>cid:0a1bc8ef-00fc-43e0-8418-ccf0e66c06ab-1@www.orangecaraibe.com</con:contentId><con:part xsi:nil="true"/><con:url>C:/Users/ncrtest2/Desktop/LivraisonBDD_PROC_MEI_OREKA_DELTA_ADM_BSCS_LISTENER.pdf</con:url><con:id>90389d50-7975-4ae2-b981-c34abad05a1b</con:id></con:attachment><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.128.100.17:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<ns2:Create xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+			<ns2:demande>
+				<Application>CRM360-CALL</Application>
+				<ClientFacturation>
+					<Custcode>1.2309198</Custcode>
+					<CustomerID>2246733</CustomerID>
+				</ClientFacturation>
+				<Contrat>
+					<IDContrat>2335461</IDContrat>
+					<MSISDN>590690646095</MSISDN>
+				</Contrat>
+				<Corbeille xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Utilisateur">
+					<UtilisateurOuEquipe>
+						<Id>1B5E564C-3111-E611-80C1-0050568214CF</Id>
+						<LogicalName>systemuser</LogicalName>
+					</UtilisateurOuEquipe>
+					<Login>admin</Login>
+				</Corbeille>
+				<CreePar>
+					<Id>1B5E564C-3111-E611-80C1-0050568214CF</Id>
+					<LogicalName>systemuser</LogicalName>
+				</CreePar>
+				<Description>désimlockage du terminal Apple A1457dâ&#128;&#153;IMEI 352050069336575Code de désimlockage : null</Description>
+				<EquipementConcerne xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+				<Interactions>
+					<Interaction>
+						<GUIDInteraction>843a6658-a48c-e611-80c2-005056826e1e</GUIDInteraction>
+					</Interaction>
+				</Interactions>
+				<MotClef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+				<Notes/>
+				<OffreConcernee>pro intense 4Go</OffreConcernee>
+				<PartyTitulaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Individu">
+					<GUIDParty>837badb8-9e43-e611-80c7-00505682274d</GUIDParty>
+				</PartyTitulaire>
+				<RaisonStatut>100000016</RaisonStatut>
+				<Statut>0</Statut>
+				<ThemeNiveau1>
+					<GUIDThemeNiveau1>bd31c11b-baf5-e511-80ba-00505682f3ff</GUIDThemeNiveau1>
+					<Libelle>Assistance</Libelle>
+					<ThemesNiveau2>
+						<ThemeNiveau2>
+							<GUIDThemeNiveau2>cb43e9af-bcf5-e511-80ba-00505682f3ff</GUIDThemeNiveau2>
+							<Libelle>Désimlockage gratuit</Libelle>
+							<ThemesNiveau3>
+								<ThemeNiveau3>
+									<GUIDThemeNiveau3>a9614e0f-bdf5-e511-80ba-00505682f3ff</GUIDThemeNiveau3>
+									<Libelle>Apple</Libelle>
+								</ThemeNiveau3>
+							</ThemesNiveau3>
+						</ThemeNiveau2>
+					</ThemesNiveau2>
+				</ThemeNiveau1>
+				<TicketClientOceane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+				<Titre>Assistance Désimlockage gratuit Apple</Titre>
+			</ns2:demande>
+		</ns2:Create>
+	</soap:Body>
+</soap:Envelope>
+]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Create"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 5"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.128.100.17:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:dat="http://www.orange.com/sidom/soa/dcrm/datacontract">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:Create>
+         <!--Optional:-->
+         <ns:demande>
+            <!--Optional:-->
+            <dat:Application>?</dat:Application>
+            <!--Optional:-->
+            <dat:AvoirRemboursement>
+               <!--Optional:-->
+               <dat:CostCenter>
+                  <dat:Id>?</dat:Id>
+                  <dat:LogicalName>?</dat:LogicalName>
+                  <!--Optional:-->
+                  <dat:Name>?</dat:Name>
+               </dat:CostCenter>
+               <!--Optional:-->
+               <dat:LignesComptables>
+                  <!--Zero or more repetitions:-->
+                  <dat:LigneComptable>
+                     <!--Optional:-->
+                     <dat:CostCenter>
+                        <dat:Id>?</dat:Id>
+                        <dat:LogicalName>?</dat:LogicalName>
+                        <!--Optional:-->
+                        <dat:Name>?</dat:Name>
+                     </dat:CostCenter>
+                     <!--Optional:-->
+                     <dat:GLCode>
+                        <dat:Id>?</dat:Id>
+                        <dat:LogicalName>?</dat:LogicalName>
+                        <!--Optional:-->
+                        <dat:Name>?</dat:Name>
+                     </dat:GLCode>
+                     <!--Optional:-->
+                     <dat:Montant>?</dat:Montant>
+                     <!--Optional:-->
+                     <dat:Nom>?</dat:Nom>
+                     <!--Optional:-->
+                     <dat:NumeroFacture>?</dat:NumeroFacture>
+                     <!--Optional:-->
+                     <dat:StatusCode>?</dat:StatusCode>
+                     <!--Optional:-->
+                     <dat:Statut>?</dat:Statut>
+                  </dat:LigneComptable>
+               </dat:LignesComptables>
+               <!--Optional:-->
+               <dat:Montant>?</dat:Montant>
+               <!--Optional:-->
+               <dat:Nom>?</dat:Nom>
+               <!--Optional:-->
+               <dat:StatusCode>?</dat:StatusCode>
+               <!--Optional:-->
+               <dat:Statut>?</dat:Statut>
+               <!--Optional:-->
+               <dat:TypeAvoirRemboursement>?</dat:TypeAvoirRemboursement>
+            </dat:AvoirRemboursement>
+            <!--Optional:-->
+            <dat:CanalCommunication>?</dat:CanalCommunication>
+            <!--Optional:-->
+            <dat:ClientFacturation>
+               <!--Optional:-->
+               <dat:Contrats>
+                  <!--Zero or more repetitions:-->
+                  <dat:Contrat>
+                     <!--Optional:-->
+                     <dat:IDContrat>?</dat:IDContrat>
+                     <!--Optional:-->
+                     <dat:MSISDN>?</dat:MSISDN>
+                  </dat:Contrat>
+               </dat:Contrats>
+               <!--Optional:-->
+               <dat:Custcode>?</dat:Custcode>
+               <!--Optional:-->
+               <dat:CustomerID>?</dat:CustomerID>
+               <!--Optional:-->
+               <dat:Segment>?</dat:Segment>
+            </dat:ClientFacturation>
+            <!--Optional:-->
+            <dat:ClotureLe>?</dat:ClotureLe>
+            <!--Optional:-->
+            <dat:Consigne>?</dat:Consigne>
+            <!--Optional:-->
+            <dat:Contrat>
+               <!--Optional:-->
+               <dat:IDContrat>?</dat:IDContrat>
+               <!--Optional:-->
+               <dat:MSISDN>?</dat:MSISDN>
+            </dat:Contrat>
+            <!--Optional:-->
+            <dat:Corbeille>
+               <!--Optional:-->
+               <dat:UtilisateurOuEquipe>
+                  <dat:Id>?</dat:Id>
+                  <dat:LogicalName>?</dat:LogicalName>
+                  <!--Optional:-->
+                  <dat:Name>?</dat:Name>
+               </dat:UtilisateurOuEquipe>
+            </dat:Corbeille>
+            <!--Optional:-->
+            <dat:CreePar>
+               <dat:Id>?</dat:Id>
+               <dat:LogicalName>?</dat:LogicalName>
+               <!--Optional:-->
+               <dat:Name>?</dat:Name>
+            </dat:CreePar>
+            <!--Optional:-->
+            <dat:DateCreation>?</dat:DateCreation>
+            <!--Optional:-->
+            <dat:DemandeMere>
+               <dat:Id>?</dat:Id>
+               <dat:LogicalName>?</dat:LogicalName>
+               <!--Optional:-->
+               <dat:Name>?</dat:Name>
+            </dat:DemandeMere>
+            <!--Optional:-->
+            <dat:Description>?</dat:Description>
+            <!--Optional:-->
+            <dat:EquipementConcerne>?</dat:EquipementConcerne>
+            <!--Optional:-->
+            <dat:EstDemandeMere>?</dat:EstDemandeMere>
+            <!--Optional:-->
+            <dat:GUIDDemande>?</dat:GUIDDemande>
+            <!--Optional:-->
+            <dat:GesteCommercial>
+               <!--Optional:-->
+               <dat:Montant>?</dat:Montant>
+               <!--Optional:-->
+               <dat:Nom>?</dat:Nom>
+               <!--Optional:-->
+               <dat:TypeGesteCommercial>?</dat:TypeGesteCommercial>
+               <!--Optional:-->
+               <dat:Unite>?</dat:Unite>
+            </dat:GesteCommercial>
+            <!--Optional:-->
+            <dat:Interactions>
+               <!--Zero or more repetitions:-->
+               <dat:Interaction>
+                  <!--Optional:-->
+                  <dat:A>
+                     <!--Zero or more repetitions:-->
+                     <dat:ActivityParty>
+                        <!--Optional:-->
+                        <dat:AdresseUtilisee>?</dat:AdresseUtilisee>
+                        <!--Optional:-->
+                        <dat:PartyOuContact>
+                           <dat:Id>?</dat:Id>
+                           <dat:LogicalName>?</dat:LogicalName>
+                           <!--Optional:-->
+                           <dat:Name>?</dat:Name>
+                        </dat:PartyOuContact>
+                     </dat:ActivityParty>
+                  </dat:A>
+                  <!--Optional:-->
+                  <dat:De>
+                     <!--Zero or more repetitions:-->
+                     <dat:ActivityParty>
+                        <!--Optional:-->
+                        <dat:AdresseUtilisee>?</dat:AdresseUtilisee>
+                        <!--Optional:-->
+                        <dat:PartyOuContact>
+                           <dat:Id>?</dat:Id>
+                           <dat:LogicalName>?</dat:LogicalName>
+                           <!--Optional:-->
+                           <dat:Name>?</dat:Name>
+                        </dat:PartyOuContact>
+                     </dat:ActivityParty>
+                  </dat:De>
+                  <!--Optional:-->
+                  <dat:Demandes>
+                     <!--Zero or more repetitions:-->
+                     <dat:Demande/>
+                  </dat:Demandes>
+                  <!--Optional:-->
+                  <dat:Description>?</dat:Description>
+                  <!--Optional:-->
+                  <dat:Direction>?</dat:Direction>
+                  <!--Optional:-->
+                  <dat:EnregistrementCreeLe>?</dat:EnregistrementCreeLe>
+                  <!--Optional:-->
+                  <dat:GUIDInteraction>?</dat:GUIDInteraction>
+                  <!--Optional:-->
+                  <dat:Notes>
+                     <!--Zero or more repetitions:-->
+                     <dat:Note>
+                        <!--Optional:-->
+                        <dat:DateCreation>?</dat:DateCreation>
+                        <!--Optional:-->
+                        <dat:EstDocument>?</dat:EstDocument>
+                        <!--Optional:-->
+                        <dat:GUIDNote>?</dat:GUIDNote>
+                        <!--Optional:-->
+                        <dat:PieceJointe>
+                           <!--Optional:-->
+                           <dat:Document>?</dat:Document>
+                           <!--Optional:-->
+                           <dat:Nom>?</dat:Nom>
+                           <!--Optional:-->
+                           <dat:Type>?</dat:Type>
+                        </dat:PieceJointe>
+                        <!--Optional:-->
+                        <dat:Sujet>?</dat:Sujet>
+                        <!--Optional:-->
+                        <dat:Texte>?</dat:Texte>
+                        <!--Optional:-->
+                        <dat:Utilisateur>
+                           <dat:Id>?</dat:Id>
+                           <dat:LogicalName>?</dat:LogicalName>
+                           <!--Optional:-->
+                           <dat:Name>?</dat:Name>
+                        </dat:Utilisateur>
+                     </dat:Note>
+                  </dat:Notes>
+                  <!--Optional:-->
+                  <dat:PartyTitulaire>
+                     <!--Optional:-->
+                     <dat:CompteParent>
+                        <dat:Id>?</dat:Id>
+                        <dat:LogicalName>?</dat:LogicalName>
+                        <!--Optional:-->
+                        <dat:Name>?</dat:Name>
+                     </dat:CompteParent>
+                     <!--Optional:-->
+                     <dat:ConnaissanceClient>
+                        <!--Optional:-->
+                        <dat:MiseSousResponsabilite>
+                           <!--Optional:-->
+                           <dat:ConnaissanceClient>
+                              <dat:Id>?</dat:Id>
+                              <dat:LogicalName>?</dat:LogicalName>
+                              <!--Optional:-->
+                              <dat:Name>?</dat:Name>
+                           </dat:ConnaissanceClient>
+                           <!--Optional:-->
+                           <dat:Date>?</dat:Date>
+                           <!--Optional:-->
+                           <dat:Motif>?</dat:Motif>
+                           <!--Optional:-->
+                           <dat:Responsable>?</dat:Responsable>
+                           <!--Optional:-->
+                           <dat:Type>?</dat:Type>
+                        </dat:MiseSousResponsabilite>
+                        <!--Optional:-->
+                        <dat:NomGerant>?</dat:NomGerant>
+                     </dat:ConnaissanceClient>
+                     <!--Optional:-->
+                     <dat:Connexions>
+                        <!--Zero or more repetitions:-->
+                        <dat:Connexion>
+                           <!--Optional:-->
+                           <dat:Party>
+                              <dat:Id>?</dat:Id>
+                              <dat:LogicalName>?</dat:LogicalName>
+                              <!--Optional:-->
+                              <dat:Name>?</dat:Name>
+                           </dat:Party>
+                           <!--Optional:-->
+                           <dat:Role>
+                              <dat:Id>?</dat:Id>
+                              <dat:LogicalName>?</dat:LogicalName>
+                              <!--Optional:-->
+                              <dat:Name>?</dat:Name>
+                           </dat:Role>
+                        </dat:Connexion>
+                     </dat:Connexions>
+                     <!--Optional:-->
+                     <dat:DateCompletude>?</dat:DateCompletude>
+                     <!--Optional:-->
+                     <dat:GUIDParty>?</dat:GUIDParty>
+                     <!--Optional:-->
+                     <dat:HierarchieParties>
+                        <!--Zero or more repetitions:-->
+                        <dat:Party/>
+                     </dat:HierarchieParties>
+                     <!--Optional:-->
+                     <dat:Libelle>?</dat:Libelle>
+                     <!--Optional:-->
+                     <dat:MoyensDeContact>
+                        <!--Zero or more repetitions:-->
+                        <dat:MoyenDeContact>
+                           <!--Optional:-->
+                           <dat:NPAI>?</dat:NPAI>
+                           <!--Optional:-->
+                           <dat:OptIn>?</dat:OptIn>
+                        </dat:MoyenDeContact>
+                     </dat:MoyensDeContact>
+                     <!--Optional:-->
+                     <dat:NumeroParty>?</dat:NumeroParty>
+                     <!--Optional:-->
+                     <dat:RolesClient>
+                        <!--Zero or more repetitions:-->
+                        <dat:RoleClient>
+                           <!--Optional:-->
+                           <dat:ClientFacturation>
+                              <!--Optional:-->
+                              <dat:Contrats>
+                                 <!--Zero or more repetitions:-->
+                                 <dat:Contrat>
+                                    <!--Optional:-->
+                                    <dat:IDContrat>?</dat:IDContrat>
+                                    <!--Optional:-->
+                                    <dat:MSISDN>?</dat:MSISDN>
+                                 </dat:Contrat>
+                              </dat:Contrats>
+                              <!--Optional:-->
+                              <dat:Custcode>?</dat:Custcode>
+                              <!--Optional:-->
+                              <dat:CustomerID>?</dat:CustomerID>
+                              <!--Optional:-->
+                              <dat:Segment>?</dat:Segment>
+                           </dat:ClientFacturation>
+                           <!--Optional:-->
+                           <dat:MoyensDeContact>
+                              <!--Zero or more repetitions:-->
+                              <dat:MoyenDeContact>
+                                 <!--Optional:-->
+                                 <dat:NPAI>?</dat:NPAI>
+                                 <!--Optional:-->
+                                 <dat:OptIn>?</dat:OptIn>
+                              </dat:MoyenDeContact>
+                           </dat:MoyensDeContact>
+                           <!--Optional:-->
+                           <dat:RaisonStatut>?</dat:RaisonStatut>
+                           <!--Optional:-->
+                           <dat:Role>?</dat:Role>
+                        </dat:RoleClient>
+                     </dat:RolesClient>
+                     <!--Optional:-->
+                     <dat:Segment>
+                        <dat:Id>?</dat:Id>
+                        <dat:LogicalName>?</dat:LogicalName>
+                        <!--Optional:-->
+                        <dat:Name>?</dat:Name>
+                     </dat:Segment>
+                  </dat:PartyTitulaire>
+                  <!--Optional:-->
+                  <dat:Proprietaire>
+                     <!--Optional:-->
+                     <dat:UtilisateurOuEquipe>
+                        <dat:Id>?</dat:Id>
+                        <dat:LogicalName>?</dat:LogicalName>
+                        <!--Optional:-->
+                        <dat:Name>?</dat:Name>
+                     </dat:UtilisateurOuEquipe>
+                  </dat:Proprietaire>
+                  <!--Optional:-->
+                  <dat:RaisonStatut>?</dat:RaisonStatut>
+                  <!--Optional:-->
+                  <dat:Statut>?</dat:Statut>
+                  <!--Optional:-->
+                  <dat:Titre>?</dat:Titre>
+               </dat:Interaction>
+            </dat:Interactions>
+            <!--Optional:-->
+            <dat:MotClef>?</dat:MotClef>
+            <!--Optional:-->
+            <dat:Notes>
+               <!--Zero or more repetitions:-->
+               <dat:Note>
+                  <!--Optional:-->
+                  <dat:DateCreation>?</dat:DateCreation>
+                  <!--Optional:-->
+                  <dat:EstDocument>?</dat:EstDocument>
+                  <!--Optional:-->
+                  <dat:GUIDNote>?</dat:GUIDNote>
+                  <!--Optional:-->
+                  <dat:PieceJointe>
+                     <!--Optional:-->
+                     <dat:Document>?</dat:Document>
+                     <!--Optional:-->
+                     <dat:Nom>?</dat:Nom>
+                     <!--Optional:-->
+                     <dat:Type>?</dat:Type>
+                  </dat:PieceJointe>
+                  <!--Optional:-->
+                  <dat:Sujet>?</dat:Sujet>
+                  <!--Optional:-->
+                  <dat:Texte>?</dat:Texte>
+                  <!--Optional:-->
+                  <dat:Utilisateur>
+                     <dat:Id>?</dat:Id>
+                     <dat:LogicalName>?</dat:LogicalName>
+                     <!--Optional:-->
+                     <dat:Name>?</dat:Name>
+                  </dat:Utilisateur>
+               </dat:Note>
+            </dat:Notes>
+            <!--Optional:-->
+            <dat:NumeroDemande>?</dat:NumeroDemande>
+            <!--Optional:-->
+            <dat:OffreConcernee>?</dat:OffreConcernee>
+            <!--Optional:-->
+            <dat:PartyTitulaire>
+               <!--Optional:-->
+               <dat:CompteParent>
+                  <dat:Id>?</dat:Id>
+                  <dat:LogicalName>?</dat:LogicalName>
+                  <!--Optional:-->
+                  <dat:Name>?</dat:Name>
+               </dat:CompteParent>
+               <!--Optional:-->
+               <dat:ConnaissanceClient>
+                  <!--Optional:-->
+                  <dat:MiseSousResponsabilite>
+                     <!--Optional:-->
+                     <dat:ConnaissanceClient>
+                        <dat:Id>?</dat:Id>
+                        <dat:LogicalName>?</dat:LogicalName>
+                        <!--Optional:-->
+                        <dat:Name>?</dat:Name>
+                     </dat:ConnaissanceClient>
+                     <!--Optional:-->
+                     <dat:Date>?</dat:Date>
+                     <!--Optional:-->
+                     <dat:Motif>?</dat:Motif>
+                     <!--Optional:-->
+                     <dat:Responsable>?</dat:Responsable>
+                     <!--Optional:-->
+                     <dat:Type>?</dat:Type>
+                  </dat:MiseSousResponsabilite>
+                  <!--Optional:-->
+                  <dat:NomGerant>?</dat:NomGerant>
+               </dat:ConnaissanceClient>
+               <!--Optional:-->
+               <dat:Connexions>
+                  <!--Zero or more repetitions:-->
+                  <dat:Connexion>
+                     <!--Optional:-->
+                     <dat:Party>
+                        <dat:Id>?</dat:Id>
+                        <dat:LogicalName>?</dat:LogicalName>
+                        <!--Optional:-->
+                        <dat:Name>?</dat:Name>
+                     </dat:Party>
+                     <!--Optional:-->
+                     <dat:Role>
+                        <dat:Id>?</dat:Id>
+                        <dat:LogicalName>?</dat:LogicalName>
+                        <!--Optional:-->
+                        <dat:Name>?</dat:Name>
+                     </dat:Role>
+                  </dat:Connexion>
+               </dat:Connexions>
+               <!--Optional:-->
+               <dat:DateCompletude>?</dat:DateCompletude>
+               <!--Optional:-->
+               <dat:GUIDParty>?</dat:GUIDParty>
+               <!--Optional:-->
+               <dat:HierarchieParties>
+                  <!--Zero or more repetitions:-->
+                  <dat:Party/>
+               </dat:HierarchieParties>
+               <!--Optional:-->
+               <dat:Libelle>?</dat:Libelle>
+               <!--Optional:-->
+               <dat:MoyensDeContact>
+                  <!--Zero or more repetitions:-->
+                  <dat:MoyenDeContact>
+                     <!--Optional:-->
+                     <dat:NPAI>?</dat:NPAI>
+                     <!--Optional:-->
+                     <dat:OptIn>?</dat:OptIn>
+                  </dat:MoyenDeContact>
+               </dat:MoyensDeContact>
+               <!--Optional:-->
+               <dat:NumeroParty>?</dat:NumeroParty>
+               <!--Optional:-->
+               <dat:RolesClient>
+                  <!--Zero or more repetitions:-->
+                  <dat:RoleClient>
+                     <!--Optional:-->
+                     <dat:ClientFacturation>
+                        <!--Optional:-->
+                        <dat:Contrats>
+                           <!--Zero or more repetitions:-->
+                           <dat:Contrat>
+                              <!--Optional:-->
+                              <dat:IDContrat>?</dat:IDContrat>
+                              <!--Optional:-->
+                              <dat:MSISDN>?</dat:MSISDN>
+                           </dat:Contrat>
+                        </dat:Contrats>
+                        <!--Optional:-->
+                        <dat:Custcode>?</dat:Custcode>
+                        <!--Optional:-->
+                        <dat:CustomerID>?</dat:CustomerID>
+                        <!--Optional:-->
+                        <dat:Segment>?</dat:Segment>
+                     </dat:ClientFacturation>
+                     <!--Optional:-->
+                     <dat:MoyensDeContact>
+                        <!--Zero or more repetitions:-->
+                        <dat:MoyenDeContact>
+                           <!--Optional:-->
+                           <dat:NPAI>?</dat:NPAI>
+                           <!--Optional:-->
+                           <dat:OptIn>?</dat:OptIn>
+                        </dat:MoyenDeContact>
+                     </dat:MoyensDeContact>
+                     <!--Optional:-->
+                     <dat:RaisonStatut>?</dat:RaisonStatut>
+                     <!--Optional:-->
+                     <dat:Role>?</dat:Role>
+                  </dat:RoleClient>
+               </dat:RolesClient>
+               <!--Optional:-->
+               <dat:Segment>
+                  <dat:Id>?</dat:Id>
+                  <dat:LogicalName>?</dat:LogicalName>
+                  <!--Optional:-->
+                  <dat:Name>?</dat:Name>
+               </dat:Segment>
+            </dat:PartyTitulaire>
+            <!--Optional:-->
+            <dat:Priorite>?</dat:Priorite>
+            <!--Optional:-->
+            <dat:PropositionsRetentions>
+               <!--Zero or more repetitions:-->
+               <dat:PropositionRetention>
+                  <!--Optional:-->
+                  <dat:Code>?</dat:Code>
+                  <!--Optional:-->
+                  <dat:Nom>?</dat:Nom>
+                  <!--Optional:-->
+                  <dat:Statut>?</dat:Statut>
+               </dat:PropositionRetention>
+            </dat:PropositionsRetentions>
+            <!--Optional:-->
+            <dat:RaisonStatut>?</dat:RaisonStatut>
+            <!--Optional:-->
+            <dat:Recouvrement>
+               <!--Optional:-->
+               <dat:DateDelai>?</dat:DateDelai>
+               <!--Optional:-->
+               <dat:DateEcheance1>?</dat:DateEcheance1>
+               <!--Optional:-->
+               <dat:DateEcheance2>?</dat:DateEcheance2>
+               <!--Optional:-->
+               <dat:DateEcheance3>?</dat:DateEcheance3>
+               <!--Optional:-->
+               <dat:MontantDelai>?</dat:MontantDelai>
+               <!--Optional:-->
+               <dat:MontantEcheance1>?</dat:MontantEcheance1>
+               <!--Optional:-->
+               <dat:MontantEcheance2>?</dat:MontantEcheance2>
+               <!--Optional:-->
+               <dat:MontantEcheance3>?</dat:MontantEcheance3>
+               <!--Optional:-->
+               <dat:TypeFacilite>?</dat:TypeFacilite>
+            </dat:Recouvrement>
+            <!--Optional:-->
+            <dat:Resolution>?</dat:Resolution>
+            <!--Optional:-->
+            <dat:Statut>?</dat:Statut>
+            <!--Optional:-->
+            <dat:ThemeNiveau1>
+               <!--Optional:-->
+               <dat:GUIDThemeNiveau1>?</dat:GUIDThemeNiveau1>
+               <!--Optional:-->
+               <dat:Libelle>?</dat:Libelle>
+               <!--Optional:-->
+               <dat:ThemesNiveau2>
+                  <!--Zero or more repetitions:-->
+                  <dat:ThemeNiveau2>
+                     <!--Optional:-->
+                     <dat:GUIDThemeNiveau2>?</dat:GUIDThemeNiveau2>
+                     <!--Optional:-->
+                     <dat:Libelle>?</dat:Libelle>
+                     <!--Optional:-->
+                     <dat:ThemesNiveau3>
+                        <!--Zero or more repetitions:-->
+                        <dat:ThemeNiveau3>
+                           <!--Optional:-->
+                           <dat:GUIDThemeNiveau3>?</dat:GUIDThemeNiveau3>
+                           <!--Optional:-->
+                           <dat:Libelle>?</dat:Libelle>
+                           <!--Optional:-->
+                           <dat:Type>?</dat:Type>
+                        </dat:ThemeNiveau3>
+                     </dat:ThemesNiveau3>
+                  </dat:ThemeNiveau2>
+               </dat:ThemesNiveau2>
+            </dat:ThemeNiveau1>
+            <!--Optional:-->
+            <dat:TicketClientOceane>?</dat:TicketClientOceane>
+            <!--Optional:-->
+            <dat:TicketReseauOceane>?</dat:TicketReseauOceane>
+            <!--Optional:-->
+            <dat:Titre>?</dat:Titre>
+         </ns:demande>
+      </ns:Create>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Create"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet" name="FindAndGet" bindingOperationName="FindAndGet" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://in-w2k-dyn-as1:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:FindAndGet xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+         <ns2:criteria>CoID</ns2:criteria>
+         <ns2:value>3198972</ns2:value>
+         <ns2:additionalCriteria>
+            <FilterNotes>
+               <GetNote>false</GetNote>
+               <GetPieceJointe>false</GetPieceJointe>
+            </FilterNotes>
+            <FromDate>2016-11-23T19:15:58.695-04:00</FromDate>
+            <ThemesNiveau1>
+               <ExcludeThemes>false</ExcludeThemes>
+               <ArrayOfEntityReference/>
+            </ThemesNiveau1>
+            <ToDate>2017-11-23T19:15:58.695-04:00</ToDate>
+         </ns2:additionalCriteria>
+      </ns2:FindAndGet>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet"/><con:wsrmConfig version="1.2"/></con:call><con:call name="By PartyId"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://in-crm-ws1.oc.gp:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:FindAndGet xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+         <ns2:criteria>GUIDParty</ns2:criteria>
+         <ns2:value xsi:type="xs:string" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">0fc02d03-22b4-e611-8106-005056bc1097</ns2:value>
+         <ns2:additionalCriteria>
+            <FilterNotes>
+               <GetNote>false</GetNote>
+               <GetPieceJointe>false</GetPieceJointe>
+            </FilterNotes>
+            <FromDate>2022-01-01T19:15:58.695-04:00</FromDate>
+            <ThemesNiveau1>
+               <ExcludeThemes>false</ExcludeThemes>
+               <ArrayOfEntityReference/>
+            </ThemesNiveau1>
+            <ToDate>2022-01-20T19:15:58.695-04:00</ToDate>
+         </ns2:additionalCriteria>
+      </ns2:FindAndGet>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>ENABLERCRM-ENA_ENABLERCRM</con:username><con:password>,K~+^u^3</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ByDemandeId"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.128.100.17:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<ns2:FindAndGet xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+			<ns2:criteria>GUIDDemande</ns2:criteria>
+			<ns2:value>b1dd5403-d46d-ea11-80db-0050569c116f</ns2:value>
+			<ns2:additionalCriteria>
+				<FilterNotes>
+					<GetNote>true</GetNote>
+					<GetPieceJointe>true</GetPieceJointe>
+				</FilterNotes>
+				<GetOnlyNewOceanDemandeFilles>true</GetOnlyNewOceanDemandeFilles>
+				<NombreMaxEnregistrements>1</NombreMaxEnregistrements>
+				<ThemesNiveau1>
+					<ExcludeThemes>false</ExcludeThemes>
+					<ArrayOfEntityReference/>
+				</ThemesNiveau1>
+			</ns2:additionalCriteria>
+		</ns2:FindAndGet>
+	</soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>ENABLERCRM-ENA_ENABLERCRM</con:username><con:password>,K~+^u^3</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet"/><con:wsrmConfig version="1.2"/></con:call><con:call name="By billingAccountId"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://in-crm-ws1.oc.gp:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:FindAndGet xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+         <ns2:criteria>CustomerID</ns2:criteria>
+         <ns2:value xsi:type="xs:string" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">3185155</ns2:value>
+         <ns2:additionalCriteria>
+            <FilterNotes>
+               <GetNote>true</GetNote>
+               <GetPieceJointe>true</GetPieceJointe>
+            </FilterNotes>
+           
+            <NombreMaxEnregistrements>10</NombreMaxEnregistrements>
+            <Statuts/>
+            <ThemesNiveau1>
+               <ExcludeThemes>false</ExcludeThemes>
+               <ArrayOfEntityReference/>
+            </ThemesNiveau1>
+         </ns2:additionalCriteria>
+      </ns2:FindAndGet>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet"/><con:wsrmConfig version="1.2"/></con:call><con:call name="By Co_id"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.128.100.17:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:FindAndGet xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+         <ns2:criteria>MSISDN</ns2:criteria>
+         <ns2:value xsi:type="xs:string" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">590690348540</ns2:value>
+         <ns2:additionalCriteria>
+            <FilterNotes>
+               <GetNote>true</GetNote>
+               <GetPieceJointe>true</GetPieceJointe>
+            </FilterNotes>
+           
+            <NombreMaxEnregistrements>10</NombreMaxEnregistrements>
+            <Statuts/>
+            <ThemesNiveau1>
+               <ExcludeThemes>false</ExcludeThemes>
+               <ArrayOfEntityReference/>
+            </ThemesNiveau1>
+         </ns2:additionalCriteria>
+      </ns2:FindAndGet>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.128.100.17:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:dat="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:FindAndGet>
+         <!--Optional:-->
+         <ns:criteria>MSISDN</ns:criteria>
+         <!--Optional:-->
+         <ns:value>596696863332</ns:value>
+         <!--Optional:-->
+         
+      </ns:FindAndGet>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Update" name="Update" bindingOperationName="Update" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ioswocapp-si.ms.fcm/DCRM/ManageDemande-1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<ns2:Update xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+			<ns2:demande>
+				<Application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+				<GUIDDemande>F5E05FE1-09E4-E611-80CC-0050569C116F</GUIDDemande>
+				<Notes>
+					<Note>
+						<EstDocument>false</EstDocument>
+						<Texte>Date de résiliation : 15/09/2016.
+Montant restant dû :946.16 </Texte>
+					</Note>
+				</Notes>
+				<RaisonStatut>100000017</RaisonStatut>
+				<Statut>0</Statut>
+			</ns2:demande>
+		</ns2:Update>
+	</soap:Body>
+</soap:Envelope>
+]]></con:request><con:credentials><con:username>ENABLERCRM-ENA_ENABLERCRM</con:username><con:password>,K~+^u^3</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/Update"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" name="FindAndGet - By Co_id"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_ManageDemande</con:interface><con:operation>FindAndGet</con:operation><con:request name="FindAndGet - By Co_id" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.128.100.65:8080/ManageDemande.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:FindAndGet xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+         <ns2:criteria>MSISDN</ns2:criteria>
+         <ns2:value xsi:type="xs:string" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">590690483302</ns2:value>
+         <ns2:additionalCriteria>
+            <FilterNotes>
+               <GetNote>true</GetNote>
+               <GetPieceJointe>false</GetPieceJointe>
+            </FilterNotes>
+           
+            <NombreMaxEnregistrements>10</NombreMaxEnregistrements>
+            <Statuts/>
+            <ThemesNiveau1>
+               <ExcludeThemes>false</ExcludeThemes>
+               <ArrayOfEntityReference/>
+            </ThemesNiveau1>
+         </ns2:additionalCriteria>
+      </ns2:FindAndGet>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>ENABLERCRM-ENA_ENABLERCRM</con:username><con:password>,K~+^u^3</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/demande/1.0/ManageDemande/FindAndGet"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>MSISDN</con:name><con:value/></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

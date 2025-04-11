@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="DCRM-ManageTheme" resourceRoot="" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_ManageTheme" type="wsdl" bindingName="{http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0}BasicHttpBinding_ManageTheme" soapVersion="1_1" anonymous="optional" definition="http://in-w2k-dyn-as1:8080/ManageTheme.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://in-w2k-dyn-as1:8080/ManageTheme.svc?singleWsdl"><con:part><con:url>http://in-w2k-dyn-as1:8080/ManageTheme.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ManageThemeService" targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+      <xs:element name="FindAndGet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="criteria" type="q1:FilterCriteriaTheme" xmlns:q1="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FindAndGetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="FindAndGetResult" nillable="true" type="q2:FindAndGetThemeResponse" xmlns:q2="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xs:complexType name="FilterCriteriaTheme">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FilterCriteriaTheme" nillable="true" type="tns:FilterCriteriaTheme"/>
+      <xs:complexType name="FindAndGetThemeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Themes" nillable="true" type="tns:ArrayOfThemeNiveau1"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FindAndGetThemeResponse" nillable="true" type="tns:FindAndGetThemeResponse"/>
+      <xs:complexType name="ArrayOfThemeNiveau1">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ThemeNiveau1" nillable="true" type="tns:ThemeNiveau1"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfThemeNiveau1" nillable="true" type="tns:ArrayOfThemeNiveau1"/>
+      <xs:complexType name="ThemeNiveau1">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUIDThemeNiveau1" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Libelle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ThemesNiveau2" nillable="true" type="tns:ArrayOfThemeNiveau2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ThemeNiveau1" nillable="true" type="tns:ThemeNiveau1"/>
+      <xs:complexType name="ArrayOfThemeNiveau2">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ThemeNiveau2" nillable="true" type="tns:ThemeNiveau2"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfThemeNiveau2" nillable="true" type="tns:ArrayOfThemeNiveau2"/>
+      <xs:complexType name="ThemeNiveau2">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUIDThemeNiveau2" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Libelle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ThemesNiveau3" nillable="true" type="tns:ArrayOfThemeNiveau3"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ThemeNiveau2" nillable="true" type="tns:ThemeNiveau2"/>
+      <xs:complexType name="ArrayOfThemeNiveau3">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ThemeNiveau3" nillable="true" type="tns:ThemeNiveau3"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfThemeNiveau3" nillable="true" type="tns:ArrayOfThemeNiveau3"/>
+      <xs:complexType name="ThemeNiveau3">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUIDThemeNiveau3" type="ser:guid"/>
+          <xs:element minOccurs="0" name="Libelle" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Type" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ThemeNiveau3" nillable="true" type="tns:ThemeNiveau3"/>
+      <xs:complexType name="ServiceFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int"/>
+          <xs:element minOccurs="0" name="InnerFault" nillable="true" type="tns:ServiceFault"/>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="TraceText" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ServiceFault" nillable="true" type="tns:ServiceFault"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ManageTheme_FindAndGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAndGet"/>
+  </wsdl:message>
+  <wsdl:message name="ManageTheme_FindAndGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAndGetResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ManageTheme_FindAndGet_ServiceFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:ServiceFault" xmlns:q1="http://www.orange.com/sidom/soa/dcrm/datacontract"/>
+  </wsdl:message>
+  <wsdl:portType name="ManageTheme">
+    <wsdl:operation name="FindAndGet">
+      <wsdl:input wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0/ManageTheme/FindAndGet" message="tns:ManageTheme_FindAndGet_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0/ManageTheme/FindAndGetResponse" message="tns:ManageTheme_FindAndGet_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0/ManageTheme/FindAndGetServiceFaultFault" name="ServiceFaultFault" message="tns:ManageTheme_FindAndGet_ServiceFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ManageTheme" type="tns:ManageTheme">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="FindAndGet">
+      <soap:operation soapAction="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0/ManageTheme/FindAndGet" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap:fault use="literal" name="ServiceFaultFault" namespace=""/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManageThemeService">
+    <wsdl:port name="BasicHttpBinding_ManageTheme" binding="tns:BasicHttpBinding_ManageTheme">
+      <soap:address location="http://in-w2k-dyn-as1:8080/ManageTheme.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://172.23.161.21:8080/ManageTheme.svc</con:endpoint><con:endpoint>http://in-w2k-dyn-as1:8080/ManageParty.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0/ManageTheme/FindAndGet" name="FindAndGet" bindingOperationName="FindAndGet" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://in-crm-ws1.oc.gp:8080/ManageTheme.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:FindAndGet xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0" xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+         <ns2:criteria/>
+      </ns2:FindAndGet>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0/ManageTheme/FindAndGet"/><con:wsrmConfig version="1.2"/></con:call><con:call name="testType"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.128.100.66:8080/ManageTheme.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:FindAndGet xmlns="http://www.orange.com/sidom/soa/dcrm/datacontract" xmlns:ns2="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/">
+         <ns2:criteria>
+            <Type>100000004</Type>
+         </ns2:criteria>
+      </ns2:FindAndGet>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0/ManageTheme/FindAndGet"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8080" path="/" host="DZ-WKS-NCR06" name="MockService 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-version">false</con:setting></con:settings><con:properties/><con:mockOperation name="FindAndGet" interface="BasicHttpBinding_ManageTheme" operation="FindAndGet"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:EtaskWrite xmlns:ns2="http://www.orange.com/04O/soa/EtaskService/v1/message">
+         <Emetteur>
+            <id_usr>WWWW9967</id_usr>
+            <id_pwd>7fc1edec07556b6fb1Adfe981ssf4dg4</id_pwd>
+            <id_job>8450</id_job>
+         </Emetteur>
+         <Ot>
+            <da_min/>
+            <da_max/>
+            <da_fin/>
+            <priorite/>
+            <code_uo/>
+            <gpparc/>
+            <clef>20190418-16342435</clef>
+            <data><![CDATA[<version>1.0</version><profile><id>OMY</id></profile><sendOrderRequest><order><id>HERMES</id><channelID>DOM</channelID><saleDate>2019-04-18T16:47:18.000-04:00</saleDate><contact><mailAdress>JM@gmail.com</mailAdress></contact><customer><marketSegment>R</marketSegment><typology>PPR</typology><customerDetailsNumber>1</customerDetailsNumber><customerDetails><civility>M.</civility><lastName>May</lastName><firstName>James</firstName><profession></profession><birthPlace></birthPlace><birthDate>1980-01-01</birthDate><birthDept></birthDept><typeClient>1</typeClient><customerOldDetailsNumber>1</customerOldDetailsNumber></customerDetails><idList><type>orangeAccountBillingId</type><value>750001439</value></idList></customer><componentMS><operation>RVOI</operation><phoneNumber>0590385105</phoneNumber><offerList><id>OC50000000367</id><label>Open Infini sans abo OM</label><status>OLD</status><specificityNumber>1</specificityNumber></offerList><offerList><id></id><label></label><status>NEW</status></offerList></componentMS></order></sendOrderRequest>]]]]>><![CDATA[</data>
+            <motif_retour/>
+         </Ot>
+      </ns2:EtaskWrite>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.orange.com/sidom/soa/dcrm/servicecontract/theme/1.0/ManageTheme/FindAndGet"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
